@@ -515,27 +515,42 @@
     }
 
     /* RESPONSIVE */
-    @media (max-width: 360px){
+  @media (max-width: 480px){
+  /* Keep header one line and prevent wrapping */
+  .topbar-inner{
+    flex-wrap: nowrap !important;
+    gap:10px;
+  }
+
+  /* Let the logo/name area shrink instead of pushing the phone pill */
+  .brand{
+    min-width: 0;
+    gap:10px;
+  }
+
+  /* Prevent the business name from forcing extra width */
+  .name{
+    min-width:0;
+  }
+  .name .sub{
+    display:none; /* hides the subline on very small screens */
+  }
+
+  /* Make the phone button smaller and avoid stretching the header */
   .phone-pill{
-    padding:7px 9px;
-    font-size:12px;
+    flex: 0 0 auto;
+    padding:8px 10px;
+    font-size:13px;
     gap:6px;
-    line-height:1;
     white-space:nowrap;
+    border-radius:999px;
   }
 
   .phone-pill svg{
     width:16px;
     height:16px;
   }
-
-  /* Hide any extra label text inside the pill */
-  .phone-pill span,
-  .phone-pill .label{
-    display:none !important;
-  }
 }
-
     @media (max-width: 980px){
       .nav{display:none}
       .hero{min-height:unset}
@@ -559,7 +574,7 @@
         <img src="logo.png" alt="American Purity logo" onerror="this.style.display='none'">
         <div class="name">
           American <span>Purity</span>
-          <span class="sub">Whole-Home Water Filtration & Softening</span>
+          <span class="sub">Whole-Home Water Filtration</span>
         </div>
       </a>
 
