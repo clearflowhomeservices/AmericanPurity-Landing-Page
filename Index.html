@@ -1,1 +1,1006 @@
 
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>American Purity Water System | Whole House Water Filtration (GA • TN • AL)</title>
+  <meta name="description" content="Whole house water filtration for homes in Georgia, Tennessee, and Alabama. Get clean, filtered water from every faucet. Free consultation." />
+
+  <!-- Open Graph (optional but nice for sharing) -->
+  <meta property="og:title" content="American Purity Water System | Whole House Water Filtration" />
+  <meta property="og:description" content="Clean, filtered water from every faucet. Serving GA • TN • AL. Free consultation." />
+  <meta property="og:type" content="website" />
+
+  <!-- Tally embed script (only needed if you use the embed below) -->
+  <script async src="https://tally.so/widgets/embed.js"></script>
+
+  <style>
+    :root{
+      --bg:#ffffff;
+      --text:#111827;
+      --muted:#6b7280;
+      --line:#e5e7eb;
+      --brand:#0f172a;        /* navy */
+      --brand2:#2563eb;       /* blue */
+      --accent:#16a34a;       /* green */
+      --card:#ffffff;
+      --shadow:0 18px 50px rgba(0,0,0,.16);
+      --shadow2:0 10px 28px rgba(0,0,0,.12);
+      --radius:16px;
+      --max:1120px;
+      --font: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      --headerH:72px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:var(--font);color:var(--text);background:var(--bg)}
+    a{color:inherit}
+    .container{max-width:var(--max);margin:0 auto;padding:0 18px}
+    section[id]{scroll-margin-top: calc(var(--headerH) + 18px);}
+
+    /* TOP BAR */
+    .topbar{
+      height:var(--headerH);
+      display:flex; align-items:center;
+      border-bottom:1px solid var(--line);
+      background:#fff;
+      position:sticky; top:0; z-index:50;
+    }
+    .topbar-inner{
+      display:flex; align-items:center; gap:14px; width:100%;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      text-decoration:none;
+      font-weight:950; letter-spacing:.2px;
+      white-space:nowrap;
+    }
+    .brand img{height:38px; width:auto; display:block;}
+    .brand .name{font-size:16.5px; line-height:1.05}
+    .brand .name span{display:block;color:var(--muted);font-weight:800;font-size:12px;margin-top:3px}
+    .navspacer{flex:1}
+    .nav{
+      display:flex; gap:18px; font-size:14px; color:#374151; align-items:center;
+    }
+    .nav a{ text-decoration:none; opacity:.92; font-weight:750 }
+    .nav a:hover{ opacity:1; text-decoration:underline }
+    .nav .cta{
+      background:var(--brand);
+      color:#fff !important;
+      border-radius:10px;
+      padding:10px 12px;
+      text-decoration:none !important;
+      font-weight:950;
+      letter-spacing:.2px;
+    }
+
+    /* HERO */
+    .hero{
+      position:relative;
+      min-height:560px;
+      background:
+        radial-gradient(1200px 520px at 20% 30%, rgba(37,99,235,.20), transparent 55%),
+        linear-gradient(90deg, rgba(15,23,42,.70) 0%, rgba(15,23,42,.45) 55%, rgba(15,23,42,.22) 100%),
+        url("hero.jpg"); /* <-- replace with your best photo (truck, install, clean kitchen faucet, etc.) */
+      background-size:cover;
+      background-position:center;
+      overflow:hidden;
+    }
+    .hero .container{
+      display:grid;
+      grid-template-columns: 1.2fr .9fr;
+      gap:34px;
+      padding:56px 18px 44px;
+      align-items:center;
+    }
+    .hero h1{
+      margin:0 0 12px;
+      color:#fff;
+      font-size:44px;
+      line-height:1.06;
+      font-weight:1000;
+      text-shadow:0 2px 12px rgba(0,0,0,.28);
+      letter-spacing:-.5px;
+    }
+    .hero p{
+      margin:0 0 18px;
+      color:rgba(255,255,255,.92);
+      font-size:16.5px;
+      line-height:1.65;
+      max-width:760px;
+    }
+
+    /* Benefit chips */
+    .benefits{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin:16px 0 0;
+      padding:0;
+      list-style:none;
+      color:#fff;
+    }
+    .benefits li{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      border:1px solid rgba(255,255,255,.18);
+      background:rgba(0,0,0,.20);
+      padding:10px 12px;
+      border-radius:999px;
+      font-weight:900;
+      font-size:13px;
+      letter-spacing:.15px;
+    }
+    .benefits svg{flex:0 0 18px; opacity:.95}
+
+    /* mini trust strip */
+    .strip{
+      margin-top:16px;
+      background:rgba(255,255,255,.10);
+      border:1px solid rgba(255,255,255,.16);
+      border-radius:14px;
+      padding:14px 14px;
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:12px;
+      width:min(780px,100%);
+      box-shadow:var(--shadow2);
+      backdrop-filter: blur(8px);
+    }
+    .strip .item{
+      display:flex; align-items:center; gap:10px;
+      color:#fff; font-size:13px; line-height:1.25;
+    }
+    .strip .item svg{flex:0 0 22px; opacity:.95}
+    .strip strong{display:block; font-size:13px}
+    .strip span{display:block; opacity:.90; font-size:12px}
+
+    /* CTA CARD */
+    .cta-card{
+      background:var(--card);
+      border-radius:14px;
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+    .cta-card .head{
+      background:var(--brand);
+      color:#fff;
+      padding:14px 16px;
+      font-weight:950;
+      text-align:center;
+      font-size:15px;
+      letter-spacing:.2px;
+    }
+    .cta-card .body{padding:18px}
+    .cta-card label{display:block;font-size:14px;font-weight:900;margin:0 0 8px;color:#111827}
+    .field{
+      display:flex; gap:10px; align-items:center;
+      border:1px solid var(--line);
+      border-radius:12px;
+      padding:10px 12px;
+      background:#fff;
+    }
+    .field svg{opacity:.65}
+    .field input{
+      border:0; outline:0; width:100%;
+      font-size:14px; padding:2px 0;
+    }
+    .btn{
+      display:inline-flex; justify-content:center; align-items:center;
+      border:0; cursor:pointer;
+      font-weight:1000;
+      letter-spacing:.35px;
+      border-radius:12px;
+      padding:12px 14px;
+      text-transform:uppercase;
+      font-size:13px;
+      text-decoration:none;
+    }
+    .btn-primary{background:var(--brand2);color:#fff;width:100%;margin-top:12px}
+    .btn-primary:hover{filter:brightness(.97)}
+    .btn-dark{background:#111827;color:#fff}
+    .btn-dark:hover{filter:brightness(1.06)}
+    .btn-green{background:var(--accent);color:#fff}
+    .btn-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+    .btn-row .btn{width:100%}
+    .micro{
+      margin-top:12px;
+      font-size:12px;
+      color:#6b7280;
+      line-height:1.5;
+      text-align:center;
+    }
+    .note{
+      margin-top:12px;
+      padding:10px 12px;
+      border:1px solid var(--line);
+      border-radius:12px;
+      background:#fafafa;
+      color:#374151;
+      font-size:12.5px;
+      line-height:1.45;
+      text-align:left;
+    }
+
+    /* TRUST BAR */
+    .proof{
+      background:#fff;
+      border-bottom:1px solid var(--line);
+      padding:18px 0;
+    }
+    .proof .row{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+    }
+    .proof-pill{
+      border:1px solid var(--line);
+      border-radius:999px;
+      padding:10px 14px;
+      background:#fafafa;
+      font-weight:900;
+      font-size:13px;
+      color:#111827;
+    }
+    .proof small{
+      display:block;
+      margin-top:10px;
+      color:var(--muted);
+      font-size:12.5px;
+      line-height:1.5;
+      text-align:center;
+    }
+    .stars{
+      display:inline-flex;
+      gap:2px;
+      align-items:center;
+      justify-content:center;
+      font-weight:950;
+      color:#111827;
+    }
+    .stars .star{
+      width:16px;height:16px;
+      fill:#f5c542;
+      stroke:#b45309;
+      stroke-width:.6;
+      filter: drop-shadow(0 1px 0 rgba(0,0,0,.10));
+    }
+
+    /* SECTIONS */
+    .section{padding:46px 0}
+    .section.tight{padding-top:0}
+    .two-col{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:26px;
+      align-items:center;
+    }
+    .card{
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:22px;
+      background:#fff;
+    }
+    .card h2{margin:0 0 10px;font-size:24px; letter-spacing:-.2px}
+    .lead{color:#374151;line-height:1.78;margin:0 0 14px;font-size:14.9px}
+    .lead strong{color:#111827}
+    .imgbox{
+      border-radius:16px;
+      overflow:hidden;
+      border:1px solid var(--line);
+      background:#f3f4f6;
+    }
+    .imgbox img{display:block;width:100%;height:auto}
+    .subpoints{
+      margin:12px 0 0;
+      padding-left:18px;
+      color:#374151;
+      line-height:1.78;
+      font-size:14.6px;
+    }
+    .subpoints li{margin:6px 0}
+
+    /* PROBLEM GRID */
+    .grid3{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:16px;
+    }
+    .mini{
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:16px;
+      background:#fff;
+    }
+    .mini h4{margin:0 0 6px;font-size:15.5px}
+    .mini p{margin:0;color:#374151;line-height:1.68;font-size:13.9px}
+
+    /* TESTIMONIALS (replace with real ones when you have them) */
+    .tgrid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:16px;
+      margin-top:14px;
+    }
+    .tcard{
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:16px;
+      background:#fff;
+    }
+    .tcard p{
+      margin:0 0 12px;
+      color:#374151;
+      line-height:1.7;
+      font-size:14px;
+    }
+    .tmeta{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      border-top:1px solid var(--line);
+      padding-top:12px;
+      margin-top:10px;
+      font-size:12.5px;
+      color:var(--muted);
+      font-weight:800;
+    }
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      font-size:12px;
+      font-weight:950;
+      padding:6px 10px;
+      border-radius:999px;
+      background:#111827;
+      color:#fff;
+      white-space:nowrap;
+    }
+
+    /* BEFORE/AFTER */
+    .ba-wrap{
+      border:1px solid var(--line);
+      border-radius:16px;
+      overflow:hidden;
+      background:#fff;
+      margin-top:14px;
+    }
+    .ba-wrap img{display:block;width:100%;height:auto}
+    .ba-cap{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:10px;
+      padding:10px 12px;
+      border-top:1px solid var(--line);
+      background:#fafafa;
+      font-weight:950;
+      font-size:13px;
+      color:#111827;
+    }
+    .ba-cap span:last-child{
+      font-weight:900;
+      color:#374151;
+      font-size:12px;
+      opacity:.95;
+    }
+
+    /* FORM WRAP */
+    .embedwrap{
+      border:1px solid var(--line);
+      border-radius:16px;
+      overflow:hidden;
+      background:#fff;
+    }
+    .embedhead{
+      padding:14px 16px;
+      border-bottom:1px solid var(--line);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+    .embedhead strong{font-size:14px}
+    .embedhead span{font-size:12px;color:var(--muted)}
+    .embed-body{padding:12px 12px 16px;}
+    .embed-body iframe{
+      width:100%;
+      display:block;
+      border:0;
+      min-height:420px; /* desktop default - adjust if your Tally needs more */
+    }
+
+    /* FAQ */
+    .faq{padding-top:0}
+    details.faq-item{
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:14px 16px;
+      background:#fff;
+      margin:10px 0;
+    }
+    details.faq-item summary{
+      cursor:pointer;
+      font-weight:950;
+      color:#111827;
+      list-style:none;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+    }
+    details.faq-item summary::-webkit-details-marker{display:none}
+    .chev{
+      width:18px; height:18px; flex:0 0 18px;
+      transition:transform .18s ease;
+      opacity:.75;
+    }
+    details[open] .chev{transform:rotate(180deg)}
+    .faq-answer{
+      margin-top:10px;
+      color:#374151;
+      line-height:1.75;
+      font-size:14.6px;
+    }
+
+    /* FOOTER */
+    footer{
+      background:#111827;
+      color:rgba(255,255,255,.86);
+      padding:26px 0;
+      font-size:13px;
+    }
+    footer .container{display:flex; gap:12px; align-items:center; justify-content:space-between; flex-wrap:wrap}
+    .footlinks{display:flex; gap:14px; flex-wrap:wrap}
+    .footlinks a{color:rgba(255,255,255,.86); text-decoration:none}
+    .footlinks a:hover{text-decoration:underline}
+
+    /* Sticky CTA (mobile) */
+    .sticky-cta{
+      position:fixed;
+      left:12px;
+      right:12px;
+      bottom:12px;
+      z-index:60;
+      display:none;
+    }
+    .sticky-cta .inner{
+      background:#111827;
+      border-radius:14px;
+      padding:10px;
+      box-shadow:0 18px 50px rgba(0,0,0,.30);
+      display:flex;
+      gap:10px;
+      align-items:center;
+      justify-content:space-between;
+    }
+    .sticky-cta .inner span{
+      color:#fff;
+      font-weight:950;
+      font-size:13px;
+      line-height:1.2;
+    }
+    .sticky-cta a{
+      width:auto;
+      padding:12px 14px;
+      border-radius:12px;
+      text-transform:uppercase;
+      font-weight:1000;
+      border:0;
+      cursor:pointer;
+      background:var(--accent);
+      color:#fff;
+      letter-spacing:.35px;
+      font-size:12px;
+      white-space:nowrap;
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 980px){
+      .hero .container{grid-template-columns: 1fr; padding-top:32px}
+      .strip{grid-template-columns: 1fr}
+      .two-col{grid-template-columns: 1fr}
+      .grid3{grid-template-columns: 1fr}
+      .tgrid{grid-template-columns: 1fr}
+      .nav{display:none}
+      .hero{min-height:unset}
+      .hero h1{font-size:38px}
+      .sticky-cta{display:block;}
+      body{padding-bottom:86px;}
+      .embed-body iframe{min-height:520px;} /* mobile default - adjust if needed */
+    }
+  </style>
+</head>
+
+<body>
+  <!-- TOP BAR -->
+  <header class="topbar" id="top">
+    <div class="container topbar-inner">
+      <a class="brand" href="#top" aria-label="American Purity Water System">
+        <!-- Replace with your actual logo file name -->
+        <img src="logo.png" alt="American Purity Water System logo" onerror="this.style.display='none'">
+        <div class="name">
+          American Purity Water System
+          <span>Whole House Water Filtration • GA • TN • AL</span>
+        </div>
+      </a>
+
+      <div class="navspacer"></div>
+
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="#how">How It Works</a>
+        <a href="#proof">Trust</a>
+        <a href="#beforeafter">Before/After</a>
+        <a href="#pricing">What You Get</a>
+        <a class="cta" href="#getstarted">Free Consultation</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" aria-label="Hero">
+    <div class="container">
+      <div>
+        <h1>Do You Actually Trust The Water In Your Home?</h1>
+
+        <p>
+          Chlorine smell, hard water buildup, cloudy water, or skin irritation can be signs your water needs help.
+          Get <strong>clean, filtered water from every faucet</strong> with a whole-house system installed by local pros serving
+          Georgia, Tennessee, and Alabama.
+        </p>
+
+        <ul class="benefits" aria-label="Key benefits">
+          <li>
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="white" stroke-width="2">
+              <path d="M12 2l7 4v6c0 5-3 9-7 10-4-1-7-5-7-10V6l7-4z"/>
+            </svg>
+            Cleaner water at every faucet
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="white" stroke-width="2">
+              <path d="M20 7l-8 10-4-4"/>
+            </svg>
+            Installed by local pros
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="white" stroke-width="2">
+              <path d="M12 8v4l3 3"/><path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/>
+            </svg>
+            Fast scheduling
+          </li>
+        </ul>
+
+        <div class="strip" aria-label="Quick trust points">
+          <div class="item">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="white" stroke-width="2">
+              <path d="M12 2l3.1 6.9 7.5.7-5.7 4.9 1.7 7.3L12 18.2 5.4 21.8l1.7-7.3L1.4 9.6l7.5-.7L12 2z"/>
+            </svg>
+            <div><strong>Family-first water</strong><span>taste • skin • appliances</span></div>
+          </div>
+          <div class="item">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="white" stroke-width="2">
+              <path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/><path d="M12 7v5l3 3"/>
+            </svg>
+            <div><strong>Free consult</strong><span>no pressure, clear options</span></div>
+          </div>
+          <div class="item">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="white" stroke-width="2">
+              <path d="M12 21s7-4.35 7-10a7 7 0 0 0-14 0c0 5.65 7 10 7 10z"/>
+              <circle cx="12" cy="11" r="2"/>
+            </svg>
+            <div><strong>GA • TN • AL</strong><span>local scheduling</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA CARD -->
+      <aside class="cta-card" id="getstarted" aria-label="Get started">
+        <div class="head">Get a Free Consultation</div>
+        <div class="body">
+          <label for="zip">Your ZIP Code (optional)</label>
+          <div class="field">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#111827" stroke-width="2">
+              <path d="M12 21s7-4.35 7-10a7 7 0 0 0-14 0c0 5.65 7 10 7 10z"/>
+              <circle cx="12" cy="11" r="2"/>
+            </svg>
+            <input id="zip" inputmode="numeric" maxlength="10" placeholder="e.g., 37421" />
+          </div>
+
+          <!-- PHONE CTA (replace number) -->
+          <div class="btn-row">
+            <a class="btn btn-green" href="tel:+14236607139" aria-label="Call American Purity Water System">
+              Call Now • (423) 660-7139
+            </a>
+            <button
+              class="btn btn-primary"
+              type="button"
+              data-tally-open="YOUR_TALLY_ID"
+              data-tally-emoji-text="👋"
+              data-tally-emoji-animation="wave"
+              onclick="return openTallyWithZip(true);">
+              Start Free Consultation
+            </button>
+          </div>
+
+          <div class="note">
+            <strong>Service area:</strong> Georgia • Tennessee • Alabama<br/>
+            <strong>What happens next:</strong> quick call/text to confirm your water concerns and schedule a visit.
+          </div>
+
+          <div class="micro">
+            No spam. We only use your info to schedule your consultation.
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- TRUST / SOCIAL PROOF -->
+  <section class="proof" id="proof" aria-label="trust signals">
+    <div class="container">
+      <div class="row">
+        <div class="proof-pill">
+          <span class="stars" aria-label="rating">
+            <svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.1 6.9 7.5.7-5.7 4.9 1.7 7.3L12 18.2 5.4 21.8l1.7-7.3L1.4 9.6l7.5-.7L12 2z"/></svg>
+            <svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.1 6.9 7.5.7-5.7 4.9 1.7 7.3L12 18.2 5.4 21.8l1.7-7.3L1.4 9.6l7.5-.7L12 2z"/></svg>
+            <svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.1 6.9 7.5.7-5.7 4.9 1.7 7.3L12 18.2 5.4 21.8l1.7-7.3L1.4 9.6l7.5-.7L12 2z"/></svg>
+            <svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.1 6.9 7.5.7-5.7 4.9 1.7 7.3L12 18.2 5.4 21.8l1.7-7.3L1.4 9.6l7.5-.7L12 2z"/></svg>
+            <svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.1 6.9 7.5.7-5.7 4.9 1.7 7.3L12 18.2 5.4 21.8l1.7-7.3L1.4 9.6l7.5-.7L12 2z"/></svg>
+            &nbsp;Trusted local installs • GA • TN • AL
+          </span>
+        </div>
+        <div class="proof-pill">Whole-home filtration (not just a pitcher)</div>
+        <div class="proof-pill">Clean water • better taste • less buildup</div>
+      </div>
+      <small>
+        *Replace this line with real proof when available (Google reviews, number of installs, warranty terms, etc.).
+      </small>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="section" id="how">
+    <div class="container two-col">
+      <div class="imgbox">
+        <!-- Replace with an install photo, truck photo, or close-up of the system -->
+        <img src="install.jpg" alt="Whole house water filtration system installation" loading="lazy" />
+      </div>
+
+      <div class="card">
+        <h2>How it works</h2>
+        <p class="lead">
+          Most families don’t need a complicated science lesson — they just want water they can trust.
+          We keep it simple: understand your concerns, check the water, then recommend the right system for your home.
+        </p>
+
+        <ul class="subpoints">
+          <li><strong>Step 1:</strong> Tell us what you’re noticing (smell, taste, hardness, buildup, irritation)</li>
+          <li><strong>Step 2:</strong> Free consultation + clear options for your home</li>
+          <li><strong>Step 3:</strong> Professional install and simple upkeep</li>
+        </ul>
+
+        <div class="btn-row" style="margin-top:16px;">
+          <a class="btn btn-green" href="tel:+14236607139">Call • (423) 660-7139</a>
+          <a class="btn btn-dark" href="#form">Request a Consultation</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEMS WE SOLVE -->
+  <section class="section" id="pricing">
+    <div class="container">
+      <h2 style="margin:0;">Common reasons homeowners upgrade their water</h2>
+      <p class="lead" style="margin:10px 0 18px;">
+        Whole-house filtration helps with <strong>taste</strong>, <strong>odor</strong>, <strong>buildup</strong>, and <strong>appliance protection</strong>.
+        We’ll recommend the best-fit system based on your water and goals.
+      </p>
+
+      <div class="grid3">
+        <div class="mini">
+          <h4>Chlorine smell / bad taste</h4>
+          <p>Clean, fresh water at every faucet—drinking, showering, cooking.</p>
+        </div>
+        <div class="mini">
+          <h4>Hard water buildup</h4>
+          <p>Helps reduce mineral scale on fixtures and inside appliances.</p>
+        </div>
+        <div class="mini">
+          <h4>Skin & hair irritation</h4>
+          <p>Many homeowners notice improvements when harsh water is filtered.</p>
+        </div>
+        <div class="mini">
+          <h4>Cloudy water / sediment</h4>
+          <p>Filtration can capture particles so water looks and feels cleaner.</p>
+        </div>
+        <div class="mini">
+          <h4>Protect your plumbing</h4>
+          <p>Less buildup can extend the life of water heaters, dishwashers, and pipes.</p>
+        </div>
+        <div class="mini">
+          <h4>Peace of mind</h4>
+          <p>You shouldn’t have to “hope” your water is okay—know it’s filtered.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BEFORE / AFTER -->
+  <section class="section" id="beforeafter">
+    <div class="container two-col">
+      <div class="card">
+        <h2>What “better” looks like</h2>
+        <p class="lead" style="margin-bottom:0;">
+          People don’t buy filters — they buy confidence. Cleaner taste, less smell, less buildup, and water you don’t question.
+        </p>
+
+        <!-- Replace these captions if your before/after is different -->
+        <div class="ba-wrap" aria-label="Before and after photo">
+          <!-- You can use a single combined image here (recommended) -->
+          <img src="foundation-drainage-before-after.jpg" alt="Before and after: improved results after installing a solution" loading="lazy" />
+          <div class="ba-cap">
+            <span>Before → After</span>
+            <span>Real results beat stock photos.</span>
+          </div>
+        </div>
+
+        <p class="lead" style="margin:14px 0 0;">
+          <strong>Pro tip:</strong> As soon as you get 2–3 real customer photos/reviews, swap them in here — conversion jumps.
+        </p>
+      </div>
+
+      <div class="imgbox">
+        <!-- Replace with a clean “kitchen faucet / family / truck / install team” photo -->
+        <img src="truck.jpg" alt="American Purity Water System service truck and team" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section" id="testimonials">
+    <div class="container">
+      <h2 style="margin:0;">What homeowners say</h2>
+      <p class="lead" style="margin:10px 0 0;">
+        These are <strong>placeholders</strong> — replace with real quotes as soon as you have them (even 3 is enough to boost conversions).
+      </p>
+
+      <div class="tgrid">
+        <div class="tcard">
+          <p>“The chlorine smell was the first thing we noticed. After the install, the water tastes way better and showers feel cleaner.”</p>
+          <div class="tmeta">
+            <span>Homeowner • TN</span>
+            <span class="badge">Taste & Odor</span>
+          </div>
+        </div>
+        <div class="tcard">
+          <p>“We were tired of buildup on everything. The consultation was quick and the install was straightforward.”</p>
+          <div class="tmeta">
+            <span>Homeowner • GA</span>
+            <span class="badge">Hard Water</span>
+          </div>
+        </div>
+        <div class="tcard">
+          <p>“No pressure. They explained options in plain English and helped us choose what made sense for our home.”</p>
+          <div class="tmeta">
+            <span>Homeowner • AL</span>
+            <span class="badge">Clear Options</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORM EMBED -->
+  <section class="section tight" id="form">
+    <div class="container two-col">
+      <div class="card">
+        <h2>Request a free consultation</h2>
+        <p class="lead">
+          Tell us what you’re noticing and how soon you’d like help. We’ll follow up to confirm details and schedule your next step.
+        </p>
+        <p class="lead" style="margin-bottom:0;">
+          <strong>Fast response:</strong> most requests get a callback quickly.
+        </p>
+
+        <div class="btn-row" style="margin-top:16px;">
+          <a class="btn btn-green" href="tel:+14236607139">Call • (423) 660-7139</a>
+          <button class="btn btn-dark" type="button"
+            data-tally-open="YOUR_TALLY_ID"
+            data-tally-emoji-text="👋"
+            data-tally-emoji-animation="wave"
+            onclick="return openTallyWithZip(false);">
+            Open Form
+          </button>
+        </div>
+      </div>
+
+      <div class="embedwrap" aria-label="Consultation form">
+        <div class="embedhead">
+          <div>
+            <strong>Quick Consultation Form</strong><br>
+            <span>~2 minutes • helps route you correctly</span>
+          </div>
+        </div>
+
+        <div class="embed-body">
+          <!-- OPTION A (recommended): embed the form -->
+          <iframe
+            id="tallyFrame"
+            data-tally-src="https://tally.so/embed/YOUR_TALLY_ID?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+            loading="lazy"
+            title="Free consultation request">
+          </iframe>
+
+          <!-- OPTION B: If you only want popup, delete the iframe above -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section faq" id="faq">
+    <div class="container">
+      <div class="card">
+        <h2>Frequently asked questions</h2>
+        <p class="lead" style="margin-bottom:6px;">
+          Quick answers homeowners ask before scheduling.
+        </p>
+
+        <details class="faq-item">
+          <summary>
+            How fast can I get scheduled?
+            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="#111827" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <div class="faq-answer">
+            Most homeowners can get a quick call/text to confirm details and schedule a visit based on your area and availability.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            Is the consultation really free?
+            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="#111827" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <div class="faq-answer">
+            Yes — the consultation is free. If you choose to move forward with an install, pricing depends on the system and your home.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            Do you serve my area?
+            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="#111827" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <div class="faq-answer">
+            We currently serve homes across <strong>Georgia, Tennessee, and Alabama</strong>. Enter your ZIP and we’ll confirm availability.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            What if I’m not sure what’s in my water?
+            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="#111827" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <div class="faq-answer">
+            That’s common. Most people start with symptoms (smell/taste/buildup). The consultation helps identify what solution makes sense.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div>
+        <strong>American Purity Water System</strong><br/>
+        <span style="opacity:.85;">Whole House Water Filtration • Serving GA • TN • AL</span>
+      </div>
+      <div class="footlinks">
+        <a href="#top">Top</a>
+        <a href="#how">How It Works</a>
+        <a href="#beforeafter">Before/After</a>
+        <a href="#form">Consultation</a>
+        <a href="#faq">FAQ</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MOBILE STICKY CTA -->
+  <div class="sticky-cta" aria-label="Sticky call to action">
+    <div class="inner">
+      <span>Want cleaner water?<br/>Call or request a consult.</span>
+      <a href="tel:+14236607139" aria-label="Call now">
+        Call Now
+      </a>
+    </div>
+  </div>
+
+  <script>
+    function validZip(zip){
+      return /^\d{5}(-\d{4})?$/.test(zip);
+    }
+
+    // Appends zip to Tally URL (only useful if your Tally form reads query params)
+    function setFormZip(zip){
+      const frame = document.getElementById('tallyFrame');
+      if(!frame) return;
+      const base = frame.getAttribute('data-tally-src') || frame.getAttribute('src');
+      if(!base) return;
+
+      try{
+        const u = new URL(base, window.location.href);
+        if(zip) u.searchParams.set("zip", zip);
+        frame.setAttribute('data-tally-src', u.toString());
+        if(frame.getAttribute('src')) frame.setAttribute('src', u.toString());
+      }catch(e){}
+    }
+
+    function openTallyWithZip(alsoScroll){
+      const zipEl = document.getElementById('zip');
+      const zip = (zipEl && zipEl.value ? zipEl.value : '').trim();
+
+      if(zip && !validZip(zip)){
+        alert("Please enter a valid ZIP code (e.g., 37421).");
+        if(zipEl) zipEl.focus();
+        return false;
+      }
+
+      try { localStorage.setItem("ap_zip", zip); } catch(e){}
+      setFormZip(zip);
+
+      if(alsoScroll){
+        setTimeout(() => {
+          const target = document.getElementById('form');
+          if(target) target.scrollIntoView({behavior:'smooth'});
+        }, 250);
+      }
+      return true; // allow Tally popup
+    }
+
+    // Load saved ZIP back into field
+    (function(){
+      try{
+        const saved = localStorage.getItem("ap_zip");
+        const zipEl = document.getElementById('zip');
+        if(saved && zipEl && !zipEl.value) zipEl.value = saved;
+      }catch(e){}
+    })();
+
+    // Ensure Tally embeds load reliably
+    (function(){
+      var d=document,w="https://tally.so/widgets/embed.js";
+      function v(){
+        if(typeof Tally!=="undefined" && Tally.loadEmbeds){
+          Tally.loadEmbeds();
+          setTimeout(() => { try { Tally.loadEmbeds(); } catch(e){} }, 1200);
+        } else {
+          d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach(function(e){
+            e.src=e.dataset.tallySrc;
+          });
+        }
+      }
+      if(typeof Tally!=="undefined") v();
+      else if(d.querySelector('script[src="'+w+'"]')==null){
+        var s=d.createElement("script");
+        s.src=w; s.onload=v; s.onerror=v; d.body.appendChild(s);
+      }
+      if(document.readyState==="loading") d.addEventListener("DOMContentLoaded", v);
+      else v();
+      setTimeout(v, 800);
+    })();
+  </script>
+</body>
+</html>
