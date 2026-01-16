@@ -516,8 +516,23 @@
 
     /* RESPONSIVE */
     @media (max-width: 480px){
-  .phone-pill span{
-    display:none;
+  .phone-pill{
+    padding:8px 12px;
+    font-size:14px;
+    gap:6px;
+    line-height:1;
+    white-space:nowrap;
+  }
+
+  .phone-pill svg{
+    width:16px;
+    height:16px;
+  }
+
+  /* Hide any extra label text inside the pill */
+  .phone-pill span,
+  .phone-pill .label{
+    display:none !important;
   }
 }
 
