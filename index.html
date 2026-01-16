@@ -425,6 +425,30 @@
     .whylist li{margin:7px 0}
     .whybar .imgbox{border-color:rgba(255,255,255,.12);background:rgba(255,255,255,.06)}
 
+    /* ✅ NEW: Financing section styles */
+    .fin-grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:26px;
+      align-items:center;
+    }
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:#f8fafc;
+      font-weight:950;
+      font-size:12.5px;
+      color:#0f172a;
+      width:fit-content;
+      box-shadow:0 6px 18px rgba(2,6,23,.06);
+      margin:8px 0 10px;
+    }
+    .badge svg{opacity:.9}
+
     /* FAQ */
     .faq{padding-top:0}
     details.faq-item{
@@ -553,6 +577,7 @@
       .reviews{grid-template-columns:1fr}
       .whygrid{grid-template-columns:1fr}
       .steps{grid-template-columns:1fr}
+      .fin-grid{grid-template-columns:1fr} /* ✅ financing stacks on mobile */
       .sticky-cta{display:block}
       body{padding-bottom:86px;}
     }
@@ -817,35 +842,43 @@
     </div>
   </section>
 
-  <!-- FINANCING (NEW) -->
+  <!-- ✅ NEW: FINANCING -->
   <section class="section" id="financing">
-    <div class="container two-col">
+    <div class="container fin-grid">
       <div class="card">
-        <h2>Flexible financing available</h2>
-        <p class="lead">
-          High-quality water filtration shouldn’t require a large upfront payment.
-          American Purity offers flexible financing options that allow qualified homeowners to install a whole-home system now and pay over time.
+        <h2>Financing options available</h2>
+
+        <div class="badge" aria-label="Financing available badge">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#0f172a" stroke-width="2">
+            <path d="M12 1v22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7H14a3.5 3.5 0 0 1 0 7H6"/>
+          </svg>
+          Financing options available
+        </div>
+
+        <p class="lead" style="margin-bottom:0;">
+          Want better water without a big upfront hit? We can offer financing options for qualified homeowners.
+          We’ll walk you through the choices and help you pick a payment plan that makes sense for your home.
         </p>
 
         <ul class="subpoints">
-          <li>Simple approval process</li>
-          <li>Affordable monthly payment options</li>
-          <li>No obligation to use financing</li>
-          <li>Details explained during your free water analysis</li>
+          <li><strong>Simple approval process</strong> (when available)</li>
+          <li><strong>Flexible payments</strong> for qualified applicants</li>
+          <li><strong>No pressure</strong> — we explain options clearly</li>
         </ul>
 
-        <p class="lead" style="margin-top:14px;">
-          <strong>No pressure.</strong> Financing is reviewed after your water quality check so you can decide what works best for your home.
-        </p>
-
         <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:16px;">
-          <a class="btn btn-dark" href="#request" onclick="return saveZip();">Check My Water Quality</a>
+          <a class="btn btn-primary" href="#request" onclick="return saveZip();">Check My Water Quality</a>
           <a class="btn btn-outline" href="tel:+14235550123">Call (423) 555-0123</a>
+        </div>
+
+        <div class="note">
+          <strong>Note:</strong> Financing availability and terms depend on approval and provider options.
         </div>
       </div>
 
       <div class="imgbox">
-        <img src="truck.jpg" alt="American Purity service truck" onerror="this.style.display='none'">
+        <!-- ✅ Placeholder: swap this to kitchen.png when you find the right photo -->
+        <img src="kitchen.png" alt="Clean water in a modern home kitchen" onerror="this.style.display='none'">
       </div>
     </div>
   </section>
@@ -1052,6 +1085,20 @@
             We’re based in Chattanooga and serve the surrounding Tri-State region across Tennessee, North Georgia, and Northeast Alabama.
           </div>
         </details>
+
+        <details class="faq-item">
+          <summary>
+            Do you offer financing?
+            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="#0f172a" stroke-width="2">
+              <path d="M6 9l6 6 6-6"/>
+            </svg>
+          </summary>
+          <div class="faq-answer">
+            Yes — financing options may be available for qualified homeowners. Availability and terms depend on approval and provider options.
+            Ask during your free water analysis and we’ll walk you through it clearly.
+          </div>
+        </details>
+
       </div>
     </div>
   </section>
