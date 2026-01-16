@@ -4,54 +4,56 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-  <title>Whole Home Water Filtration & Softener | [Business Name] | [City, State]</title>
-  <meta name="description" content="Whole-home water filtration and softener systems in [City, State]. Remove chlorine, sediment, bad taste/odor, and hard water issues. Request a free consultation today." />
+  <title>Whole-Home Water Filtration in Chattanooga, TN | BUSINESS_NAME</title>
+  <meta name="description" content="Whole-home water filtration and softener systems in Chattanooga, TN. Cleaner water from every tap. Free consultation & straightforward recommendations." />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Whole Home Water Filtration & Softener | [Business Name]" />
-  <meta property="og:description" content="Whole-home water filtration and softener systems in [City, State]. Cleaner water from every tap. Request a free consultation." />
+  <meta property="og:title" content="Whole-Home Water Filtration in Chattanooga, TN | BUSINESS_NAME" />
+  <meta property="og:description" content="Cleaner water from every tap. Whole-home filtration & softeners in Chattanooga, TN. Request a free consultation." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="hero.jpg" />
 
-  <!-- Tally Popup Script -->
-  <script async src="https://tally.so/widgets/embed.js"></script>
-
-  <!-- Basic LocalBusiness schema (edit placeholders) -->
+  <!-- LocalBusiness schema (edit phone + url when ready) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": "[Business Name]",
+    "name": "BUSINESS_NAME",
     "image": "hero.jpg",
-    "telephone": "+1-800-555-1234",
-    "areaServed": "[City, State]",
+    "telephone": "+1-PHONE_TEL",
+    "areaServed": "Chattanooga, TN",
     "address": {
       "@type": "PostalAddress",
-      "addressLocality": "[City]",
-      "addressRegion": "[State]",
+      "addressLocality": "Chattanooga",
+      "addressRegion": "TN",
       "addressCountry": "US"
     },
     "url": "https://www.yourdomain.com",
-    "description": "Whole-home water filtration and softener systems in [City, State]."
+    "description": "Whole-home water filtration and water softener systems serving Chattanooga, TN."
   }
   </script>
 
   <style>
     :root{
       --bg:#ffffff;
-      --text:#111827;
-      --muted:#6b7280;
-      --line:#e5e7eb;
-      --brand:#1f7a4f;
-      --brand2:#e05a00;
+      --text:#0b1220;
+      --muted:#556070;
+      --line:#e6edf5;
+
+      /* WATER BRAND (blue) */
+      --brand:#0b5bd3;        /* primary */
+      --brand2:#10b3ff;       /* accent */
+      --dark:#0b1220;
+
       --card:#ffffff;
-      --shadow:0 18px 50px rgba(0,0,0,.18);
-      --shadow2:0 10px 28px rgba(0,0,0,.14);
-      --radius:14px;
+      --shadow:0 18px 50px rgba(0,0,0,.16);
+      --shadow2:0 10px 28px rgba(0,0,0,.12);
+      --radius:16px;
       --max:1120px;
       --font: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-      --headerH:74px;
+      --headerH:76px;
     }
+
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{margin:0;font-family:var(--font);color:var(--text);background:var(--bg)}
@@ -73,7 +75,8 @@
     .brand{
       display:flex; align-items:center; gap:10px;
       text-decoration:none;
-      font-weight:900; letter-spacing:.2px;
+      font-weight:950;
+      letter-spacing:.2px;
       white-space:nowrap;
     }
     .brand img{height:38px; width:auto; display:block;}
@@ -82,30 +85,27 @@
     .navspacer{flex:1}
 
     .nav{
-      display:flex; gap:18px; font-size:14px; color:#374151; align-items:center;
+      display:flex; gap:18px; font-size:14px; color:#334155; align-items:center;
     }
-    .nav a{ text-decoration:none; opacity:.92; font-weight:650 }
+    .nav a{ text-decoration:none; opacity:.9; font-weight:750 }
     .nav a:hover{ opacity:1; text-decoration:underline }
     .nav .cta{
-      background:#111827;
+      background:var(--dark);
       color:#fff !important;
-      border-radius:10px;
+      border-radius:12px;
       padding:10px 12px;
       text-decoration:none !important;
-      font-weight:900;
+      font-weight:950;
       letter-spacing:.2px;
     }
 
-    /* Phone (top right) */
     .phone{
-      display:flex;
-      align-items:center;
-      gap:8px;
+      display:flex; align-items:center; gap:8px;
       text-decoration:none;
-      font-weight:900;
-      color:#111827;
+      font-weight:950;
+      color:var(--dark);
       border:1px solid var(--line);
-      background:#fafafa;
+      background:#f7fbff;
       padding:10px 12px;
       border-radius:999px;
       white-space:nowrap;
@@ -113,12 +113,35 @@
     .phone:hover{filter:brightness(.98)}
     .phone svg{opacity:.75}
 
+    /* BUTTONS */
+    .btn{
+      display:inline-flex; justify-content:center; align-items:center;
+      border:0; cursor:pointer;
+      font-weight:950;
+      letter-spacing:.35px;
+      border-radius:12px;
+      padding:12px 14px;
+      text-transform:uppercase;
+      font-size:13px;
+      text-decoration:none;
+      white-space:nowrap;
+    }
+    .btn-primary{background:var(--brand);color:#fff}
+    .btn-primary:hover{filter:brightness(.98)}
+    .btn-ghost{
+      background:rgba(255,255,255,.10);
+      border:1px solid rgba(255,255,255,.22);
+      color:#fff;
+    }
+    .btn-dark{background:var(--dark);color:#fff}
+    .btn-dark:hover{filter:brightness(1.06)}
+
     /* HERO */
     .hero{
       position:relative;
-      min-height:540px;
+      min-height:560px;
       background:
-        linear-gradient(90deg, rgba(0,0,0,.64) 0%, rgba(0,0,0,.40) 55%, rgba(0,0,0,.22) 100%),
+        linear-gradient(110deg, rgba(11,18,32,.78) 0%, rgba(11,18,32,.55) 48%, rgba(11,18,32,.28) 100%),
         url("hero.jpg");
       background-size:cover;
       background-position:center;
@@ -126,62 +149,55 @@
     }
     .hero .container{
       display:grid;
-      grid-template-columns: 1.25fr .9fr;
+      grid-template-columns: 1.2fr .8fr;
       gap:34px;
-      padding:54px 18px 44px;
+      padding:56px 18px 46px;
       align-items:center;
     }
     .hero h1{
       margin:0 0 12px;
       color:#fff;
-      font-size:44px;
+      font-size:46px;
       line-height:1.06;
-      font-weight:950;
+      font-weight:980;
       text-shadow:0 2px 12px rgba(0,0,0,.30);
-      letter-spacing:-.4px;
+      letter-spacing:-.6px;
     }
     .hero p{
       margin:0 0 18px;
       color:rgba(255,255,255,.92);
       font-size:16.5px;
-      line-height:1.6;
+      line-height:1.65;
       max-width:740px;
     }
 
-    /* benefit chips */
-    .benefits{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      margin:16px 0 0;
-      padding:0;
-      list-style:none;
+    .chips{
+      display:flex; flex-wrap:wrap; gap:10px;
+      margin:14px 0 0; padding:0; list-style:none;
       color:#fff;
     }
-    .benefits li{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
+    .chips li{
+      display:inline-flex; align-items:center; gap:8px;
       border:1px solid rgba(255,255,255,.18);
-      background:rgba(0,0,0,.22);
+      background:rgba(255,255,255,.08);
       padding:10px 12px;
       border-radius:999px;
-      font-weight:850;
+      font-weight:900;
       font-size:13px;
       letter-spacing:.2px;
     }
-    .benefits svg{flex:0 0 18px; opacity:.92}
+    .chips svg{flex:0 0 18px; opacity:.92}
 
     .value-strip{
       margin-top:16px;
-      background:rgba(31,122,79,.92);
+      background:rgba(11,91,211,.90);
       border:1px solid rgba(255,255,255,.14);
-      border-radius:14px;
+      border-radius:16px;
       padding:14px 14px;
       display:grid;
       grid-template-columns: repeat(4, 1fr);
       gap:12px;
-      width:min(780px,100%);
+      width:min(820px,100%);
       box-shadow:var(--shadow2);
     }
     .value-item{
@@ -192,25 +208,25 @@
     .value-item strong{display:block; font-size:13px}
     .value-item span{display:block; opacity:.92; font-size:12px}
 
-    /* ZIP CARD */
-    .zip-card{
-      background:var(--card);
-      border-radius:14px;
+    /* HERO CTA CARD (desktop anchor) */
+    .cta-card{
+      background:rgba(255,255,255,.96);
+      border-radius:16px;
       box-shadow:var(--shadow);
       overflow:hidden;
-      position:relative;
+      border:1px solid rgba(255,255,255,.55);
     }
-    .zip-card .head{
-      background:var(--brand);
+    .cta-card .head{
+      background:linear-gradient(90deg, var(--brand) 0%, var(--brand2) 100%);
       color:#fff;
       padding:14px 16px;
-      font-weight:900;
+      font-weight:950;
       text-align:center;
       font-size:15px;
       letter-spacing:.2px;
     }
-    .zip-card .body{padding:18px}
-    .zip-card label{display:block;font-size:14px;font-weight:800;margin:0 0 8px;color:#111827}
+    .cta-card .body{padding:18px}
+    .cta-card label{display:block;font-size:14px;font-weight:850;margin:0 0 8px;color:var(--dark)}
     .field{
       display:flex; gap:10px; align-items:center;
       border:1px solid var(--line);
@@ -223,93 +239,47 @@
       border:0; outline:0; width:100%;
       font-size:14px; padding:2px 0;
     }
-
-    .btn{
-      display:inline-flex; justify-content:center; align-items:center;
-      border:0; cursor:pointer;
-      font-weight:950;
-      letter-spacing:.35px;
-      border-radius:12px;
-      padding:12px 14px;
-      text-transform:uppercase;
-      font-size:13px;
-    }
-    .btn-primary{background:var(--brand2);color:#fff;width:100%;margin-top:12px}
-    .btn-primary:hover{filter:brightness(.97)}
-    .btn-dark{background:#111827;color:#fff}
-    .btn-dark:hover{filter:brightness(1.06)}
-    .micro{
+    .cta-card .micro{
       margin-top:12px;
       font-size:12px;
-      color:#6b7280;
-      line-height:1.5;
+      color:#5b6472;
+      line-height:1.45;
       text-align:center;
     }
-
-    .note{
+    .cta-card .note{
       margin-top:12px;
       padding:10px 12px;
       border:1px solid var(--line);
       border-radius:12px;
-      background:#fafafa;
-      color:#374151;
+      background:#f7fbff;
+      color:#334155;
       font-size:12.5px;
       line-height:1.45;
       text-align:left;
     }
 
-    /* TRUST / SOCIAL PROOF */
+    /* TRUST */
     .proof{
       background:#fff;
       border-bottom:1px solid var(--line);
       padding:18px 0;
     }
     .proof .row{
-      display:flex;
-      gap:14px;
-      flex-wrap:wrap;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
+      display:flex; gap:14px; flex-wrap:wrap;
+      align-items:center; justify-content:center; text-align:center;
     }
-    .proof-pill{
+    .pill{
       border:1px solid var(--line);
       border-radius:999px;
       padding:10px 14px;
-      background:#fafafa;
+      background:#f7fbff;
       font-weight:850;
       font-size:13px;
-      color:#111827;
-    }
-    .proof small{
-      display:block;
-      margin-top:10px;
-      color:var(--muted);
-      font-size:12.5px;
-      line-height:1.5;
-      text-align:center;
+      color:var(--dark);
     }
 
-    /* Gold filled stars */
-    .stars{
-      display:inline-flex;
-      gap:2px;
-      align-items:center;
-      justify-content:center;
-      font-weight:950;
-      color:#111827;
-    }
-    .stars .star{
-      width:16px;height:16px;
-      fill:#f5c542;
-      stroke:#b45309;
-      stroke-width:.6;
-      filter: drop-shadow(0 1px 0 rgba(0,0,0,.10));
-    }
-
-    /* MAIN */
-    .section{padding:46px 0}
-    .section.tight{padding-top:0}
+    /* SECTIONS */
+    .section{padding:52px 0}
     .two-col{
       display:grid;
       grid-template-columns: 1fr 1fr;
@@ -322,47 +292,24 @@
       padding:22px;
       background:#fff;
     }
-    .card h2{margin:0 0 10px;font-size:24px; letter-spacing:-.2px}
-    .lead{color:#374151;line-height:1.78;margin:0 0 14px;font-size:14.9px}
-    .lead strong{color:#111827}
+    .card h2{margin:0 0 10px;font-size:26px; letter-spacing:-.2px}
+    .lead{color:#334155;line-height:1.78;margin:0 0 14px;font-size:15px}
+    .subpoints{
+      margin:12px 0 0;
+      padding-left:18px;
+      color:#334155;
+      line-height:1.78;
+      font-size:14.8px;
+    }
+    .subpoints li{margin:6px 0}
 
     .imgbox{
       border-radius:16px;
       overflow:hidden;
       border:1px solid var(--line);
-      background:#f3f4f6;
+      background:#f1f5f9;
     }
     .imgbox img{display:block;width:100%;height:auto}
-
-    .subpoints{
-      margin:12px 0 0;
-      padding-left:18px;
-      color:#374151;
-      line-height:1.78;
-      font-size:14.6px;
-    }
-    .subpoints li{margin:6px 0}
-
-    /* Testimonials */
-    .tgrid{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap:16px;
-      margin-top:14px;
-    }
-    .tcard{
-      border:1px solid var(--line);
-      border-radius:16px;
-      padding:16px;
-      background:#fff;
-    }
-    .tcard .top{
-      display:flex; align-items:center; justify-content:space-between; gap:10px;
-      margin-bottom:10px;
-    }
-    .tname{font-weight:950}
-    .tmeta{color:var(--muted); font-size:12.5px}
-    .ttext{color:#374151; line-height:1.75; font-size:14px; margin:0}
 
     /* Before/After */
     .baWrap{
@@ -377,104 +324,43 @@
       display:flex; justify-content:space-between; gap:10px; align-items:center;
       padding:10px 12px;
       border-top:1px solid var(--line);
-      background:#fafafa;
-      font-weight:900;
+      background:#f7fbff;
+      font-weight:950;
       font-size:13px;
     }
     .tag{
-      display:inline-flex;
-      align-items:center;
-      gap:6px;
-      font-size:12px;
-      font-weight:900;
+      display:inline-flex; align-items:center; gap:6px;
+      font-size:12px; font-weight:950;
       padding:6px 10px;
       border-radius:999px;
-      background:#111827;
+      background:var(--dark);
       color:#fff;
       white-space:nowrap;
     }
 
-    /* Local block (truck image + text) */
-    .localblock{
+    /* Simple form */
+    form.simple{
       display:grid;
-      grid-template-columns: .95fr 1.05fr;
-      gap:16px;
+      gap:10px;
       margin-top:14px;
-      align-items:center;
     }
-    .localpoints{
-      margin:0;
-      padding-left:18px;
-      color:#374151;
-      line-height:1.78;
-      font-size:14.6px;
-    }
-    .localpoints li{margin:6px 0}
-
-    /* FORM WRAP */
-    .embedwrap{
-      border:1px solid var(--line);
-      border-radius:16px;
-      overflow:hidden;
-      background:#fff;
-    }
-    .embedhead{
-      padding:14px 16px;
-      border-bottom:1px solid var(--line);
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:10px;
-      flex-wrap:wrap;
-    }
-    .embedhead strong{font-size:14px}
-    .embedhead span{font-size:12px;color:var(--muted)}
-    .embed-body{
-      padding:12px 12px 16px;
-    }
-    .embed-body iframe{
+    .row2{display:grid; grid-template-columns: 1fr 1fr; gap:10px;}
+    input, select, textarea{
       width:100%;
-      display:block;
-      border:0;
-      min-height:520px; /* desktop baseline */
-    }
-
-    /* FAQ */
-    .faq{padding-top:0}
-    details.faq-item{
       border:1px solid var(--line);
-      border-radius:16px;
-      padding:14px 16px;
+      border-radius:12px;
+      padding:12px 12px;
+      font-size:14px;
+      font-family:var(--font);
+      outline:none;
       background:#fff;
-      margin:10px 0;
     }
-    details.faq-item summary{
-      cursor:pointer;
-      font-weight:900;
-      color:#111827;
-      list-style:none;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:10px;
-    }
-    details.faq-item summary::-webkit-details-marker{display:none}
-    .chev{
-      width:18px; height:18px; flex:0 0 18px;
-      transition:transform .18s ease;
-      opacity:.75;
-    }
-    details[open] .chev{transform:rotate(180deg)}
-    .faq-answer{
-      margin-top:10px;
-      color:#374151;
-      line-height:1.75;
-      font-size:14.6px;
-    }
+    textarea{min-height:110px; resize:vertical;}
+    .formnote{color:#5b6472; font-size:12.5px; line-height:1.45; margin:6px 0 0;}
 
     /* FOOTER */
     footer{
-      background:#111827;
+      background:var(--dark);
       color:rgba(255,255,255,.86);
       padding:26px 0;
       font-size:13px;
@@ -484,17 +370,15 @@
     .footlinks a{color:rgba(255,255,255,.86); text-decoration:none}
     .footlinks a:hover{text-decoration:underline}
 
-    /* Mobile sticky CTA */
+    /* Sticky mobile CTA */
     .sticky-cta{
       position:fixed;
-      left:12px;
-      right:12px;
-      bottom:12px;
+      left:12px; right:12px; bottom:12px;
       z-index:60;
       display:none;
     }
     .sticky-cta .inner{
-      background:#111827;
+      background:var(--dark);
       border-radius:14px;
       padding:10px;
       box-shadow:0 18px 50px rgba(0,0,0,.30);
@@ -505,28 +389,14 @@
     }
     .sticky-cta .inner span{
       color:#fff;
-      font-weight:900;
+      font-weight:950;
       font-size:13px;
       line-height:1.2;
     }
-    .sticky-cta button{
-      width:auto;
-      padding:12px 14px;
-      border-radius:12px;
-      text-transform:uppercase;
-      font-weight:950;
-      border:0;
-      cursor:pointer;
-      background:var(--brand2);
-      color:#fff;
-      letter-spacing:.35px;
-      font-size:12px;
-      white-space:nowrap;
-    }
 
-    /* RESPONSIVE */
+    /* Responsive */
     @media (max-width: 980px){
-      .hero .container{grid-template-columns: 1fr; padding-top:32px}
+      .hero .container{grid-template-columns: 1fr; padding-top:34px}
       .value-strip{grid-template-columns: 1fr 1fr}
       .two-col{grid-template-columns: 1fr}
       .nav{display:none}
@@ -534,11 +404,7 @@
       .hero h1{font-size:38px}
       .sticky-cta{display:block;}
       body{padding-bottom:86px;}
-      .tgrid{grid-template-columns: 1fr;}
-      .localblock{grid-template-columns: 1fr;}
-      /* Make the embedded form feel normal on mobile */
-      .embed-body iframe{min-height:420px;}
-      .phone{padding:10px 10px;}
+      .row2{grid-template-columns: 1fr;}
     }
   </style>
 </head>
@@ -546,27 +412,25 @@
 <body>
   <header class="topbar">
     <div class="container topbar-inner">
-      <a class="brand" href="#top" aria-label="[Business Name]">
-        <img src="logo.png" alt="[Business Name] logo" onerror="this.style.display='none'">
-        <div class="name">[Business] <span>[Name]</span></div>
+      <a class="brand" href="#top" aria-label="BUSINESS_NAME">
+        <img src="logo.png" alt="BUSINESS_NAME logo" onerror="this.style.display='none'">
+        <div class="name">BUSINESS_NAME <span>Chattanooga</span></div>
       </a>
 
       <div class="navspacer"></div>
 
-      <!-- Click-to-call (replace number + label) -->
-      <a class="phone" href="tel:18005551234" aria-label="Call (800) 555-1234">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#111827" stroke-width="2">
+      <a class="phone" href="tel:PHONE_TEL" aria-label="Call PHONE_DISPLAY">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#0b1220" stroke-width="2">
           <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8 9.6a16 16 0 0 0 6.4 6.4l1.2-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6A2 2 0 0 1 22 16.9z"/>
         </svg>
-        (800) 555-1234
+        PHONE_DISPLAY
       </a>
 
       <nav class="nav" aria-label="Primary navigation">
         <a href="#how">How It Works</a>
-        <a href="#proof">Trust</a>
         <a href="#results">Results</a>
-        <a href="#formembed">Consultation</a>
-        <a class="cta" href="#getmatched">Request a Free Consultation</a>
+        <a href="#consult">Consultation</a>
+        <a class="cta" href="#consult">Request a Free Consultation</a>
       </nav>
     </div>
   </header>
@@ -575,16 +439,16 @@
   <section class="hero" id="top">
     <div class="container">
       <div>
-        <h1>Whole-Home Water Filtration for Cleaner Water From Every Tap</h1>
+        <h1>Whole-Home Water Filtration in Chattanooga, TN</h1>
         <p>
-          If your water has a strong chlorine taste, stains fixtures, smells off, or leaves buildup in appliances,
-          a properly sized system can improve taste, reduce common contaminants, and help protect plumbing long-term.
+          If your water tastes like chlorine, smells off, stains fixtures, or leaves buildup in appliances,
+          we’ll recommend the right filtration/softener setup for your home — with clear expectations and local scheduling.
         </p>
 
-        <ul class="benefits" aria-label="Key benefits">
+        <ul class="chips" aria-label="Key benefits">
           <li>
             <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="white" stroke-width="2"><path d="M12 22s8-4 8-10V6l-8-4-8 4v6c0 6 8 10 8 10z"/></svg>
-            Better taste & odor
+            Cleaner taste & odor
           </li>
           <li>
             <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="white" stroke-width="2"><path d="M20 7l-8 10-4-4"/></svg>
@@ -599,141 +463,98 @@
         <div class="value-strip" aria-label="key benefits">
           <div class="value-item">
             <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="white" stroke-width="2"><path d="M20 7l-8 10-4-4" /></svg>
-            <div><strong>Right System</strong><span>Sized for your home</span></div>
+            <div><strong>Right System</strong><span>Filtration / softener / combo</span></div>
           </div>
           <div class="value-item">
             <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="white" stroke-width="2"><path d="M12 8v4l3 3"/><path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/></svg>
-            <div><strong>Quick Response</strong><span>Typical callback & scheduling</span></div>
+            <div><strong>Quick Response</strong><span>Callback & scheduling</span></div>
           </div>
           <div class="value-item">
             <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="white" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
-            <div><strong>Clear Next Step</strong><span>No guesswork</span></div>
+            <div><strong>Clear Plan</strong><span>No runaround</span></div>
           </div>
           <div class="value-item">
             <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="white" stroke-width="2"><path d="M4 19h16"/><path d="M6 17V7a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v10"/><path d="M9 10h6"/></svg>
-            <div><strong>Local Team</strong><span>[City] & nearby areas</span></div>
+            <div><strong>Chattanooga</strong><span>Local service area</span></div>
           </div>
         </div>
       </div>
 
-      <!-- ZIP / CTA CARD -->
-      <aside class="zip-card" id="getmatched">
+      <!-- CTA CARD -->
+      <aside class="cta-card" id="consult">
         <div class="head">Request a Free Consultation</div>
         <div class="body">
-          <label for="zip">Enter your ZIP Code</label>
+          <label for="zip">ZIP Code</label>
           <div class="field">
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#111827" stroke-width="2">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#0b1220" stroke-width="2">
               <path d="M12 21s7-4.35 7-10a7 7 0 0 0-14 0c0 5.65 7 10 7 10z"/>
               <circle cx="12" cy="11" r="2"/>
             </svg>
-            <input id="zip" inputmode="numeric" maxlength="10" placeholder="e.g., 35966" />
+            <input id="zip" inputmode="numeric" maxlength="10" placeholder="e.g., 37421" />
           </div>
 
-          <button
-            class="btn btn-primary"
-            type="button"
-            data-tally-open="Gx9WQQ"
-            data-tally-emoji-text="👋"
-            data-tally-emoji-animation="wave"
-            onclick="return openTallyWithZip(true);">
+          <a class="btn btn-primary" href="#form" style="width:100%; margin-top:12px;" onclick="saveZip();">
             Request a Free Consultation
-          </button>
+          </a>
 
           <div class="note">
-            <strong>Service area:</strong> [City] and surrounding areas.<br/>
-            <strong>What you get:</strong> We confirm your goals (taste/odor, hardness, staining) and recommend the right system type.<br/>
-            <span class="muted">Consultation and system recommendations depend on your water and home setup.</span>
+            Serving <strong>Chattanooga, TN</strong> and surrounding areas.<br/>
+            Prefer to talk? Call <strong><a href="tel:PHONE_TEL">PHONE_DISPLAY</a></strong>.
           </div>
 
-          <div class="micro">
-            No spam. Your info is used only to schedule your consultation.
-          </div>
+          <div class="micro">No spam. Just scheduling and follow-up.</div>
         </div>
       </aside>
     </div>
   </section>
 
   <!-- TRUST -->
-  <section class="proof" id="proof" aria-label="trust signals">
+  <section class="proof" aria-label="trust signals">
     <div class="container">
       <div class="row">
-        <div class="proof-pill">
-          <span class="stars" aria-label="star rating">
-            <svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.1 6.9 7.5.7-5.7 4.9 1.7 7.3L12 18.2 5.4 21.8l1.7-7.3L1.4 9.6l7.5-.7L12 2z"/></svg>
-            <svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.1 6.9 7.5.7-5.7 4.9 1.7 7.3L12 18.2 5.4 21.8l1.7-7.3L1.4 9.6l7.5-.7L12 2z"/></svg>
-            <svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.1 6.9 7.5.7-5.7 4.9 1.7 7.3L12 18.2 5.4 21.8l1.7-7.3L1.4 9.6l7.5-.7L12 2z"/></svg>
-            <svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.1 6.9 7.5.7-5.7 4.9 1.7 7.3L12 18.2 5.4 21.8l1.7-7.3L1.4 9.6l7.5-.7L12 2z"/></svg>
-            <svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.1 6.9 7.5.7-5.7 4.9 1.7 7.3L12 18.2 5.4 21.8l1.7-7.3L1.4 9.6l7.5-.7L12 2z"/></svg>
-            &nbsp;4.8/5 homeowner satisfaction
-          </span>
-        </div>
-        <div class="proof-pill">Clear recommendations • sized to your home</div>
-        <div class="proof-pill">Local scheduling • [City] area</div>
+        <div class="pill">Local Chattanooga scheduling</div>
+        <div class="pill">Straightforward recommendations</div>
+        <div class="pill">Whole-home filtration & softeners</div>
       </div>
-      <small>
-        *Satisfaction reflects homeowner feedback across our local installs and service experience.
-      </small>
     </div>
   </section>
 
-  <!-- HOW IT WORKS + truck image now has context -->
+  <!-- HOW IT WORKS -->
   <section class="section" id="how">
     <div class="container two-col">
       <div class="card">
-        <h2>How the consultation works</h2>
+        <h2>How it works</h2>
         <p class="lead">
-          We start by learning what you want to fix (taste/odor, hardness, staining, chlorine, sediment).
-          Then we recommend the right approach and schedule the next step.
+          We start with what you’re noticing, confirm your goals, and recommend the right system type for your home.
         </p>
-
         <ul class="subpoints">
-          <li><strong>Step 1:</strong> Tell us your ZIP + what you’re noticing</li>
-          <li><strong>Step 2:</strong> We confirm system type and fit (filtration / softening / combo)</li>
-          <li><strong>Step 3:</strong> Schedule installation or next steps</li>
+          <li><strong>Step 1:</strong> Tell us your ZIP and your water issues</li>
+          <li><strong>Step 2:</strong> Confirm filtration vs. softener vs. combo</li>
+          <li><strong>Step 3:</strong> Schedule the next step in Chattanooga</li>
         </ul>
 
-        <div style="margin-top:16px;">
-          <button class="btn btn-dark" type="button"
-            data-tally-open="Gx9WQQ" data-tally-emoji-text="👋" data-tally-emoji-animation="wave"
-            onclick="return openTallyWithZip(true);">
-            Request a Free Consultation
-          </button>
-        </div>
-
-        <div class="localblock">
-          <div class="imgbox">
-            <img src="truck.jpg" alt="[Business Name] service truck in [City, State]" loading="lazy" />
-          </div>
-          <div>
-            <p class="lead" style="margin:0 0 10px;">
-              Local, professional installs with clear expectations from the start.
-            </p>
-            <ul class="localpoints">
-              <li>Appointment windows you can plan around</li>
-              <li>Recommendations based on your goals and home setup</li>
-              <li>Clean install, clean explanation, clean results</li>
-            </ul>
-          </div>
+        <div style="margin-top:16px; display:flex; gap:10px; flex-wrap:wrap;">
+          <a class="btn btn-dark" href="#form" onclick="saveZip();">Request a Free Consultation</a>
+          <a class="btn btn-primary" href="tel:PHONE_TEL">Call Now</a>
         </div>
       </div>
 
       <div class="imgbox">
-        <img src="install.jpg" alt="Whole home water filtration system installation" loading="lazy" />
+        <img src="install.jpg" alt="Whole home water filtration system installation in Chattanooga TN" loading="lazy" />
       </div>
     </div>
   </section>
 
-  <!-- RESULTS / BEFORE-AFTER (single real image file) -->
+  <!-- RESULTS -->
   <section class="section" id="results">
     <div class="container two-col">
       <div class="card">
-        <h2>Real results you can see</h2>
+        <h2>Before & after</h2>
         <p class="lead" style="margin-bottom:0;">
-          The goal is simple: cleaner water, less buildup, better taste, and fewer headaches with fixtures and appliances.
-          Here’s an example of what improved water quality can look like.
+          Here’s a real example of improved clarity after a system install.
         </p>
 
-        <div class="baWrap" aria-label="Before and after water filtration example">
+        <div class="baWrap">
           <img src="water-filtration-system-before-after.jpg" alt="Before and after: improved water clarity after filtration system install" loading="lazy" />
           <div class="baCap">
             <span>Before → After</span>
@@ -743,167 +564,58 @@
       </div>
 
       <div class="card">
-        <h2>What homeowners say</h2>
-        <p class="lead" style="margin-bottom:0;">
-          A good system is only as good as the install and the follow-through. Here are a few recent comments from homeowners.
+        <h2>Local, professional installs</h2>
+        <p class="lead">
+          You’ll get clear expectations, clean workmanship, and a system that’s sized properly for your home.
         </p>
-
-        <div class="tgrid" aria-label="Testimonials">
-          <div class="tcard">
-            <div class="top">
-              <div>
-                <div class="tname">“Night and day difference.”</div>
-                <div class="tmeta">[City], [State]</div>
-              </div>
-              <span class="stars" aria-hidden="true">
-                <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.1 6.9 7.5.7-5.7 4.9 1.7 7.3L12 18.2 5.4 21.8l1.7-7.3L1.4 9.6l7.5-.7L12 2z"/></svg>
-                <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.1 6.9 7.5.7-5.7 4.9 1.7 7.3L12 18.2 5.4 21.8l1.7-7.3L1.4 9.6l7.5-.7L12 2z"/></svg>
-                <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.1 6.9 7.5.7-5.7 4.9 1.7 7.3L12 18.2 5.4 21.8l1.7-7.3L1.4 9.6l7.5-.7L12 2z"/></svg>
-                <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.1 6.9 7.5.7-5.7 4.9 1.7 7.3L12 18.2 5.4 21.8l1.7-7.3L1.4 9.6l7.5-.7L12 2z"/></svg>
-                <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.1 6.9 7.5.7-5.7 4.9 1.7 7.3L12 18.2 5.4 21.8l1.7-7.3L1.4 9.6l7.5-.7L12 2z"/></svg>
-              </span>
-            </div>
-            <p class="ttext">Water tastes clean, no strong smell, and our shower fixtures aren’t building up like they were.</p>
-          </div>
-
-          <div class="tcard">
-            <div class="top">
-              <div>
-                <div class="tname">“The install was quick and clean.”</div>
-                <div class="tmeta">[City], [State]</div>
-              </div>
-              <span class="stars" aria-hidden="true">
-                <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.1 6.9 7.5.7-5.7 4.9 1.7 7.3L12 18.2 5.4 21.8l1.7-7.3L1.4 9.6l7.5-.7L12 2z"/></svg>
-                <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.1 6.9 7.5.7-5.7 4.9 1.7 7.3L12 18.2 5.4 21.8l1.7-7.3L1.4 9.6l7.5-.7L12 2z"/></svg>
-                <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.1 6.9 7.5.7-5.7 4.9 1.7 7.3L12 18.2 5.4 21.8l1.7-7.3L1.4 9.6l7.5-.7L12 2z"/></svg>
-                <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.1 6.9 7.5.7-5.7 4.9 1.7 7.3L12 18.2 5.4 21.8l1.7-7.3L1.4 9.6l7.5-.7L12 2z"/></svg>
-                <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.1 6.9 7.5.7-5.7 4.9 1.7 7.3L12 18.2 5.4 21.8l1.7-7.3L1.4 9.6l7.5-.7L12 2z"/></svg>
-              </span>
-            </div>
-            <p class="ttext">They explained everything, answered questions, and left the area cleaner than they found it.</p>
-          </div>
-
-          <div class="tcard">
-            <div class="top">
-              <div>
-                <div class="tname">“Wish we did this sooner.”</div>
-                <div class="tmeta">[City], [State]</div>
-              </div>
-              <span class="stars" aria-hidden="true">
-                <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.1 6.9 7.5.7-5.7 4.9 1.7 7.3L12 18.2 5.4 21.8l1.7-7.3L1.4 9.6l7.5-.7L12 2z"/></svg>
-                <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.1 6.9 7.5.7-5.7 4.9 1.7 7.3L12 18.2 5.4 21.8l1.7-7.3L1.4 9.6l7.5-.7L12 2z"/></svg>
-                <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.1 6.9 7.5.7-5.7 4.9 1.7 7.3L12 18.2 5.4 21.8l1.7-7.3L1.4 9.6l7.5-.7L12 2z"/></svg>
-                <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.1 6.9 7.5.7-5.7 4.9 1.7 7.3L12 18.2 5.4 21.8l1.7-7.3L1.4 9.6l7.5-.7L12 2z"/></svg>
-                <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.1 6.9 7.5.7-5.7 4.9 1.7 7.3L12 18.2 5.4 21.8l1.7-7.3L1.4 9.6l7.5-.7L12 2z"/></svg>
-              </span>
-            </div>
-            <p class="ttext">We noticed it immediately. Better taste, less film on dishes, and the whole house feels improved.</p>
-          </div>
+        <div class="imgbox">
+          <img src="truck.jpg" alt="BUSINESS_NAME service truck in Chattanooga Tennessee" loading="lazy" />
         </div>
-
         <div style="margin-top:14px;">
-          <button class="btn btn-dark" type="button"
-            data-tally-open="Gx9WQQ" data-tally-emoji-text="👋" data-tally-emoji-animation="wave"
-            onclick="return openTallyWithZip(true);">
-            Request a Free Consultation
-          </button>
+          <a class="btn btn-primary" href="#form" onclick="saveZip();">Request a Free Consultation</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FORM EMBED -->
-  <section class="section tight" id="formembed">
+  <!-- SIMPLE BUILT-IN FORM (no external tools) -->
+  <section class="section" id="form">
     <div class="container two-col">
       <div class="card">
-        <h2>Request a Free Consultation</h2>
+        <h2>Request a free consultation</h2>
         <p class="lead">
-          Tell us what you’re noticing and how soon you want to get it handled. We’ll follow up to confirm details and schedule the next step.
+          Fill this out and we’ll reach out to schedule. (This is a basic form placeholder — once you choose a CRM or form tool,
+          we can wire it up properly.)
         </p>
         <p class="lead" style="margin-bottom:0;">
-          <strong>Response time:</strong> Most requests get a callback within <strong>24 hours</strong>.
+          Prefer to call? <strong><a href="tel:PHONE_TEL">PHONE_DISPLAY</a></strong>
         </p>
       </div>
 
-      <div class="embedwrap">
-        <div class="embedhead">
-          <div>
-            <strong>Quick Form</strong><br>
-            <span>About 1–2 minutes</span>
-          </div>
-        </div>
-
-        <div class="embed-body">
-          <iframe
-            id="tallyFrame"
-            data-tally-src="https://tally.so/embed/Gx9WQQ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
-            loading="lazy"
-            width="100%"
-            height="520"
-            frameborder="0"
-            marginheight="0"
-            marginwidth="0"
-            title="Request a Free Consultation">
-          </iframe>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section class="section faq" id="faq">
-    <div class="container">
       <div class="card">
-        <h2>Frequently asked questions</h2>
-
-        <details class="faq-item">
-          <summary>
-            How fast can you schedule?
-            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="#111827" stroke-width="2">
-              <path d="M6 9l6 6 6-6"/>
-            </svg>
-          </summary>
-          <div class="faq-answer">
-            Most homeowners hear back within <strong>24 hours</strong>. Scheduling depends on availability and your location.
+        <form class="simple" onsubmit="return fakeSubmit(event);">
+          <div class="row2">
+            <input required name="name" placeholder="Full name" />
+            <input required name="phone" inputmode="tel" placeholder="Phone number" />
           </div>
-        </details>
-
-        <details class="faq-item">
-          <summary>
-            Do you offer filtration, softening, or both?
-            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="#111827" stroke-width="2">
-              <path d="M6 9l6 6 6-6"/>
-            </svg>
-          </summary>
-          <div class="faq-answer">
-            Many homes benefit from <strong>filtration</strong>, while others need a <strong>softener</strong> (or a combo system).
-            We’ll confirm the best fit during the consultation based on what you’re noticing.
+          <div class="row2">
+            <input required id="zip2" name="zip" inputmode="numeric" placeholder="ZIP code" />
+            <select required name="issue">
+              <option value="" selected disabled>What are you noticing?</option>
+              <option>Chlorine taste / odor</option>
+              <option>Hard water / scale buildup</option>
+              <option>Staining / discoloration</option>
+              <option>Sediment / cloudy water</option>
+              <option>Not sure</option>
+            </select>
           </div>
-        </details>
+          <textarea name="notes" placeholder="Anything else? (optional)"></textarea>
 
-        <details class="faq-item">
-          <summary>
-            Will this help with chlorine taste or odor?
-            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="#111827" stroke-width="2">
-              <path d="M6 9l6 6 6-6"/>
-            </svg>
-          </summary>
-          <div class="faq-answer">
-            In many cases, yes. Whole-home filtration is commonly used to reduce <strong>chlorine taste/odor</strong> and improve overall water feel.
+          <button class="btn btn-dark" type="submit">Request a Free Consultation</button>
+          <div class="formnote">
+            This form can be connected to a real lead system (HubSpot, GoHighLevel, etc.) when you’re ready.
           </div>
-        </details>
-
-        <details class="faq-item">
-          <summary>
-            What happens after I submit?
-            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="#111827" stroke-width="2">
-              <path d="M6 9l6 6 6-6"/>
-            </svg>
-          </summary>
-          <div class="faq-answer">
-            We follow up to confirm details and schedule the next step. If a system is a good fit, we’ll walk you through options and timing.
-          </div>
-        </details>
+        </form>
       </div>
     </div>
   </section>
@@ -911,16 +623,14 @@
   <footer>
     <div class="container">
       <div>
-        <strong>[Business Name]</strong><br/>
-        <span style="opacity:.85;">Whole-home water filtration and softener systems in [City], [State].</span>
+        <strong>BUSINESS_NAME</strong><br/>
+        <span style="opacity:.85;">Whole-home water filtration & softener systems • Chattanooga, TN.</span>
       </div>
       <div class="footlinks">
         <a href="#top">Top</a>
         <a href="#how">How It Works</a>
         <a href="#results">Results</a>
-        <a href="#formembed">Consultation</a>
-        <a href="#faq">FAQ</a>
-        <a href="Privacy.html">Privacy</a>
+        <a href="#form">Consultation</a>
       </div>
     </div>
   </footer>
@@ -928,87 +638,39 @@
   <!-- MOBILE STICKY CTA -->
   <div class="sticky-cta" aria-label="Sticky call to action">
     <div class="inner">
-      <span>Cleaner water from every tap?<br/>Request a free consult.</span>
-      <button type="button"
-        data-tally-open="Gx9WQQ"
-        data-tally-emoji-text="👋"
-        data-tally-emoji-animation="wave"
-        onclick="return openTallyWithZip(true);">
-        Request a Free Consultation
-      </button>
+      <span>Cleaner water from every tap?</span>
+      <a class="btn btn-primary" href="#form" onclick="saveZip();" style="padding:12px 12px;">Free Consult</a>
     </div>
   </div>
 
   <script>
-    function validZip(zip){
-      return /^\d{5}(-\d{4})?$/.test(zip);
-    }
-
-    function setFormZip(zip){
-      const frame = document.getElementById('tallyFrame');
-      if(!frame) return;
-      const base = frame.getAttribute('data-tally-src') || frame.getAttribute('src');
-      if(!base) return;
-
+    function saveZip(){
       try{
-        const u = new URL(base, window.location.href);
-        if(zip) u.searchParams.set("zip", zip);
-        frame.setAttribute('data-tally-src', u.toString());
-        if(frame.getAttribute('src')) frame.setAttribute('src', u.toString());
+        const z = (document.getElementById('zip')?.value || '').trim();
+        if(z) localStorage.setItem('wf_zip', z);
+        const z2 = document.getElementById('zip2');
+        if(z2 && z) z2.value = z;
       }catch(e){}
-    }
-
-    function openTallyWithZip(alsoScroll){
-      const zipEl = document.getElementById('zip');
-      const zip = (zipEl && zipEl.value ? zipEl.value : '').trim();
-
-      if(zip && !validZip(zip)){
-        alert("Please enter a valid ZIP code (e.g., 35966).");
-        if(zipEl) zipEl.focus();
-        return false;
-      }
-
-      try { localStorage.setItem("cf_zip", zip); } catch(e){}
-      setFormZip(zip);
-
-      if(alsoScroll){
-        setTimeout(() => {
-          const target = document.getElementById('formembed');
-          if(target) target.scrollIntoView({behavior:'smooth'});
-        }, 250);
-      }
-      return true;
     }
 
     (function(){
       try{
-        const saved = localStorage.getItem("cf_zip");
-        const zipEl = document.getElementById('zip');
-        if(saved && zipEl && !zipEl.value) zipEl.value = saved;
-      }catch(e){}
-    })();
-
-    (function(){
-      var d=document,w="https://tally.so/widgets/embed.js";
-      function v(){
-        if(typeof Tally!=="undefined" && Tally.loadEmbeds){
-          Tally.loadEmbeds();
-          setTimeout(() => { try { Tally.loadEmbeds(); } catch(e){} }, 900);
-        } else {
-          d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach(function(e){
-            e.src=e.dataset.tallySrc;
-          });
+        const saved = localStorage.getItem('wf_zip');
+        const z = document.getElementById('zip');
+        const z2 = document.getElementById('zip2');
+        if(saved){
+          if(z && !z.value) z.value = saved;
+          if(z2 && !z2.value) z2.value = saved;
         }
-      }
-      if(typeof Tally!=="undefined") v();
-      else if(d.querySelector('script[src="'+w+'"]')==null){
-        var s=d.createElement("script");
-        s.src=w; s.onload=v; s.onerror=v; d.body.appendChild(s);
-      }
-      if(document.readyState==="loading") d.addEventListener("DOMContentLoaded", v);
-      else v();
-      setTimeout(v, 800);
+      }catch(e){}
     })();
+
+    // Placeholder submit so you can design now; wire to a real endpoint later.
+    function fakeSubmit(e){
+      e.preventDefault();
+      alert("Form received (placeholder). Next step: connect this to your lead system or email endpoint.");
+      return false;
+    }
   </script>
 </body>
 </html>
