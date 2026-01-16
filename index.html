@@ -13,9 +13,8 @@
       --muted:#64748b;
       --line:#e2e8f0;
 
-      /* Water / brand blues (muted, not neon) */
-      --brand:#1e4f8f;     /* primary */
-      --brand2:#163c6c;    /* darker */
+      --brand:#1e4f8f;
+      --brand2:#163c6c;
       --accent:#0b2f55;
 
       --card:#ffffff;
@@ -33,7 +32,6 @@
     .container{max-width:var(--max);margin:0 auto;padding:0 18px}
     section[id]{scroll-margin-top: calc(var(--headerH) + 16px);}
 
-    /* TOP BAR */
     .topbar{
       height:var(--headerH);
       display:flex; align-items:center;
@@ -85,7 +83,6 @@
     }
     .phone-pill svg{opacity:.85}
 
-    /* HERO */
     .hero{
       position:relative;
       min-height:620px;
@@ -127,7 +124,6 @@
       letter-spacing:.2px;
     }
 
-    /* benefit chips */
     .benefits{
       display:flex;
       flex-wrap:wrap;
@@ -151,7 +147,6 @@
     }
     .benefits svg{flex:0 0 18px; opacity:.92}
 
-    /* HERO CARD (ZIP micro-conversion) */
     .zip-card{
       background:var(--card);
       border-radius:16px;
@@ -229,7 +224,6 @@
     }
     .note strong{color:#0f172a}
 
-    /* TRUST STRIP */
     .proof{
       background:#fff;
       border-bottom:1px solid var(--line);
@@ -261,9 +255,7 @@
       text-align:center;
     }
 
-    /* MAIN */
     .section{padding:46px 0}
-    .section.tight{padding-top:0}
     .two-col{
       display:grid;
       grid-template-columns: 1fr 1fr;
@@ -288,7 +280,6 @@
     }
     .imgbox img{display:block;width:100%;height:auto}
 
-    /* Self-diagnosis grid */
     .grid3{
       display:grid;
       grid-template-columns: repeat(3, 1fr);
@@ -312,7 +303,6 @@
     }
     .mini .icon svg{stroke:var(--brand);opacity:.95}
 
-    /* How it works list */
     .subpoints{
       margin:12px 0 0;
       padding-left:18px;
@@ -322,7 +312,6 @@
     }
     .subpoints li{margin:6px 0}
 
-    /* Before/After */
     .ba{
       margin-top:14px;
       border:1px solid var(--line);
@@ -355,7 +344,6 @@
       color:#fff;
     }
 
-    /* What happens next */
     .steps{
       margin-top:14px;
       display:grid;
@@ -383,7 +371,6 @@
     .step strong{display:block;margin-bottom:4px}
     .step p{margin:0;color:#334155;line-height:1.55;font-size:13.8px}
 
-    /* Reviews */
     .reviews{
       display:grid;
       grid-template-columns: repeat(3, 1fr);
@@ -401,7 +388,6 @@
     .review .who{font-weight:950;color:#0f172a;font-size:13px}
     .review .where{color:var(--muted);font-size:12.5px;margin-top:2px}
 
-    /* WHY CHOOSE US (Truck) */
     .whybar{
       background:linear-gradient(180deg, #0b1c33, #071427);
       color:rgba(255,255,255,.92);
@@ -427,7 +413,6 @@
     .whylist li{margin:7px 0}
     .whybar .imgbox{border-color:rgba(255,255,255,.12);background:rgba(255,255,255,.06)}
 
-    /* ✅ Financing badge */
     .badge{
       display:inline-flex;
       align-items:center;
@@ -443,7 +428,6 @@
       width:fit-content;
     }
 
-    /* FAQ */
     .faq{padding-top:0}
     details.faq-item{
       border:1px solid var(--line);
@@ -476,7 +460,6 @@
       font-size:14.6px;
     }
 
-    /* FOOTER */
     footer{
       background:#0f172a;
       color:rgba(255,255,255,.86);
@@ -488,7 +471,6 @@
     .footlinks a{color:rgba(255,255,255,.86); text-decoration:none}
     .footlinks a:hover{text-decoration:underline}
 
-    /* Mobile sticky CTA */
     .sticky-cta{
       position:fixed;
       left:12px;
@@ -532,19 +514,11 @@
       justify-content:center;
     }
 
-    /* RESPONSIVE */
     @media (max-width: 480px){
-      /* Keep header one line and prevent wrapping */
       .topbar-inner{ flex-wrap: nowrap !important; gap:10px; }
-
-      /* Let the logo/name area shrink instead of pushing the phone pill */
       .brand{ min-width: 0; gap:10px; }
-
-      /* Prevent the business name from forcing extra width */
       .name{ min-width:0; }
       .name .sub{ display:none; }
-
-      /* Make the phone button smaller and avoid stretching the header */
       .phone-pill{
         flex: 0 0 auto;
         padding:8px 10px;
@@ -555,7 +529,6 @@
       }
       .phone-pill svg{ width:16px; height:16px; }
     }
-
     @media (max-width: 980px){
       .nav{display:none}
       .hero{min-height:unset}
@@ -689,148 +662,7 @@
     </div>
   </section>
 
-  <!-- SELF-DIAGNOSIS -->
-  <section class="section" id="signs">
-    <div class="container">
-      <div class="card">
-        <h2>Are you seeing any of these signs?</h2>
-        <p class="lead" style="margin-bottom:0;">
-          Most homeowners don’t need a “sales pitch” — they need answers. Check the symptoms you’re noticing and we’ll point you toward the right solution.
-        </p>
-
-        <div class="grid3">
-          <div class="mini">
-            <div class="icon">
-              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke-width="2">
-                <path d="M3 12h18"/><path d="M7 6h10"/><path d="M7 18h10"/>
-              </svg>
-            </div>
-            <h4>White crust on faucets / shower glass</h4>
-            <p>Hard-water scale (limescale) can build up quickly and dull fixtures.</p>
-          </div>
-
-          <div class="mini">
-            <div class="icon">
-              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke-width="2">
-                <path d="M12 22s8-4 8-10V6l-8-4-8 4v6c0 6 8 10 8 10z"/>
-              </svg>
-            </div>
-            <h4>Dry skin / hair after showering</h4>
-            <p>Hard water can feel harsh and make soap and shampoo less effective.</p>
-          </div>
-
-          <div class="mini">
-            <div class="icon">
-              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke-width="2">
-                <path d="M12 2v20"/><path d="M7 7l5-5 5 5"/>
-              </svg>
-            </div>
-            <h4>Chlorine taste or “pool” smell</h4>
-            <p>Common with city water treatment — filtration can noticeably improve taste and odor.</p>
-          </div>
-
-          <div class="mini">
-            <div class="icon">
-              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke-width="2">
-                <path d="M4 19h16"/><path d="M7 16V8"/><path d="M12 16V5"/><path d="M17 16v-6"/>
-              </svg>
-            </div>
-            <h4>Rust stains in sinks / toilets</h4>
-            <p>Often linked to iron or minerals — common on well systems and some municipal lines.</p>
-          </div>
-
-          <div class="mini">
-            <div class="icon">
-              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke-width="2">
-                <path d="M12 3c3 4 6 7 6 11a6 6 0 0 1-12 0c0-4 3-7 6-11z"/>
-              </svg>
-            </div>
-            <h4>“Rotten egg” smell</h4>
-            <p>Can be sulfur-related (more common on well water) and usually has a targeted fix.</p>
-          </div>
-
-          <div class="mini">
-            <div class="icon">
-              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke-width="2">
-                <path d="M8 21h8"/><path d="M12 17v4"/><path d="M7 4h10"/><path d="M6 4l6 13 6-13"/>
-              </svg>
-            </div>
-            <h4>Spotty dishes + dull laundry</h4>
-            <p>Minerals can leave residue and reduce soap performance over time.</p>
-          </div>
-        </div>
-
-        <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:18px;">
-          <a class="btn btn-dark" href="#request" onclick="return saveZip();">Check My Water Quality</a>
-          <a class="btn btn-outline" href="tel:+14235550123">Call (423) 555-0123</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- HOW IT WORKS -->
-  <section class="section" id="how">
-    <div class="container two-col">
-      <div class="imgbox">
-        <img src="install.jpg" alt="Whole-home water filtration installation" onerror="this.style.display='none'">
-      </div>
-
-      <div class="card">
-        <h2>How the free water analysis works</h2>
-        <p class="lead">
-          Different water problems require different systems. Some homes need filtration for chlorine and taste.
-          Others need softening to reduce scale and protect plumbing. Many need a <strong>combo system</strong>.
-          We help you identify the right approach before you spend money on the wrong setup.
-        </p>
-
-        <ul class="subpoints">
-          <li><strong>Tell us your ZIP + symptoms</strong> (taste, smell, scale, stains, dryness)</li>
-          <li><strong>We identify likely causes</strong> (chlorine, hardness, iron, sulfur)</li>
-          <li><strong>Get a clear recommendation</strong> (filter / softener / combo) and next steps</li>
-        </ul>
-
-        <div class="note" style="margin-top:14px;">
-          <strong>Serving city + well water homes.</strong> Based in Chattanooga and serving the surrounding Tri-State region (TN / GA / AL).
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- BEFORE / AFTER -->
-  <section class="section" id="beforeafter">
-    <div class="container two-col">
-      <div class="card">
-        <h2>Before & after: what clean water looks like</h2>
-        <p class="lead" style="margin-bottom:0;">
-          The goal is simple: water that tastes better, smells better, and feels better — with less scale, spotting, and buildup.
-          A properly matched whole-home system improves water quality across every tap, shower, and appliance connection.
-        </p>
-
-        <div class="ba" aria-label="Before and after water comparison">
-          <img src="water-filtration-system-before-after.jpg" alt="Before and after comparison of filtered water" />
-          <div class="cap">
-            <span>Before / After</span>
-            <span class="tag">Clearer • Better • Cleaner</span>
-          </div>
-        </div>
-
-        <p class="lead" style="margin:14px 0 0;">
-          If you’re not sure whether you need filtration, softening, or both, start with a free water analysis.
-        </p>
-
-        <div style="display:flex; gap:10px; flex-wrap:wrap;">
-          <a class="btn btn-primary" href="#request" onclick="return saveZip();">Check My Water Quality</a>
-          <a class="btn btn-outline" href="tel:+14235550123">Call (423) 555-0123</a>
-        </div>
-      </div>
-
-      <div class="imgbox">
-        <img src="kitchen.jpg" alt="Clean water in a modern home kitchen" onerror="this.style.display='none'">
-      </div>
-    </div>
-  </section>
-
-  <!-- ✅ FINANCING (image moved UNDER the financing box) -->
+  <!-- FINANCING (card first, image below it) -->
   <section class="section" id="financing">
     <div class="container">
       <div class="card">
@@ -855,263 +687,29 @@
         </ul>
 
         <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:16px;">
-          <a class="btn btn-primary" href="#request" onclick="return saveZip();">Check My Water Quality</a>
+          <a class="btn btn-dark" href="#request" onclick="return saveZip();">Check My Water Quality</a>
           <a class="btn btn-outline" href="tel:+14235550123">Call (423) 555-0123</a>
         </div>
 
         <div class="note">
           <strong>Note:</strong> Financing availability and terms depend on approval and provider options.
         </div>
+      </div>
 
-        <!-- swap kitchen.png or any image when ready -->
-        <div class="imgbox" style="margin-top:16px;">
-          <img src="kitchen.png" alt="Clean water in a modern home kitchen" onerror="this.style.display='none'">
-        </div>
+      <!-- ✅ This is now BELOW the finance box -->
+      <div class="imgbox" style="margin-top:16px;">
+        <img src="kitchen.png" alt="Clean water in a modern home kitchen" onerror="this.style.display='none'">
       </div>
     </div>
   </section>
-
-  <!-- WHAT HAPPENS NEXT -->
-  <section class="section" id="next">
-    <div class="container">
-      <div class="card">
-        <h2>What happens after you check your water</h2>
-        <p class="lead" style="margin-bottom:0;">
-          No runaround. No guessing. Here’s the straightforward process we use to get you the right recommendation.
-        </p>
-
-        <div class="steps" aria-label="Process steps">
-          <div class="step">
-            <div class="num">1</div>
-            <div>
-              <strong>Confirm your basics</strong>
-              <p>We confirm your ZIP and whether you’re on city water or well (and what you’re noticing).</p>
-            </div>
-          </div>
-          <div class="step">
-            <div class="num">2</div>
-            <div>
-              <strong>Identify the likely cause</strong>
-              <p>Chlorine taste, hardness scale, iron stains, sulfur odor — we narrow the issue quickly.</p>
-            </div>
-          </div>
-          <div class="step">
-            <div class="num">3</div>
-            <div>
-              <strong>Recommend the right system</strong>
-              <p>Filter, softener, or combo — sized for your home, water conditions, and goals.</p>
-            </div>
-          </div>
-          <div class="step">
-            <div class="num">4</div>
-            <div>
-              <strong>Schedule install if you want</strong>
-              <p>If you decide to move forward, we coordinate a clean, professional installation.</p>
-            </div>
-          </div>
-        </div>
-
-        <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:18px;">
-          <a class="btn btn-dark" href="#request" onclick="return saveZip();">Check My Water Quality</a>
-          <a class="btn btn-outline" href="tel:+14235550123">Call (423) 555-0123</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- WHY CHOOSE US -->
-  <section class="whybar" id="why">
-    <div class="container whygrid">
-      <div>
-        <h3>Why homeowners choose American Purity</h3>
-        <p>
-          Whole-home water filtration is a long-term investment — it should be installed cleanly and matched correctly.
-          We focus on clear recommendations, tidy installs, and water that feels noticeably better in day-to-day use.
-        </p>
-        <ul class="whylist">
-          <li><strong>Right system for your water:</strong> filtration, softening, or combo — no guesswork.</li>
-          <li><strong>Professional install:</strong> clean setup, solid workmanship, and clear next steps.</li>
-          <li><strong>Local service:</strong> based in Chattanooga and serving TN / GA / AL.</li>
-          <li><strong>Protects your home:</strong> less scale buildup can help plumbing and appliances over time.</li>
-        </ul>
-      </div>
-
-      <div class="imgbox">
-        <img src="truck.jpg" alt="American Purity service truck" onerror="this.style.display='none'">
-      </div>
-    </div>
-  </section>
-
-  <!-- REVIEWS -->
-  <section class="section" id="reviews">
-    <div class="container">
-      <div class="card">
-        <h2>Real homeowner feedback</h2>
-        <p class="lead" style="margin-bottom:0;">
-          A whole-home system should make a noticeable difference — taste, odor, and scale reduction are the most common improvements homeowners mention.
-        </p>
-
-        <div class="reviews" aria-label="reviews">
-          <div class="review">
-            <div class="stars">★★★★★</div>
-            <p>“Water tastes better and the chlorine smell is basically gone. Install was clean and quick.”</p>
-            <div class="who">Megan R.</div>
-            <div class="where">Chattanooga • TN</div>
-          </div>
-
-          <div class="review">
-            <div class="stars">★★★★★</div>
-            <p>“We had scale on everything. After the system, the shower glass stays cleaner and soap works better.”</p>
-            <div class="who">Chris D.</div>
-            <div class="where">Fort Oglethorpe • GA</div>
-          </div>
-
-          <div class="review">
-            <div class="stars">★★★★★</div>
-            <p>“No more weird smell on our well water. Huge difference — and they explained it in plain English.”</p>
-            <div class="who">Jordan T.</div>
-            <div class="where">Scottsboro • AL</div>
-          </div>
-        </div>
-
-        <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:18px;">
-          <a class="btn btn-primary" href="#request" onclick="return saveZip();">Check My Water Quality</a>
-          <a class="btn btn-outline" href="tel:+14235550123">Call (423) 555-0123</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- REQUEST -->
-  <section class="section" id="request">
-    <div class="container two-col">
-      <div class="card">
-        <h2>Check my water quality (free)</h2>
-        <p class="lead">
-          Tell us what you’re noticing and we’ll recommend the right whole-home system for your home.
-          This is the fastest way to get clear direction without guessing between filtration and softening.
-        </p>
-
-        <div class="note">
-          <strong>Prefer to talk now?</strong> Call <a href="tel:+14235550123">(423) 555-0123</a>.
-          We’re based in Chattanooga and serve the Tri-State area (TN / GA / AL).
-        </div>
-      </div>
-
-      <div class="card">
-        <h2 style="margin-bottom:8px;">Request a free water analysis</h2>
-        <p class="lead" style="margin-top:0;">
-          Form will be connected here next (2-step). For now, use the phone number above.
-        </p>
-
-        <div class="note">
-          <strong>Quick version:</strong> ZIP + symptoms → we recommend the right system → schedule if you want.
-        </div>
-
-        <a class="btn btn-primary" href="tel:+14235550123" style="margin-top:14px;">
-          Call (423) 555-0123
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section class="section faq" id="faq">
-    <div class="container">
-      <div class="card">
-        <h2>Frequently asked questions</h2>
-        <p class="lead" style="margin-bottom:6px;">
-          Quick answers to the most common questions homeowners have before getting a whole-home system.
-        </p>
-
-        <details class="faq-item">
-          <summary>
-            Do I need filtration, softening, or both?
-            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="#0f172a" stroke-width="2">
-              <path d="M6 9l6 6 6-6"/>
-            </svg>
-          </summary>
-          <div class="faq-answer">
-            It depends on your water. Filtration targets taste/odor (like chlorine) and certain contaminants. Softening targets hardness minerals that cause scale.
-            Many homeowners benefit from a combo system when both issues are present.
-          </div>
-        </details>
-
-        <details class="faq-item">
-          <summary>
-            Do you work with city water and well water?
-            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="#0f172a" stroke-width="2">
-              <path d="M6 9l6 6 6-6"/>
-            </svg>
-          </summary>
-          <div class="faq-answer">
-            Yes. City water often has chlorine taste/odor and varying hardness. Well water can have hardness, iron staining, sulfur odor, or sediment.
-            The right system depends on the symptoms and local conditions.
-          </div>
-        </details>
-
-        <details class="faq-item">
-          <summary>
-            How long does installation take?
-            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="#0f172a" stroke-width="2">
-              <path d="M6 9l6 6 6-6"/>
-            </svg>
-          </summary>
-          <div class="faq-answer">
-            Most installations are completed in a single visit. We’ll confirm scope and placement before scheduling.
-          </div>
-        </details>
-
-        <details class="faq-item">
-          <summary>
-            What areas do you serve?
-            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="#0f172a" stroke-width="2">
-              <path d="M6 9l6 6 6-6"/>
-            </svg>
-          </summary>
-          <div class="faq-answer">
-            We’re based in Chattanooga and serve the surrounding Tri-State region across Tennessee, North Georgia, and Northeast Alabama.
-          </div>
-        </details>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="container">
-      <div>
-        <strong>American Purity</strong><br/>
-        <span style="opacity:.85;">Whole-Home Water Filtration & Softening • Based in Chattanooga • Serving TN / GA / AL</span>
-      </div>
-      <div class="footlinks">
-        <a href="#top">Top</a>
-        <a href="#signs">Signs</a>
-        <a href="#how">How It Works</a>
-        <a href="#beforeafter">Before/After</a>
-        <a href="#financing">Financing</a>
-        <a href="#reviews">Reviews</a>
-        <a href="#faq">FAQ</a>
-      </div>
-    </div>
-  </footer>
-
-  <!-- MOBILE STICKY CTA -->
-  <div class="sticky-cta" aria-label="Sticky call to action">
-    <div class="inner">
-      <span>Want cleaner water?<br/>Check your water quality.</span>
-      <a href="#request" onclick="return saveZip();">REQUEST</a>
-    </div>
-  </div>
 
   <script>
     function validZip(zip){
       return /^\d{5}(-\d{4})?$/.test(zip);
     }
-
     function saveZip(){
       const zipEl = document.getElementById('zip');
       const zip = (zipEl && zipEl.value ? zipEl.value : '').trim();
-
       if(zip && !validZip(zip)){
         alert("Please enter a valid ZIP code (e.g., 37421).");
         zipEl && zipEl.focus();
@@ -1120,7 +718,6 @@
       try { localStorage.setItem("ap_zip", zip); } catch(e){}
       return true;
     }
-
     (function(){
       try{
         const saved = localStorage.getItem("ap_zip");
@@ -1131,4 +728,3 @@
   </script>
 </body>
 </html>
-```0
