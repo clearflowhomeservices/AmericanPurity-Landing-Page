@@ -4,7 +4,10 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>American Purity | Dealer Ordering</title>
+
+  <!-- Helps reduce search indexing (not a guarantee) -->
   <meta name="robots" content="noindex,nofollow" />
+
   <style>
     :root{
       --bg:#0b1220;
@@ -221,8 +224,8 @@
 <body>
   <div class="container">
     <div class="top">
-      <a class="brand" href="./index.html" aria-label="Back to main site">
-        <img src="logo.png" alt="American Purity logo" onerror="this.style.display='none'">
+      <a class="brand" href="../index.html" aria-label="Back to main site">
+        <img src="../logo.png" alt="American Purity logo" onerror="this.style.display='none'">
         <span>Dealer Ordering</span>
       </a>
       <span class="pill">Private • Dealer Use Only</span>
@@ -233,8 +236,7 @@
         <div>
           <h1>Place dealer orders in minutes</h1>
           <p class="lead">
-            Use this page to order systems for your customers. Choose a product, confirm quantity, and check out.
-            You’ll receive an order confirmation by email after payment.
+            Choose a product and check out. You’ll receive an order confirmation by email after payment.
           </p>
           <div class="note">
             <strong>Important:</strong> This page is not listed on the public website.
@@ -270,20 +272,19 @@
       <div class="grid">
         <div class="card">
           <h3>Whole-Home Filtration System</h3>
-          <p class="meta">Best for chlorine taste/odor, sediment, and general filtration (city or well as applicable).</p>
+          <p class="meta">Best for chlorine taste/odor, sediment, and general filtration.</p>
           <div class="price">
-            <span class="big" id="p1">$0</span>
+            <span class="big" id="p1">$1,995</span>
             <span class="small">dealer price</span>
           </div>
-          <!-- Replace href with your Stripe Payment Link -->
           <a class="btn btn-buy" href="PASTE_STRIPE_PAYMENT_LINK_1" target="_blank" rel="noopener">Checkout</a>
         </div>
 
         <div class="card">
           <h3>Whole-Home Water Softener</h3>
-          <p class="meta">Best for hardness scale, spots, soap performance, and protecting fixtures/appliances.</p>
+          <p class="meta">Best for hardness scale, spotting, and protecting fixtures.</p>
           <div class="price">
-            <span class="big" id="p2">$0</span>
+            <span class="big" id="p2">$1,695</span>
             <span class="small">dealer price</span>
           </div>
           <a class="btn btn-buy" href="PASTE_STRIPE_PAYMENT_LINK_2" target="_blank" rel="noopener">Checkout</a>
@@ -291,9 +292,9 @@
 
         <div class="card">
           <h3>Combo System (Filter + Softener)</h3>
-          <p class="meta">Most common choice when both chlorine taste/odor and hardness issues are present.</p>
+          <p class="meta">Most common choice when both taste/odor and hardness issues are present.</p>
           <div class="price">
-            <span class="big" id="p3">$0</span>
+            <span class="big" id="p3">$3,295</span>
             <span class="small">dealer price</span>
           </div>
           <a class="btn btn-buy" href="PASTE_STRIPE_PAYMENT_LINK_3" target="_blank" rel="noopener">Checkout</a>
@@ -304,7 +305,7 @@
         <strong style="display:block; margin-bottom:6px;">Ordering notes</strong>
         <div class="hint" style="margin-top:0;">
           • Shipping / pickup details can be handled after checkout.<br/>
-          • If you need bulk orders or freight, call support and we’ll coordinate.
+          • For bulk orders or freight, call support and we’ll coordinate.
         </div>
       </div>
 
@@ -314,29 +315,14 @@
 
   <script>
     // ⚠️ This is NOT true security. It's a speed bump for GitHub Pages.
-    // Anyone can view the code if they try hard enough.
-    // For real dealer-only access, host this page behind a password (Netlify/Cloudflare Access).
-
     const STORAGE_KEY = "ap_dealer_unlocked";
-    const PRICES_KEY = "ap_dealer_prices"; // optional if you want to store prices
-    const ACCESS_CODE = "CHANGE_ME"; // <-- set your dealer code here (still not secure)
-
-    // OPTIONAL: set visible prices (purely cosmetic)
-    const DISPLAY_PRICES = {
-      p1: "$1,995",
-      p2: "$1,695",
-      p3: "$3,295"
-    };
+    const ACCESS_CODE = "password"; // <-- set dealer code here
 
     document.getElementById("yr").textContent = new Date().getFullYear();
 
     function showShop(){
       document.getElementById("shop").style.display = "block";
       document.getElementById("gate").style.display = "none";
-      // show prices
-      document.getElementById("p1").textContent = DISPLAY_PRICES.p1;
-      document.getElementById("p2").textContent = DISPLAY_PRICES.p2;
-      document.getElementById("p3").textContent = DISPLAY_PRICES.p3;
     }
 
     function showGate(){
