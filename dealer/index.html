@@ -3,132 +3,173 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>American Purity | Dealer Ordering</title>
-
-  <!-- Helps reduce search indexing (not a guarantee) -->
+  <title>American Purity | Dealer Ordering Portal</title>
+  <meta name="description" content="Dealer-only ordering portal for American Purity whole-home water filtration systems." />
   <meta name="robots" content="noindex,nofollow" />
 
   <style>
     :root{
-      --bg:#0b1220;
-      --card:#0f1a2e;
-      --text:#e6edf7;
-      --muted:#a8b3c7;
-      --line:rgba(255,255,255,.10);
+      --bg:#ffffff;
+      --text:#0f172a;
+      --muted:#64748b;
+      --line:#e2e8f0;
+
+      /* Match landing page */
       --brand:#1e4f8f;
-      --cyan:#19c2ff;
-      --shadow:0 18px 60px rgba(0,0,0,.45);
+      --brand2:#163c6c;
+      --accent:#0b2f55;
+
+      --card:#ffffff;
+      --shadow:0 18px 48px rgba(2,6,23,.14);
+      --shadow2:0 10px 24px rgba(2,6,23,.10);
       --radius:16px;
       --max:1120px;
       --font: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      --headerH:74px;
     }
     *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family:var(--font);
-      color:var(--text);
-      background:
-        radial-gradient(1200px 600px at 20% 0%, rgba(25,194,255,.18), transparent 60%),
-        radial-gradient(900px 500px at 90% 10%, rgba(30,79,143,.22), transparent 55%),
-        linear-gradient(180deg, #070b14, #0b1220 45%, #070b14);
-      min-height:100vh;
-    }
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:var(--font);color:var(--text);background:var(--bg)}
     a{color:inherit}
-    .container{max-width:var(--max); margin:0 auto; padding:24px 18px;}
-    .top{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:14px;
-      padding:18px 0 8px;
+    .container{max-width:var(--max);margin:0 auto;padding:0 18px}
+    section[id]{scroll-margin-top: calc(var(--headerH) + 16px);}
+
+    /* TOP BAR */
+    .topbar{
+      height:var(--headerH);
+      display:flex; align-items:center;
+      border-bottom:1px solid var(--line);
+      background:#fff;
+      position:sticky; top:0; z-index:50;
+    }
+    .topbar-inner{
+      display:flex; align-items:center; gap:14px; width:100%;
     }
     .brand{
-      display:flex;
-      align-items:center;
-      gap:12px;
+      display:flex; align-items:center; gap:12px;
       text-decoration:none;
-      font-weight:950;
-      letter-spacing:.2px;
-    }
-    .brand img{height:40px; width:auto; display:block;}
-    .pill{
-      display:inline-flex;
-      gap:10px;
-      align-items:center;
-      padding:10px 12px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.04);
-      border-radius:999px;
-      color:var(--muted);
-      font-size:13px;
-      font-weight:800;
+      font-weight:950; letter-spacing:.2px;
       white-space:nowrap;
     }
-    .hero{
-      margin-top:12px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.03);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-      overflow:hidden;
-      position:relative;
+    .brand img{height:44px; width:auto; display:block;}
+    .brand .name{font-size:18px; line-height:1.05}
+    .brand .name span{color:var(--brand)}
+    .brand .sub{
+      display:block;
+      font-size:12px;
+      font-weight:750;
+      color:var(--muted);
+      letter-spacing:.15px;
+      margin-top:2px;
     }
-    .hero-inner{
-      padding:22px;
+    .navspacer{flex:1}
+    .nav{
+      display:flex; gap:18px; font-size:14px; color:#334155; align-items:center;
+    }
+    .nav a{ text-decoration:none; opacity:.92; font-weight:750 }
+    .nav a:hover{ opacity:1; text-decoration:underline }
+
+    .phone-pill{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 14px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:#f8fafc;
+      text-decoration:none;
+      font-weight:900;
+      color:#0f172a;
+      box-shadow:0 6px 18px rgba(2,6,23,.06);
+      white-space:nowrap;
+      flex:0 0 auto;
+    }
+    .phone-pill svg{opacity:.85}
+
+    /* HERO (dealer) */
+    .hero{
+      position:relative;
+      background:
+        radial-gradient(1200px 520px at 15% 0%, rgba(30,79,143,.22), transparent 60%),
+        radial-gradient(900px 500px at 85% 20%, rgba(14,165,233,.16), transparent 55%),
+        linear-gradient(180deg, #0b1c33 0%, #071427 100%);
+      overflow:hidden;
+      color:#fff;
+    }
+    .hero .container{
+      padding:30px 18px 26px;
       display:grid;
-      grid-template-columns: 1.15fr .85fr;
+      grid-template-columns: 1.05fr .95fr;
+      gap:22px;
+      align-items:start;
+    }
+    .hero h1{
+      margin:0 0 10px;
+      font-size:38px;
+      line-height:1.05;
+      font-weight:980;
+      letter-spacing:-.4px;
+    }
+    .hero p{
+      margin:0 0 14px;
+      color:rgba(255,255,255,.90);
+      line-height:1.68;
+      font-size:15.5px;
+    }
+    .hero .chips{
+      display:flex; flex-wrap:wrap; gap:10px; margin-top:12px;
+      padding:0; list-style:none;
+    }
+    .hero .chips li{
+      display:inline-flex; align-items:center; gap:8px;
+      border:1px solid rgba(255,255,255,.16);
+      background:rgba(2,6,23,.26);
+      padding:9px 12px;
+      border-radius:999px;
+      font-weight:900;
+      font-size:13px;
+      letter-spacing:.12px;
+    }
+    .hero .chips svg{flex:0 0 18px; opacity:.92}
+
+    /* MAIN */
+    .section{padding:30px 0 46px}
+    .grid{
+      display:grid;
+      grid-template-columns: 1.12fr .88fr;
       gap:18px;
       align-items:start;
     }
-    h1{
-      margin:0 0 10px;
-      font-size:30px;
-      line-height:1.1;
-      letter-spacing:-.4px;
+    .card{
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:20px;
+      background:#fff;
+      box-shadow:0 10px 24px rgba(2,6,23,.06);
     }
-    .lead{
-      margin:0;
-      color:rgba(230,237,247,.86);
-      line-height:1.75;
-      font-size:14.8px;
-      max-width:740px;
-    }
+    .card h2{margin:0 0 10px;font-size:20px; letter-spacing:-.2px}
+    .lead{color:#334155;line-height:1.75;margin:0 0 12px;font-size:14.7px}
+    .muted{color:var(--muted)}
+    .hr{height:1px;background:var(--line);margin:16px 0}
 
-    .gate, .panel{
-      border:1px solid var(--line);
-      background:rgba(15,26,46,.70);
-      border-radius:14px;
-      padding:16px;
-    }
-    .gate h2{
-      margin:0 0 8px;
-      font-size:16px;
-      letter-spacing:.1px;
-    }
-    .field{
-      display:flex;
-      gap:10px;
-      align-items:center;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.04);
-      border-radius:12px;
-      padding:10px 12px;
-      margin-top:10px;
-    }
-    input{
-      width:100%;
-      background:transparent;
-      border:0;
-      outline:0;
-      color:var(--text);
-      font-size:14px;
-    }
-    .btn{
+    .badge{
       display:inline-flex;
       align-items:center;
-      justify-content:center;
-      border:0;
-      cursor:pointer;
+      gap:8px;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:#f8fafc;
+      font-weight:950;
+      font-size:12.5px;
+      color:#0f172a;
+      margin:8px 0 10px;
+      width:fit-content;
+    }
+
+    .btn{
+      display:inline-flex; justify-content:center; align-items:center;
+      border:0; cursor:pointer;
       font-weight:950;
       letter-spacing:.35px;
       border-radius:12px;
@@ -136,222 +177,780 @@
       text-transform:uppercase;
       font-size:13px;
       text-decoration:none;
-      width:100%;
-      margin-top:10px;
+      user-select:none;
     }
-    .btn-primary{
-      background:linear-gradient(90deg, var(--brand), var(--cyan));
-      color:#04101b;
-    }
-    .btn-ghost{
+    .btn-primary{background:var(--brand);color:#fff}
+    .btn-primary:hover{filter:brightness(.98)}
+    .btn-dark{background:#0f172a;color:#fff}
+    .btn-dark:hover{filter:brightness(1.05)}
+    .btn-outline{
       background:transparent;
+      color:#0f172a;
       border:1px solid var(--line);
-      color:var(--text);
-      width:auto;
-      margin-top:0;
+      font-weight:950;
+    }
+    .btn-outline:hover{background:#f8fafc}
+
+    .field{
+      display:grid;
+      gap:8px;
+      margin:10px 0 0;
+    }
+    label{
+      font-size:13px;
+      font-weight:900;
+      color:#0f172a;
+    }
+    input, select, textarea{
+      width:100%;
+      border:1px solid var(--line);
+      border-radius:12px;
       padding:10px 12px;
-      text-transform:none;
-      letter-spacing:0;
+      font-size:14px;
+      outline:none;
+      background:#fff;
+    }
+    textarea{min-height:96px; resize:vertical}
+    input:focus, select:focus, textarea:focus{
+      border-color:rgba(30,79,143,.55);
+      box-shadow:0 0 0 4px rgba(30,79,143,.10);
+    }
+
+    .row2{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:12px;
+    }
+    .row3{
+      display:grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap:12px;
+    }
+
+    .pill{
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:12px;
+      background:#f8fafc;
+      color:#0f172a;
       font-weight:900;
       font-size:13px;
     }
-    .hint{
-      margin-top:10px;
-      color:rgba(168,179,199,.90);
-      font-size:12.5px;
-      line-height:1.55;
+
+    .list{
+      margin:10px 0 0;
+      padding-left:18px;
+      color:#334155;
+      line-height:1.75;
+      font-size:14.2px;
     }
+    .list li{margin:6px 0}
+
+    /* Cart */
+    .cart-line{
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+      padding:10px 0;
+      border-bottom:1px solid var(--line);
+      font-size:14px;
+      color:#0f172a;
+    }
+    .cart-line small{display:block;color:var(--muted);margin-top:2px}
+    .cart-total{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      font-weight:980;
+      font-size:15px;
+      margin-top:12px;
+    }
+
     .note{
       margin-top:12px;
-      border:1px dashed rgba(25,194,255,.35);
-      background:rgba(25,194,255,.06);
+      padding:10px 12px;
+      border:1px solid var(--line);
       border-radius:12px;
-      padding:12px;
-      color:rgba(230,237,247,.88);
+      background:#f8fafc;
+      color:#334155;
       font-size:12.8px;
       line-height:1.55;
     }
+    .note strong{color:#0f172a}
 
-    /* Dealer shop */
-    .shop{margin-top:18px; display:none;}
-    .grid{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap:14px;
-      margin-top:14px;
-    }
-    .card{
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.03);
-      border-radius:16px;
-      padding:16px;
-    }
-    .card h3{margin:0 0 8px; font-size:16px;}
-    .meta{color:rgba(168,179,199,.95); font-size:12.8px; line-height:1.55; margin:0 0 12px;}
-    .price{
+    /* Password overlay */
+    .gate{
+      position:fixed; inset:0;
+      background:
+        radial-gradient(900px 520px at 20% 10%, rgba(30,79,143,.20), transparent 60%),
+        radial-gradient(820px 520px at 80% 15%, rgba(14,165,233,.14), transparent 60%),
+        linear-gradient(180deg, #0b1c33 0%, #071427 100%);
       display:flex;
-      align-items:baseline;
-      gap:8px;
-      margin:10px 0 0;
-      font-weight:950;
+      align-items:center;
+      justify-content:center;
+      padding:18px;
+      z-index:999;
     }
-    .price .big{font-size:22px;}
-    .price .small{color:rgba(168,179,199,.9); font-size:12.5px; font-weight:800;}
-    .btn-buy{
-      margin-top:12px;
-      background:#0b172a;
-      border:1px solid rgba(25,194,255,.35);
-      color:var(--text);
+    .gate-card{
+      width:min(520px, 100%);
+      background:#fff;
+      border-radius:18px;
+      border:1px solid rgba(226,232,240,.9);
+      box-shadow:0 18px 60px rgba(0,0,0,.28);
+      overflow:hidden;
     }
-    .btn-buy:hover{filter:brightness(1.08)}
-    .actions{
-      display:flex; gap:10px; flex-wrap:wrap; margin-top:14px;
+    .gate-head{
+      background:var(--brand);
+      color:#fff;
+      padding:14px 16px;
+      font-weight:980;
+      letter-spacing:.2px;
     }
-    .footer{
-      margin:22px 0 10px;
-      color:rgba(168,179,199,.80);
-      font-size:12.5px;
-      text-align:center;
-    }
+    .gate-body{padding:16px}
+    .gate-body p{margin:0 0 12px; color:#334155; line-height:1.6; font-size:14.5px}
+    .gate-actions{display:flex; gap:10px; align-items:center; margin-top:12px}
+    .gate-actions .btn{flex:1}
+    .err{color:#b91c1c; font-weight:900; font-size:13px; margin-top:8px; display:none}
 
+    /* Responsive */
     @media (max-width: 980px){
-      .hero-inner{grid-template-columns:1fr}
+      .nav{display:none}
+      .hero .container{grid-template-columns: 1fr}
       .grid{grid-template-columns:1fr}
+      .row2,.row3{grid-template-columns:1fr}
+      .hero h1{font-size:32px}
+    }
+    @media (max-width: 480px){
+      .topbar-inner{ flex-wrap: nowrap !important; gap:10px; }
+      .brand{ min-width: 0; gap:10px; }
+      .name{ min-width:0; }
+      .name .sub{ display:none; }
+      .phone-pill{
+        flex: 0 0 auto;
+        padding:8px 10px;
+        font-size:13px;
+        gap:6px;
+        white-space:nowrap;
+        border-radius:999px;
+      }
+      .phone-pill svg{ width:16px; height:16px; }
     }
   </style>
 </head>
 
 <body>
-  <div class="container">
-    <div class="top">
-      <a class="brand" href="../index.html" aria-label="Back to main site">
-        <img src="../logo.png" alt="American Purity logo" onerror="this.style.display='none'">
-        <span>Dealer Ordering</span>
-      </a>
-      <span class="pill">Private • Dealer Use Only</span>
+  <!-- PASSWORD GATE (client-side for testing) -->
+  <div class="gate" id="gate" aria-label="Dealer portal password gate">
+    <div class="gate-card" role="dialog" aria-modal="true" aria-labelledby="gateTitle">
+      <div class="gate-head" id="gateTitle">Dealer Access Required</div>
+      <div class="gate-body">
+        <p>
+          This page is for authorized dealers only. Enter the dealer password to continue.
+          <br/><span class="muted">Testing password is currently set to: <strong>password</strong></span>
+        </p>
+
+        <div class="field">
+          <label for="dealerPass">Password</label>
+          <input id="dealerPass" type="password" autocomplete="current-password" placeholder="Enter password" />
+          <div class="err" id="gateErr">Incorrect password. Try again.</div>
+        </div>
+
+        <div class="gate-actions">
+          <button class="btn btn-primary" onclick="unlock()">Enter Portal</button>
+          <a class="btn btn-outline" href="./" title="Back to site">Back</a>
+        </div>
+
+        <div class="note">
+          <strong>Note:</strong> This is a simple front-end lock for now (fine for testing). For real dealer security, you’d want a real login (server-side) or gated platform.
+        </div>
+      </div>
     </div>
-
-    <section class="hero" aria-label="Dealer portal header">
-      <div class="hero-inner">
-        <div>
-          <h1>Place dealer orders in minutes</h1>
-          <p class="lead">
-            Choose a product and check out. You’ll receive an order confirmation by email after payment.
-          </p>
-          <div class="note">
-            <strong>Important:</strong> This page is not listed on the public website.
-            Please do not share outside your dealership.
-          </div>
-        </div>
-
-        <!-- ACCESS GATE (speed bump only) -->
-        <div class="gate" id="gate">
-          <h2>Dealer Access</h2>
-          <div class="hint">Enter the dealer access code to view pricing and checkout.</div>
-
-          <div class="field" style="margin-top:12px;">
-            <input id="dealerCode" type="password" placeholder="Enter access code" autocomplete="off" />
-          </div>
-
-          <button class="btn btn-primary" onclick="unlock()">Unlock</button>
-
-          <div class="hint">
-            Having trouble? Call <a href="tel:+14235550123" style="color:var(--cyan); text-decoration:none; font-weight:900;">(423) 555-0123</a>.
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SHOP -->
-    <section class="shop" id="shop" aria-label="Dealer products">
-      <div class="actions">
-        <a class="btn btn-ghost" href="tel:+14235550123">Call Support</a>
-        <button class="btn btn-ghost" onclick="lock()">Lock</button>
-      </div>
-
-      <div class="grid">
-        <div class="card">
-          <h3>Whole-Home Filtration System</h3>
-          <p class="meta">Best for chlorine taste/odor, sediment, and general filtration.</p>
-          <div class="price">
-            <span class="big" id="p1">$1,995</span>
-            <span class="small">dealer price</span>
-          </div>
-          <a class="btn btn-buy" href="PASTE_STRIPE_PAYMENT_LINK_1" target="_blank" rel="noopener">Checkout</a>
-        </div>
-
-        <div class="card">
-          <h3>Whole-Home Water Softener</h3>
-          <p class="meta">Best for hardness scale, spotting, and protecting fixtures.</p>
-          <div class="price">
-            <span class="big" id="p2">$1,695</span>
-            <span class="small">dealer price</span>
-          </div>
-          <a class="btn btn-buy" href="PASTE_STRIPE_PAYMENT_LINK_2" target="_blank" rel="noopener">Checkout</a>
-        </div>
-
-        <div class="card">
-          <h3>Combo System (Filter + Softener)</h3>
-          <p class="meta">Most common choice when both taste/odor and hardness issues are present.</p>
-          <div class="price">
-            <span class="big" id="p3">$3,295</span>
-            <span class="small">dealer price</span>
-          </div>
-          <a class="btn btn-buy" href="PASTE_STRIPE_PAYMENT_LINK_3" target="_blank" rel="noopener">Checkout</a>
-        </div>
-      </div>
-
-      <div class="panel" style="margin-top:14px;">
-        <strong style="display:block; margin-bottom:6px;">Ordering notes</strong>
-        <div class="hint" style="margin-top:0;">
-          • Shipping / pickup details can be handled after checkout.<br/>
-          • For bulk orders or freight, call support and we’ll coordinate.
-        </div>
-      </div>
-
-      <div class="footer">© <span id="yr"></span> American Purity • Dealer Portal</div>
-    </section>
   </div>
 
+  <header class="topbar" id="top">
+    <div class="container topbar-inner">
+      <a class="brand" href="#top" aria-label="American Purity Dealer Portal home">
+        <!-- You can add a portal logo file later if you want -->
+        <img src="logo.png" alt="American Purity logo" onerror="this.style.display='none'">
+        <div class="name">
+          American <span>Purity</span>
+          <span class="sub">Dealer Ordering Portal</span>
+        </div>
+      </a>
+
+      <div class="navspacer"></div>
+
+      <nav class="nav" aria-label="Dealer navigation">
+        <a href="#product">Product</a>
+        <a href="#order">Order</a>
+        <a href="#checkout">Checkout</a>
+      </nav>
+
+      <a class="phone-pill" href="tel:+14235550123" aria-label="Call American Purity">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#0f172a" stroke-width="2">
+          <path d="M22 16.92V21a2 2 0 0 1-2.18 2A19.86 19.86 0 0 1 3 5.18 2 2 0 0 1 5 3h4.09a2 2 0 0 1 2 1.72c.12.81.31 1.6.57 2.36a2 2 0 0 1-.45 2.11L9.91 10.91a16 16 0 0 0 3.18 3.18l1.72-1.3a2 2 0 0 1 2.11-.45c.76.26 1.55.45 2.36.57A2 2 0 0 1 22 16.92z"/>
+        </svg>
+        (423) 555-0123
+      </a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" aria-label="Dealer portal hero">
+    <div class="container">
+      <div>
+        <h1>Dealer ordering portal</h1>
+        <p>
+          Place orders for the <strong>whole-home water filtration</strong> system that installs at the main water line.
+          Designed to improve taste/odor and help reduce scale and buildup across every tap.
+        </p>
+        <ul class="chips" aria-label="High level notes">
+          <li>
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="white" stroke-width="2">
+              <path d="M12 22s8-4 8-10V6l-8-4-8 4v6c0 6 8 10 8 10z"/>
+            </svg>
+            City + well compatible
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="white" stroke-width="2">
+              <path d="M20 7l-8 10-4-4"/>
+            </svg>
+            Whole-home mainline install
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="white" stroke-width="2">
+              <path d="M12 8v4l3 3"/><path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/>
+            </svg>
+            Fast scheduling support
+          </li>
+        </ul>
+
+        <div class="note" style="margin-top:14px; background:rgba(255,255,255,.06); border-color:rgba(255,255,255,.12); color:rgba(255,255,255,.86);">
+          <strong style="color:#fff;">Service region:</strong> Based in Chattanooga • Serving TN / GA / AL (Tri-State area).<br/>
+          <span style="opacity:.92;">Need help with an order? Call the dealer support line above.</span>
+        </div>
+      </div>
+
+      <div class="card" style="background:rgba(255,255,255,.96);">
+        <h2 style="margin-top:0;">Quick start</h2>
+        <p class="lead" style="margin-bottom:10px;">
+          Add the system to your cart, enter dealer + shipping info, and submit. Payment options are placeholders for now and easy to swap later.
+        </p>
+        <div class="pill">Testing password gate is enabled (client-side)</div>
+        <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px;">
+          <a class="btn btn-primary" href="#order">Order Now</a>
+          <a class="btn btn-outline" href="#product">Product Details</a>
+        </div>
+        <div class="note">
+          <strong>Financing note:</strong> Financing language is included as an informational section (editable) for dealer/customer conversations.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main class="section">
+    <div class="container grid">
+      <!-- LEFT: PRODUCT + ORDER -->
+      <div>
+        <!-- PRODUCT -->
+        <section class="card" id="product" aria-label="Product details">
+          <h2>Product</h2>
+          <p class="lead" style="margin-bottom:0;">
+            This portal is currently set up for a single core product: a <strong>whole-home filtration system</strong> that ties into the main water line.
+            Many homes pair filtration with softening when hardness/scale is a concern.
+          </p>
+
+          <div class="badge" aria-label="Dealer note badge">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#0f172a" stroke-width="2">
+              <path d="M12 2v20"/><path d="M7 7l5-5 5 5"/>
+            </svg>
+            Built for city + well water homes
+          </div>
+
+          <ul class="list">
+            <li><strong>Primary goal:</strong> better taste/odor, cleaner-feeling water, less scale & buildup.</li>
+            <li><strong>Install type:</strong> mainline / whole-home connection (covers all taps/showers/appliance lines).</li>
+            <li><strong>Best fit:</strong> chlorine taste/odor (city) and common mineral issues (varies by area).</li>
+            <li><strong>Optional pairing:</strong> softening when hardness minerals are present (combo setups).</li>
+          </ul>
+
+          <div class="hr"></div>
+
+          <h2 style="margin-top:0;">Dealer resources (editable)</h2>
+          <div class="row2">
+            <div class="note" style="margin-top:0;">
+              <strong>What to tell homeowners:</strong><br/>
+              “We match the right system (filter / softener / combo) based on your water symptoms and home needs.”
+            </div>
+            <div class="note" style="margin-top:0;">
+              <strong>Common symptoms:</strong><br/>
+              Chlorine taste/“pool” smell, spotting on dishes, scale on fixtures, dryness after showering, iron staining, sulfur odor.
+            </div>
+          </div>
+        </section>
+
+        <!-- ORDER -->
+        <section class="card" id="order" aria-label="Order builder" style="margin-top:18px;">
+          <h2>Build your order</h2>
+          <p class="lead" style="margin-bottom:0;">
+            Pricing and payment processor are placeholders for now so you can easily update later.
+            Change defaults in the <strong>EDIT ME</strong> block below.
+          </p>
+
+          <div class="note">
+            <strong>EDIT ME:</strong><br/>
+            • Default dealer price, SKU, shipping, tax behavior, and payment methods are all configurable.<br/>
+            • When you know the real price + POS (Stripe/Square/QuickBooks/etc.), you’ll just update a few constants in the script.
+          </div>
+
+          <div class="hr"></div>
+
+          <div class="row3">
+            <div class="field">
+              <label for="sku">SKU (editable)</label>
+              <input id="sku" value="AP-WH-01" />
+            </div>
+            <div class="field">
+              <label for="unitPrice">Unit price (editable)</label>
+              <input id="unitPrice" inputmode="decimal" value="0.00" />
+            </div>
+            <div class="field">
+              <label for="qty">Quantity</label>
+              <input id="qty" type="number" min="1" step="1" value="1" />
+            </div>
+          </div>
+
+          <div class="row2" style="margin-top:10px;">
+            <div class="field">
+              <label for="waterType">Water type</label>
+              <select id="waterType">
+                <option value="unknown">Unknown / not specified</option>
+                <option value="city">City water</option>
+                <option value="well">Well water</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="systemType">System configuration</label>
+              <select id="systemType">
+                <option value="filtration">Filtration (mainline)</option>
+                <option value="softener">Softener (when needed)</option>
+                <option value="combo">Combo (filter + softener)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="dealerNotes">Order notes (optional)</label>
+            <textarea id="dealerNotes" placeholder="Example: include extra fittings, homeowner notes, preferred ship date, etc."></textarea>
+          </div>
+
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:14px;">
+            <button class="btn btn-primary" onclick="addToCart()">Add to Cart</button>
+            <button class="btn btn-outline" onclick="resetBuilder()">Reset</button>
+          </div>
+
+          <div class="note">
+            <strong>Financing (optional, editable language):</strong><br/>
+            “Financing options may be available for qualified homeowners. We’ll walk through options and pick a plan that fits.”
+          </div>
+        </section>
+      </div>
+
+      <!-- RIGHT: CART + CHECKOUT -->
+      <div>
+        <section class="card" aria-label="Cart">
+          <h2>Cart</h2>
+          <div id="cartEmpty" class="note" style="margin-top:10px;">
+            Your cart is empty. Add the system from the order builder.
+          </div>
+
+          <div id="cartLines" style="display:none; margin-top:10px;"></div>
+
+          <div id="cartTotals" style="display:none;">
+            <div class="cart-line">
+              <span>Subtotal</span>
+              <span id="subtotal">$0.00</span>
+            </div>
+            <div class="cart-line">
+              <span>Estimated shipping</span>
+              <span id="shipping">$0.00</span>
+            </div>
+            <div class="cart-line">
+              <span>Estimated tax</span>
+              <span id="tax">$0.00</span>
+            </div>
+
+            <div class="cart-total">
+              <span>Total</span>
+              <span id="total">$0.00</span>
+            </div>
+
+            <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px;">
+              <a class="btn btn-dark" href="#checkout">Checkout</a>
+              <button class="btn btn-outline" onclick="clearCart()">Clear</button>
+            </div>
+
+            <div class="note">
+              <strong>Note:</strong> Shipping/tax are placeholders for now. You can switch to real rates later (flat rate, per-unit, API, etc.).
+            </div>
+          </div>
+        </section>
+
+        <section class="card" id="checkout" aria-label="Checkout" style="margin-top:18px;">
+          <h2>Checkout</h2>
+          <p class="lead" style="margin-bottom:0;">
+            This is a “looks real” checkout that’s easy to wire to your actual payment processor later.
+            For now, submission will simulate an order and show a confirmation.
+          </p>
+
+          <div class="hr"></div>
+
+          <div class="row2">
+            <div class="field">
+              <label for="dealerCompany">Dealer company</label>
+              <input id="dealerCompany" placeholder="Your business name" />
+            </div>
+            <div class="field">
+              <label for="dealerContact">Contact name</label>
+              <input id="dealerContact" placeholder="Full name" />
+            </div>
+          </div>
+
+          <div class="row2">
+            <div class="field">
+              <label for="dealerEmail">Email</label>
+              <input id="dealerEmail" type="email" placeholder="name@company.com" />
+            </div>
+            <div class="field">
+              <label for="dealerPhone">Phone</label>
+              <input id="dealerPhone" inputmode="tel" placeholder="(###) ###-####" />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="shipTo">Ship-to address</label>
+            <textarea id="shipTo" placeholder="Street, City, State, ZIP"></textarea>
+          </div>
+
+          <div class="row2">
+            <div class="field">
+              <label for="paymentMethod">Payment method (placeholder)</label>
+              <select id="paymentMethod">
+                <option value="invoice">Invoice / Net Terms (placeholder)</option>
+                <option value="card_stripe">Credit Card (Stripe placeholder)</option>
+                <option value="card_square">Credit Card (Square placeholder)</option>
+                <option value="quickbooks">QuickBooks Payment Link (placeholder)</option>
+                <option value="other">Other (notes)</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="poNumber">PO / reference (optional)</label>
+              <input id="poNumber" placeholder="PO-12345" />
+            </div>
+          </div>
+
+          <div class="note">
+            <strong>Dealer support:</strong> Based in Chattanooga • Serving TN / GA / AL. Call <a href="tel:+14235550123">(423) 555-0123</a>.
+          </div>
+
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:14px;">
+            <button class="btn btn-primary" onclick="submitOrder()">Place Order</button>
+            <button class="btn btn-outline" onclick="prefillTest()">Prefill Test</button>
+          </div>
+
+          <div class="err" id="orderErr" style="display:none; margin-top:10px;"></div>
+
+          <div id="orderOk" class="note" style="display:none; margin-top:12px;">
+            <strong>Order received (simulation).</strong><br/>
+            Next step is wiring this “Place Order” button to your real POS / payment link / backend.
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer style="background:#0f172a;color:rgba(255,255,255,.86);padding:22px 0;font-size:13px;">
+    <div class="container" style="display:flex; gap:12px; align-items:center; justify-content:space-between; flex-wrap:wrap;">
+      <div>
+        <strong>American Purity</strong><br/>
+        <span style="opacity:.85;">Dealer Ordering Portal • Whole-Home Water Filtration & Softening • TN / GA / AL</span>
+      </div>
+      <div style="display:flex; gap:14px; flex-wrap:wrap;">
+        <a href="#product" style="color:rgba(255,255,255,.86); text-decoration:none;">Product</a>
+        <a href="#order" style="color:rgba(255,255,255,.86); text-decoration:none;">Order</a>
+        <a href="#checkout" style="color:rgba(255,255,255,.86); text-decoration:none;">Checkout</a>
+      </div>
+    </div>
+  </footer>
+
   <script>
-    // ⚠️ This is NOT true security. It's a speed bump for GitHub Pages.
-    const STORAGE_KEY = "ap_dealer_unlocked";
-    const ACCESS_CODE = "password"; // <-- set dealer code here
+    /*****************************************************************
+     * EDIT ME (quick configuration)
+     *****************************************************************/
+    const DEALER_PASSWORD = "password"; // testing only
+    const CART_STORAGE_KEY = "ap_dealer_cart_v1";
+    const GATE_STORAGE_KEY = "ap_dealer_gate_ok";
 
-    document.getElementById("yr").textContent = new Date().getFullYear();
+    // Defaults for “looks real” totals (placeholders)
+    const DEFAULT_SHIPPING_FLAT = 0.00;  // set later
+    const DEFAULT_TAX_RATE = 0.00;       // set later (e.g., 0.07)
 
-    function showShop(){
-      document.getElementById("shop").style.display = "block";
-      document.getElementById("gate").style.display = "none";
-    }
+    // Optional: when you wire real submission later, set an endpoint here
+    // const ORDER_ENDPOINT_URL = "https://script.google.com/macros/s/XXXX/exec";
 
-    function showGate(){
-      document.getElementById("shop").style.display = "none";
-      document.getElementById("gate").style.display = "block";
+    /*****************************************************************
+     * Password gate
+     *****************************************************************/
+    function lockIfNeeded(){
+      try{
+        const ok = localStorage.getItem(GATE_STORAGE_KEY) === "1";
+        document.getElementById("gate").style.display = ok ? "none" : "flex";
+        if(!ok){
+          setTimeout(()=> document.getElementById("dealerPass")?.focus(), 150);
+        }
+      }catch(e){
+        document.getElementById("gate").style.display = "flex";
+      }
     }
 
     function unlock(){
-      const val = (document.getElementById("dealerCode").value || "").trim();
-      if(!val){ alert("Enter the dealer access code."); return; }
-      if(val !== ACCESS_CODE){
-        alert("Incorrect code.");
+      const passEl = document.getElementById("dealerPass");
+      const errEl = document.getElementById("gateErr");
+      const pass = (passEl?.value || "").trim();
+
+      if(pass === DEALER_PASSWORD){
+        try{ localStorage.setItem(GATE_STORAGE_KEY, "1"); }catch(e){}
+        document.getElementById("gate").style.display = "none";
+        errEl.style.display = "none";
+      }else{
+        errEl.style.display = "block";
+        passEl && passEl.focus();
+        passEl && passEl.select();
+      }
+    }
+
+    document.addEventListener("keydown", (e)=>{
+      if(e.key === "Enter" && document.getElementById("gate")?.style.display !== "none"){
+        unlock();
+      }
+    });
+
+    /*****************************************************************
+     * Cart helpers
+     *****************************************************************/
+    function money(n){
+      const x = Number(n || 0);
+      return x.toLocaleString(undefined, { style:"currency", currency:"USD" });
+    }
+
+    function readCart(){
+      try{
+        const raw = localStorage.getItem(CART_STORAGE_KEY);
+        return raw ? JSON.parse(raw) : [];
+      }catch(e){
+        return [];
+      }
+    }
+
+    function writeCart(cart){
+      try{ localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(cart || [])); }catch(e){}
+    }
+
+    function calcTotals(cart){
+      const subtotal = cart.reduce((sum, item)=> sum + (Number(item.unitPrice)||0) * (Number(item.qty)||0), 0);
+      const shipping = DEFAULT_SHIPPING_FLAT;
+      const tax = subtotal * DEFAULT_TAX_RATE;
+      const total = subtotal + shipping + tax;
+      return { subtotal, shipping, tax, total };
+    }
+
+    function renderCart(){
+      const cart = readCart();
+
+      const empty = document.getElementById("cartEmpty");
+      const linesWrap = document.getElementById("cartLines");
+      const totalsWrap = document.getElementById("cartTotals");
+
+      if(!cart.length){
+        empty.style.display = "block";
+        linesWrap.style.display = "none";
+        totalsWrap.style.display = "none";
         return;
       }
-      try{ localStorage.setItem(STORAGE_KEY, "1"); }catch(e){}
-      showShop();
+
+      empty.style.display = "none";
+      linesWrap.style.display = "block";
+      totalsWrap.style.display = "block";
+
+      linesWrap.innerHTML = "";
+      cart.forEach((item, idx)=>{
+        const line = document.createElement("div");
+        line.className = "cart-line";
+        line.innerHTML = `
+          <div>
+            <strong>${escapeHtml(item.name)}</strong>
+            <small>SKU: ${escapeHtml(item.sku)} • ${escapeHtml(item.systemType)} • ${escapeHtml(item.waterType)} • Qty: ${Number(item.qty||0)}</small>
+          </div>
+          <div style="text-align:right;">
+            <strong>${money((Number(item.unitPrice)||0) * (Number(item.qty)||0))}</strong>
+            <small><a href="#" onclick="removeLine(${idx});return false;" style="color:${"#1e4f8f"}; font-weight:900; text-decoration:none;">Remove</a></small>
+          </div>
+        `;
+        linesWrap.appendChild(line);
+      });
+
+      const t = calcTotals(cart);
+      document.getElementById("subtotal").textContent = money(t.subtotal);
+      document.getElementById("shipping").textContent = money(t.shipping);
+      document.getElementById("tax").textContent = money(t.tax);
+      document.getElementById("total").textContent = money(t.total);
     }
 
-    function lock(){
-      try{ localStorage.removeItem(STORAGE_KEY); }catch(e){}
-      showGate();
-      document.getElementById("dealerCode").value = "";
+    function removeLine(idx){
+      const cart = readCart();
+      cart.splice(idx, 1);
+      writeCart(cart);
+      renderCart();
     }
 
-    (function init(){
-      let ok = false;
-      try{ ok = localStorage.getItem(STORAGE_KEY) === "1"; }catch(e){}
-      if(ok) showShop();
-    })();
+    function clearCart(){
+      writeCart([]);
+      renderCart();
+    }
+
+    function resetBuilder(){
+      document.getElementById("sku").value = "AP-WH-01";
+      document.getElementById("unitPrice").value = "0.00";
+      document.getElementById("qty").value = "1";
+      document.getElementById("waterType").value = "unknown";
+      document.getElementById("systemType").value = "filtration";
+      document.getElementById("dealerNotes").value = "";
+    }
+
+    function addToCart(){
+      const sku = (document.getElementById("sku").value || "").trim();
+      const unitPrice = Number((document.getElementById("unitPrice").value || "0").replace(/[^0-9.]/g,""));
+      const qty = Math.max(1, parseInt(document.getElementById("qty").value || "1", 10) || 1);
+      const waterType = document.getElementById("waterType").value;
+      const systemType = document.getElementById("systemType").value;
+      const notes = (document.getElementById("dealerNotes").value || "").trim();
+
+      if(!sku){
+        alert("Please enter a SKU.");
+        return;
+      }
+      if(!isFinite(unitPrice) || unitPrice < 0){
+        alert("Please enter a valid unit price.");
+        return;
+      }
+
+      const nameMap = {
+        filtration: "Whole-Home Filtration System (Mainline)",
+        softener: "Whole-Home Softener System (When Needed)",
+        combo: "Whole-Home Combo System (Filter + Softener)"
+      };
+
+      const cart = readCart();
+      cart.push({
+        name: nameMap[systemType] || "Whole-Home System",
+        sku,
+        unitPrice,
+        qty,
+        waterType,
+        systemType,
+        notes,
+        addedAt: new Date().toISOString()
+      });
+      writeCart(cart);
+      renderCart();
+
+      // little UX
+      location.hash = "#checkout";
+    }
+
+    /*****************************************************************
+     * Checkout (simulation)
+     *****************************************************************/
+    function submitOrder(){
+      const err = document.getElementById("orderErr");
+      const ok = document.getElementById("orderOk");
+      err.style.display = "none";
+      ok.style.display = "none";
+
+      const cart = readCart();
+      if(!cart.length){
+        err.textContent = "Your cart is empty. Add at least one item before checkout.";
+        err.style.display = "block";
+        return;
+      }
+
+      const dealerCompany = (document.getElementById("dealerCompany").value || "").trim();
+      const dealerContact = (document.getElementById("dealerContact").value || "").trim();
+      const dealerEmail = (document.getElementById("dealerEmail").value || "").trim();
+      const dealerPhone = (document.getElementById("dealerPhone").value || "").trim();
+      const shipTo = (document.getElementById("shipTo").value || "").trim();
+      const paymentMethod = document.getElementById("paymentMethod").value;
+      const poNumber = (document.getElementById("poNumber").value || "").trim();
+
+      if(!dealerCompany || !dealerContact || !dealerEmail || !shipTo){
+        err.textContent = "Please fill out Dealer company, Contact name, Email, and Ship-to address.";
+        err.style.display = "block";
+        return;
+      }
+
+      const totals = calcTotals(cart);
+      const payload = {
+        portal: "AmericanPurity Dealer Portal",
+        submittedAt: new Date().toISOString(),
+        dealer: { dealerCompany, dealerContact, dealerEmail, dealerPhone, shipTo, paymentMethod, poNumber },
+        cart,
+        totals
+      };
+
+      // For now: simulate success (and log payload so you can copy it)
+      console.log("DEALER ORDER PAYLOAD:", payload);
+
+      // If/when you wire a real backend:
+      // fetch(ORDER_ENDPOINT_URL, { method:"POST", headers:{ "Content-Type":"application/json" }, body: JSON.stringify(payload) })
+      //   .then(r => r.json())
+      //   .then(() => { ok.style.display="block"; clearCart(); })
+      //   .catch(() => { err.textContent="Submission failed. Try again."; err.style.display="block"; });
+
+      ok.style.display = "block";
+
+      // optional: clear cart on "success"
+      clearCart();
+
+      // scroll to confirmation
+      ok.scrollIntoView({ behavior:"smooth", block:"start" });
+    }
+
+    function prefillTest(){
+      document.getElementById("dealerCompany").value = "Test Dealer LLC";
+      document.getElementById("dealerContact").value = "Test Contact";
+      document.getElementById("dealerEmail").value = "test@dealer.com";
+      document.getElementById("dealerPhone").value = "(423) 555-9999";
+      document.getElementById("shipTo").value = "123 Test St\nChattanooga, TN 37421";
+      document.getElementById("poNumber").value = "PO-TEST-001";
+    }
+
+    /*****************************************************************
+     * Small utilities
+     *****************************************************************/
+    function escapeHtml(str){
+      return String(str || "")
+        .replaceAll("&","&amp;")
+        .replaceAll("<","&lt;")
+        .replaceAll(">","&gt;")
+        .replaceAll('"',"&quot;")
+        .replaceAll("'","&#039;");
+    }
+
+    // init
+    lockIfNeeded();
+    renderCart();
   </script>
 </body>
 </html>
