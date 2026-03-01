@@ -3,365 +3,386 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>American Purity | Dealer Ordering Portal</title>
-  <meta name="description" content="Dealer-only ordering portal for American Purity whole-home water filtration systems." />
+  <title>American Purity | Dealer Portal</title>
+  <meta name="description" content="Dealer-only ordering portal for American Purity." />
   <meta name="robots" content="noindex,nofollow" />
 
   <style>
     :root{
-      --bg:#ffffff;
-      --text:#0f172a;
-      --muted:#64748b;
-      --line:#e2e8f0;
+      --bg:#0b1220;
+      --panel:#0f172a;
+      --panel2:#0b1c33;
+      --card:#0f172a;
+      --card2:#0b1c33;
+      --line:rgba(148,163,184,.18);
+      --text:#e5e7eb;
+      --muted:rgba(226,232,240,.72);
 
-      /* Match landing page */
+      /* Match landing page blues */
       --brand:#1e4f8f;
       --brand2:#163c6c;
-      --accent:#0b2f55;
 
-      --card:#ffffff;
-      --shadow:0 18px 48px rgba(2,6,23,.14);
-      --shadow2:0 10px 24px rgba(2,6,23,.10);
-      --radius:16px;
-      --max:1120px;
+      --good:#22c55e;
+      --bad:#ef4444;
+
+      --radius:14px;
+      --shadow:0 18px 55px rgba(0,0,0,.35);
+      --max:1160px;
       --font: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-      --headerH:74px;
+      --headerH:66px;
     }
+
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
-    body{margin:0;font-family:var(--font);color:var(--text);background:var(--bg)}
-    a{color:inherit}
-    .container{max-width:var(--max);margin:0 auto;padding:0 18px}
-    section[id]{scroll-margin-top: calc(var(--headerH) + 16px);}
-
-    /* TOP BAR */
-    .topbar{
-      height:var(--headerH);
-      display:flex; align-items:center;
-      border-bottom:1px solid var(--line);
-      background:#fff;
-      position:sticky; top:0; z-index:50;
-    }
-    .topbar-inner{
-      display:flex; align-items:center; gap:14px; width:100%;
-    }
-    .brand{
-      display:flex; align-items:center; gap:12px;
-      text-decoration:none;
-      font-weight:950; letter-spacing:.2px;
-      white-space:nowrap;
-    }
-    .brand img{height:44px; width:auto; display:block;}
-    .brand .name{font-size:18px; line-height:1.05}
-    .brand .name span{color:var(--brand)}
-    .brand .sub{
-      display:block;
-      font-size:12px;
-      font-weight:750;
-      color:var(--muted);
-      letter-spacing:.15px;
-      margin-top:2px;
-    }
-    .navspacer{flex:1}
-    .nav{
-      display:flex; gap:18px; font-size:14px; color:#334155; align-items:center;
-    }
-    .nav a{ text-decoration:none; opacity:.92; font-weight:750 }
-    .nav a:hover{ opacity:1; text-decoration:underline }
-
-    .phone-pill{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      padding:10px 14px;
-      border-radius:999px;
-      border:1px solid var(--line);
-      background:#f8fafc;
-      text-decoration:none;
-      font-weight:900;
-      color:#0f172a;
-      box-shadow:0 6px 18px rgba(2,6,23,.06);
-      white-space:nowrap;
-      flex:0 0 auto;
-    }
-    .phone-pill svg{opacity:.85}
-
-    /* HERO (dealer) */
-    .hero{
-      position:relative;
+    body{
+      margin:0;
+      font-family:var(--font);
+      color:var(--text);
       background:
         radial-gradient(1200px 520px at 15% 0%, rgba(30,79,143,.22), transparent 60%),
-        radial-gradient(900px 500px at 85% 20%, rgba(14,165,233,.16), transparent 55%),
-        linear-gradient(180deg, #0b1c33 0%, #071427 100%);
-      overflow:hidden;
-      color:#fff;
+        radial-gradient(900px 500px at 85% 20%, rgba(56,189,248,.12), transparent 55%),
+        linear-gradient(180deg, var(--bg) 0%, #070b14 100%);
     }
-    .hero .container{
-      padding:30px 18px 26px;
-      display:grid;
-      grid-template-columns: 1.05fr .95fr;
-      gap:22px;
-      align-items:start;
+
+    a{color:inherit}
+    .container{max-width:var(--max);margin:0 auto;padding:0 18px}
+
+    /* Topbar (portal-like) */
+    .topbar{
+      height:var(--headerH);
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(10px);
+      background: rgba(7,11,20,.65);
+      border-bottom:1px solid var(--line);
     }
-    .hero h1{
-      margin:0 0 10px;
-      font-size:38px;
-      line-height:1.05;
-      font-weight:980;
-      letter-spacing:-.4px;
+    .topbar-inner{
+      height:100%;
+      display:flex;
+      align-items:center;
+      gap:14px;
     }
-    .hero p{
-      margin:0 0 14px;
-      color:rgba(255,255,255,.90);
-      line-height:1.68;
-      font-size:15.5px;
-    }
-    .hero .chips{
-      display:flex; flex-wrap:wrap; gap:10px; margin-top:12px;
-      padding:0; list-style:none;
-    }
-    .hero .chips li{
-      display:inline-flex; align-items:center; gap:8px;
-      border:1px solid rgba(255,255,255,.16);
-      background:rgba(2,6,23,.26);
-      padding:9px 12px;
-      border-radius:999px;
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      text-decoration:none;
       font-weight:900;
+      letter-spacing:.2px;
+      min-width: 0;
+    }
+    .brand img{height:34px; width:auto; display:block}
+    .brand .title{display:flex; flex-direction:column; min-width:0}
+    .brand .title strong{
+      font-size:14px;
+      line-height:1.15;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .brand .title span{
+      font-size:12px;
+      color:var(--muted);
+      font-weight:700;
+      margin-top:2px;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .navspacer{flex:1}
+
+    .nav{
+      display:flex; gap:14px;
       font-size:13px;
-      letter-spacing:.12px;
+      color:rgba(226,232,240,.78);
+      align-items:center;
     }
-    .hero .chips svg{flex:0 0 18px; opacity:.92}
+    .nav a{
+      text-decoration:none;
+      font-weight:800;
+      opacity:.92;
+      padding:8px 10px;
+      border-radius:10px;
+      border:1px solid transparent;
+    }
+    .nav a:hover{
+      opacity:1;
+      border-color:rgba(148,163,184,.22);
+      background:rgba(15,23,42,.35);
+    }
 
-    /* MAIN */
-    .section{padding:30px 0 46px}
-    .grid{
-      display:grid;
-      grid-template-columns: 1.12fr .88fr;
-      gap:18px;
-      align-items:start;
-    }
-    .card{
-      border:1px solid var(--line);
-      border-radius:16px;
-      padding:20px;
-      background:#fff;
-      box-shadow:0 10px 24px rgba(2,6,23,.06);
-    }
-    .card h2{margin:0 0 10px;font-size:20px; letter-spacing:-.2px}
-    .lead{color:#334155;line-height:1.75;margin:0 0 12px;font-size:14.7px}
-    .muted{color:var(--muted)}
-    .hr{height:1px;background:var(--line);margin:16px 0}
-
-    .badge{
+    .phone-pill{
       display:inline-flex;
       align-items:center;
       gap:8px;
       padding:8px 12px;
       border-radius:999px;
-      border:1px solid var(--line);
-      background:#f8fafc;
-      font-weight:950;
-      font-size:12.5px;
-      color:#0f172a;
-      margin:8px 0 10px;
-      width:fit-content;
-    }
-
-    .btn{
-      display:inline-flex; justify-content:center; align-items:center;
-      border:0; cursor:pointer;
-      font-weight:950;
-      letter-spacing:.35px;
-      border-radius:12px;
-      padding:12px 14px;
-      text-transform:uppercase;
-      font-size:13px;
+      border:1px solid rgba(148,163,184,.18);
+      background:rgba(15,23,42,.45);
       text-decoration:none;
-      user-select:none;
-    }
-    .btn-primary{background:var(--brand);color:#fff}
-    .btn-primary:hover{filter:brightness(.98)}
-    .btn-dark{background:#0f172a;color:#fff}
-    .btn-dark:hover{filter:brightness(1.05)}
-    .btn-outline{
-      background:transparent;
-      color:#0f172a;
-      border:1px solid var(--line);
-      font-weight:950;
-    }
-    .btn-outline:hover{background:#f8fafc}
-
-    .field{
-      display:grid;
-      gap:8px;
-      margin:10px 0 0;
-    }
-    label{
-      font-size:13px;
       font-weight:900;
-      color:#0f172a;
+      color:rgba(226,232,240,.92);
+      white-space:nowrap;
     }
-    input, select, textarea{
-      width:100%;
+    .phone-pill svg{opacity:.9}
+
+    /* Layout */
+    .wrap{
+      padding:22px 0 44px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr 420px;
+      gap:16px;
+      align-items:start;
+    }
+
+    .panel{
       border:1px solid var(--line);
-      border-radius:12px;
-      padding:10px 12px;
+      border-radius:var(--radius);
+      background: rgba(15,23,42,.55);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .panel .head{
+      padding:14px 16px;
+      border-bottom:1px solid var(--line);
+      background: rgba(11,28,51,.55);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+    }
+    .panel .head h1,
+    .panel .head h2{
+      margin:0;
       font-size:14px;
-      outline:none;
-      background:#fff;
+      letter-spacing:.22px;
+      text-transform:uppercase;
+      color:rgba(226,232,240,.9);
     }
-    textarea{min-height:96px; resize:vertical}
-    input:focus, select:focus, textarea:focus{
-      border-color:rgba(30,79,143,.55);
-      box-shadow:0 0 0 4px rgba(30,79,143,.10);
-    }
+    .panel .body{padding:16px}
 
-    .row2{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:12px;
-    }
-    .row3{
-      display:grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap:12px;
-    }
-
-    .pill{
-      border:1px solid var(--line);
-      border-radius:14px;
-      padding:12px;
-      background:#f8fafc;
-      color:#0f172a;
-      font-weight:900;
+    .meta{
+      display:flex; flex-wrap:wrap; gap:10px;
+      color:rgba(226,232,240,.72);
       font-size:13px;
+      line-height:1.45;
+    }
+    .tag{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid rgba(148,163,184,.18);
+      background:rgba(15,23,42,.35);
+      font-weight:800;
+      font-size:12px;
+      white-space:nowrap;
     }
 
-    .list{
+    /* Product block */
+    .product{
+      display:grid;
+      grid-template-columns: 220px 1fr;
+      gap:16px;
+      align-items:start;
+    }
+    .product .img{
+      border-radius:12px;
+      border:1px solid rgba(148,163,184,.18);
+      background: rgba(15,23,42,.25);
+      overflow:hidden;
+      min-height:160px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    .product .img img{width:100%; height:auto; display:block}
+    .product h3{
+      margin:0 0 8px;
+      font-size:18px;
+      letter-spacing:-.2px;
+    }
+    .product p{
+      margin:0 0 10px;
+      color:rgba(226,232,240,.74);
+      line-height:1.6;
+      font-size:13.8px;
+    }
+    .bullets{
       margin:10px 0 0;
       padding-left:18px;
-      color:#334155;
-      line-height:1.75;
-      font-size:14.2px;
+      color:rgba(226,232,240,.78);
+      font-size:13.6px;
+      line-height:1.7;
     }
-    .list li{margin:6px 0}
+    .bullets li{margin:6px 0}
 
-    /* Cart */
-    .cart-line{
-      display:flex;
-      justify-content:space-between;
-      gap:10px;
-      padding:10px 0;
-      border-bottom:1px solid var(--line);
+    /* Forms */
+    .field{display:grid; gap:7px; margin-top:12px}
+    label{
+      font-size:12px;
+      font-weight:900;
+      letter-spacing:.14px;
+      color:rgba(226,232,240,.86);
+      text-transform:uppercase;
+    }
+    input, textarea, select{
+      width:100%;
+      padding:11px 12px;
+      border-radius:12px;
+      border:1px solid rgba(148,163,184,.20);
+      background: rgba(2,6,23,.30);
+      color:rgba(226,232,240,.92);
+      outline:none;
       font-size:14px;
-      color:#0f172a;
     }
-    .cart-line small{display:block;color:var(--muted);margin-top:2px}
-    .cart-total{
-      display:flex;
-      justify-content:space-between;
+    textarea{min-height:96px; resize:vertical}
+    input::placeholder, textarea::placeholder{color:rgba(226,232,240,.38)}
+    input:focus, textarea:focus, select:focus{
+      border-color: rgba(30,79,143,.55);
+      box-shadow: 0 0 0 4px rgba(30,79,143,.18);
+    }
+
+    .row2{display:grid; grid-template-columns:1fr 1fr; gap:12px}
+    .row3{display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px}
+
+    .btn{
+      display:inline-flex;
       align-items:center;
-      font-weight:980;
-      font-size:15px;
-      margin-top:12px;
+      justify-content:center;
+      gap:10px;
+      padding:11px 14px;
+      border-radius:12px;
+      border:1px solid transparent;
+      cursor:pointer;
+      text-decoration:none;
+      font-weight:950;
+      letter-spacing:.20px;
+      text-transform:uppercase;
+      font-size:13px;
+      user-select:none;
     }
+    .btn-primary{
+      background: linear-gradient(180deg, var(--brand) 0%, var(--brand2) 100%);
+      color:#fff;
+      border-color: rgba(255,255,255,.06);
+    }
+    .btn-primary:hover{filter:brightness(1.03)}
+    .btn-ghost{
+      background: transparent;
+      color:rgba(226,232,240,.92);
+      border-color: rgba(148,163,184,.22);
+    }
+    .btn-ghost:hover{background: rgba(15,23,42,.35)}
 
     .note{
       margin-top:12px;
       padding:10px 12px;
-      border:1px solid var(--line);
       border-radius:12px;
-      background:#f8fafc;
-      color:#334155;
-      font-size:12.8px;
+      border:1px solid rgba(148,163,184,.18);
+      background: rgba(15,23,42,.28);
+      color:rgba(226,232,240,.78);
+      font-size:13px;
       line-height:1.55;
     }
-    .note strong{color:#0f172a}
+    .note strong{color:rgba(226,232,240,.95)}
 
-    /* Password overlay */
+    .divider{
+      height:1px;
+      background: rgba(148,163,184,.18);
+      margin:14px 0;
+    }
+
+    .status{
+      font-size:13px;
+      font-weight:900;
+      margin-top:10px;
+      display:none;
+    }
+    .status.good{color:var(--good)}
+    .status.bad{color:var(--bad)}
+
+    /* Password gate */
     .gate{
-      position:fixed; inset:0;
-      background:
-        radial-gradient(900px 520px at 20% 10%, rgba(30,79,143,.20), transparent 60%),
-        radial-gradient(820px 520px at 80% 15%, rgba(14,165,233,.14), transparent 60%),
-        linear-gradient(180deg, #0b1c33 0%, #071427 100%);
-      display:flex;
-      align-items:center;
-      justify-content:center;
+      position:fixed; inset:0; z-index:999;
+      display:flex; align-items:center; justify-content:center;
       padding:18px;
-      z-index:999;
+      background:
+        radial-gradient(1200px 520px at 15% 0%, rgba(30,79,143,.22), transparent 60%),
+        radial-gradient(900px 500px at 85% 20%, rgba(56,189,248,.12), transparent 55%),
+        linear-gradient(180deg, #0b1220 0%, #070b14 100%);
     }
     .gate-card{
       width:min(520px, 100%);
-      background:#fff;
-      border-radius:18px;
-      border:1px solid rgba(226,232,240,.9);
-      box-shadow:0 18px 60px rgba(0,0,0,.28);
+      border-radius:16px;
+      border:1px solid rgba(148,163,184,.18);
+      background: rgba(15,23,42,.68);
+      box-shadow: var(--shadow);
       overflow:hidden;
     }
     .gate-head{
-      background:var(--brand);
-      color:#fff;
       padding:14px 16px;
-      font-weight:980;
-      letter-spacing:.2px;
+      border-bottom:1px solid rgba(148,163,184,.18);
+      background: rgba(11,28,51,.55);
+      font-weight:950;
+      text-transform:uppercase;
+      letter-spacing:.22px;
+      font-size:13px;
     }
     .gate-body{padding:16px}
-    .gate-body p{margin:0 0 12px; color:#334155; line-height:1.6; font-size:14.5px}
-    .gate-actions{display:flex; gap:10px; align-items:center; margin-top:12px}
-    .gate-actions .btn{flex:1}
-    .err{color:#b91c1c; font-weight:900; font-size:13px; margin-top:8px; display:none}
-
-    /* Responsive */
-    @media (max-width: 980px){
-      .nav{display:none}
-      .hero .container{grid-template-columns: 1fr}
-      .grid{grid-template-columns:1fr}
-      .row2,.row3{grid-template-columns:1fr}
-      .hero h1{font-size:32px}
+    .gate-body p{
+      margin:0 0 12px;
+      color:rgba(226,232,240,.78);
+      line-height:1.6;
+      font-size:14px;
     }
-    @media (max-width: 480px){
-      .topbar-inner{ flex-wrap: nowrap !important; gap:10px; }
-      .brand{ min-width: 0; gap:10px; }
-      .name{ min-width:0; }
-      .name .sub{ display:none; }
-      .phone-pill{
-        flex: 0 0 auto;
-        padding:8px 10px;
-        font-size:13px;
-        gap:6px;
-        white-space:nowrap;
-        border-radius:999px;
-      }
-      .phone-pill svg{ width:16px; height:16px; }
+    .gate-actions{display:flex; gap:10px; margin-top:12px}
+    .gate-actions .btn{flex:1}
+
+    footer{
+      margin-top:22px;
+      padding:16px 0 0;
+      color:rgba(226,232,240,.50);
+      font-size:12px;
+      border-top:1px solid rgba(148,163,184,.12);
+    }
+
+    @media (max-width: 980px){
+      .grid{grid-template-columns:1fr}
+      .product{grid-template-columns:1fr}
+      .nav{display:none}
+      .row2,.row3{grid-template-columns:1fr}
     }
   </style>
 </head>
 
 <body>
-  <!-- PASSWORD GATE (client-side for testing) -->
-  <div class="gate" id="gate" aria-label="Dealer portal password gate">
-    <div class="gate-card" role="dialog" aria-modal="true" aria-labelledby="gateTitle">
-      <div class="gate-head" id="gateTitle">Dealer Access Required</div>
+  <!-- PASSWORD GATE (client-side; fine for testing) -->
+  <div class="gate" id="gate">
+    <div class="gate-card" role="dialog" aria-modal="true">
+      <div class="gate-head">Dealer Access Required</div>
       <div class="gate-body">
         <p>
-          This page is for authorized dealers only. Enter the dealer password to continue.
-          <br/><span class="muted">Testing password is currently set to: <strong>password</strong></span>
+          Enter the dealer password to access this portal.
+          <br><span style="opacity:.9">Testing password: <strong>password</strong></span>
         </p>
 
         <div class="field">
           <label for="dealerPass">Password</label>
           <input id="dealerPass" type="password" autocomplete="current-password" placeholder="Enter password" />
-          <div class="err" id="gateErr">Incorrect password. Try again.</div>
+          <div class="status bad" id="gateErr">Incorrect password.</div>
         </div>
 
         <div class="gate-actions">
           <button class="btn btn-primary" onclick="unlock()">Enter Portal</button>
-          <a class="btn btn-outline" href="./" title="Back to site">Back</a>
+          <a class="btn btn-ghost" href="../" title="Back">Back</a>
         </div>
 
         <div class="note">
-          <strong>Note:</strong> This is a simple front-end lock for now (fine for testing). For real dealer security, you’d want a real login (server-side) or gated platform.
+          <strong>Note:</strong> This lock is front-end only (good for testing). If you need true dealer security later, we can move to real auth.
         </div>
       </div>
     </div>
@@ -369,25 +390,23 @@
 
   <header class="topbar" id="top">
     <div class="container topbar-inner">
-      <a class="brand" href="#top" aria-label="American Purity Dealer Portal home">
-        <!-- You can add a portal logo file later if you want -->
-        <img src="logo.png" alt="American Purity logo" onerror="this.style.display='none'">
-        <div class="name">
-          American <span>Purity</span>
-          <span class="sub">Dealer Ordering Portal</span>
+      <a class="brand" href="#top" aria-label="American Purity Dealer Portal">
+        <img src="../logo.png" alt="American Purity logo" onerror="this.style.display='none'">
+        <div class="title">
+          <strong>American Purity</strong>
+          <span>Dealer Ordering Portal</span>
         </div>
       </a>
 
       <div class="navspacer"></div>
 
-      <nav class="nav" aria-label="Dealer navigation">
+      <nav class="nav" aria-label="Portal navigation">
         <a href="#product">Product</a>
-        <a href="#order">Order</a>
         <a href="#checkout">Checkout</a>
       </nav>
 
       <a class="phone-pill" href="tel:+14235550123" aria-label="Call American Purity">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#0f172a" stroke-width="2">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
           <path d="M22 16.92V21a2 2 0 0 1-2.18 2A19.86 19.86 0 0 1 3 5.18 2 2 0 0 1 5 3h4.09a2 2 0 0 1 2 1.72c.12.81.31 1.6.57 2.36a2 2 0 0 1-.45 2.11L9.91 10.91a16 16 0 0 0 3.18 3.18l1.72-1.3a2 2 0 0 1 2.11-.45c.76.26 1.55.45 2.36.57A2 2 0 0 1 22 16.92z"/>
         </svg>
         (423) 555-0123
@@ -395,339 +414,180 @@
     </div>
   </header>
 
-  <!-- HERO -->
-  <section class="hero" aria-label="Dealer portal hero">
-    <div class="container">
-      <div>
-        <h1>Dealer ordering portal</h1>
-        <p>
-          Place orders for the <strong>whole-home water filtration</strong> system that installs at the main water line.
-          Designed to improve taste/odor and help reduce scale and buildup across every tap.
-        </p>
-        <ul class="chips" aria-label="High level notes">
-          <li>
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="white" stroke-width="2">
-              <path d="M12 22s8-4 8-10V6l-8-4-8 4v6c0 6 8 10 8 10z"/>
-            </svg>
-            City + well compatible
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="white" stroke-width="2">
-              <path d="M20 7l-8 10-4-4"/>
-            </svg>
-            Whole-home mainline install
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="white" stroke-width="2">
-              <path d="M12 8v4l3 3"/><path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/>
-            </svg>
-            Fast scheduling support
-          </li>
-        </ul>
-
-        <div class="note" style="margin-top:14px; background:rgba(255,255,255,.06); border-color:rgba(255,255,255,.12); color:rgba(255,255,255,.86);">
-          <strong style="color:#fff;">Service region:</strong> Based in Chattanooga • Serving TN / GA / AL (Tri-State area).<br/>
-          <span style="opacity:.92;">Need help with an order? Call the dealer support line above.</span>
-        </div>
-      </div>
-
-      <div class="card" style="background:rgba(255,255,255,.96);">
-        <h2 style="margin-top:0;">Quick start</h2>
-        <p class="lead" style="margin-bottom:10px;">
-          Add the system to your cart, enter dealer + shipping info, and submit. Payment options are placeholders for now and easy to swap later.
-        </p>
-        <div class="pill">Testing password gate is enabled (client-side)</div>
-        <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px;">
-          <a class="btn btn-primary" href="#order">Order Now</a>
-          <a class="btn btn-outline" href="#product">Product Details</a>
-        </div>
-        <div class="note">
-          <strong>Financing note:</strong> Financing language is included as an informational section (editable) for dealer/customer conversations.
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <main class="section">
+  <main class="wrap">
     <div class="container grid">
-      <!-- LEFT: PRODUCT + ORDER -->
-      <div>
-        <!-- PRODUCT -->
-        <section class="card" id="product" aria-label="Product details">
+      <!-- LEFT: Product -->
+      <section class="panel" id="product" aria-label="Product">
+        <div class="head">
           <h2>Product</h2>
-          <p class="lead" style="margin-bottom:0;">
-            This portal is currently set up for a single core product: a <strong>whole-home filtration system</strong> that ties into the main water line.
-            Many homes pair filtration with softening when hardness/scale is a concern.
-          </p>
-
-          <div class="badge" aria-label="Dealer note badge">
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#0f172a" stroke-width="2">
-              <path d="M12 2v20"/><path d="M7 7l5-5 5 5"/>
-            </svg>
-            Built for city + well water homes
+          <div class="meta">
+            <span class="tag">Chattanooga • TN/GA/AL</span>
+            <span class="tag">City + Well</span>
           </div>
+        </div>
 
-          <ul class="list">
-            <li><strong>Primary goal:</strong> better taste/odor, cleaner-feeling water, less scale & buildup.</li>
-            <li><strong>Install type:</strong> mainline / whole-home connection (covers all taps/showers/appliance lines).</li>
-            <li><strong>Best fit:</strong> chlorine taste/odor (city) and common mineral issues (varies by area).</li>
-            <li><strong>Optional pairing:</strong> softening when hardness minerals are present (combo setups).</li>
-          </ul>
-
-          <div class="hr"></div>
-
-          <h2 style="margin-top:0;">Dealer resources (editable)</h2>
-          <div class="row2">
-            <div class="note" style="margin-top:0;">
-              <strong>What to tell homeowners:</strong><br/>
-              “We match the right system (filter / softener / combo) based on your water symptoms and home needs.”
+        <div class="body">
+          <div class="product">
+            <div class="img">
+              <!-- EDIT ME: swap product image -->
+              <img src="../kitchen.jpg" alt="Whole-home system" onerror="this.style.display='none'">
             </div>
-            <div class="note" style="margin-top:0;">
-              <strong>Common symptoms:</strong><br/>
-              Chlorine taste/“pool” smell, spotting on dishes, scale on fixtures, dryness after showering, iron staining, sulfur odor.
+            <div>
+              <h3>Whole-Home Filtration System</h3>
+              <p>
+                Mainline whole-home filtration installed at the home’s primary water connection.
+                Common goals include improved taste/odor and less scale & buildup across taps, showers, and appliances.
+              </p>
+
+              <ul class="bullets">
+                <li><strong>Install:</strong> mainline / whole-home (covers every tap)</li>
+                <li><strong>Works with:</strong> city water + well water homes</li>
+                <li><strong>Common issues:</strong> chlorine taste/odor, spotting, scale buildup</li>
+                <li><strong>Optional:</strong> softening when hardness is present (combo setups)</li>
+              </ul>
+
+              <div class="note">
+                <strong>Dealer note:</strong> This portal is set up to look production-ready, but pricing + payment link are editable placeholders until finalized.
+              </div>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <!-- ORDER -->
-        <section class="card" id="order" aria-label="Order builder" style="margin-top:18px;">
-          <h2>Build your order</h2>
-          <p class="lead" style="margin-bottom:0;">
-            Pricing and payment processor are placeholders for now so you can easily update later.
-            Change defaults in the <strong>EDIT ME</strong> block below.
-          </p>
+      <!-- RIGHT: Checkout -->
+      <section class="panel" id="checkout" aria-label="Checkout">
+        <div class="head">
+          <h2>Dealer Checkout</h2>
+          <div class="meta">
+            <span class="tag">Order → Pay Link</span>
+          </div>
+        </div>
 
+        <div class="body">
+          <!-- ORDER CONFIG (Editable) -->
           <div class="note">
-            <strong>EDIT ME:</strong><br/>
-            • Default dealer price, SKU, shipping, tax behavior, and payment methods are all configurable.<br/>
-            • When you know the real price + POS (Stripe/Square/QuickBooks/etc.), you’ll just update a few constants in the script.
+            <strong>EDIT ME:</strong><br>
+            • SKU / Product name / Unit price / Payment link<br>
+            • Apps Script URL (for Google Sheets logging)
           </div>
 
-          <div class="hr"></div>
+          <div class="divider"></div>
 
           <div class="row3">
             <div class="field">
-              <label for="sku">SKU (editable)</label>
-              <input id="sku" value="AP-WH-01" />
-            </div>
-            <div class="field">
-              <label for="unitPrice">Unit price (editable)</label>
-              <input id="unitPrice" inputmode="decimal" value="0.00" />
+              <label for="sku">SKU</label>
+              <input id="sku" value="AP-WH-01">
             </div>
             <div class="field">
               <label for="qty">Quantity</label>
-              <input id="qty" type="number" min="1" step="1" value="1" />
+              <input id="qty" type="number" min="1" step="1" value="1">
             </div>
-          </div>
-
-          <div class="row2" style="margin-top:10px;">
             <div class="field">
-              <label for="waterType">Water type</label>
-              <select id="waterType">
-                <option value="unknown">Unknown / not specified</option>
-                <option value="city">City water</option>
-                <option value="well">Well water</option>
-              </select>
-            </div>
-
-            <div class="field">
-              <label for="systemType">System configuration</label>
-              <select id="systemType">
-                <option value="filtration">Filtration (mainline)</option>
-                <option value="softener">Softener (when needed)</option>
-                <option value="combo">Combo (filter + softener)</option>
-              </select>
+              <label for="unitPrice">Unit price</label>
+              <input id="unitPrice" value="0.00" inputmode="decimal">
             </div>
           </div>
 
           <div class="field">
-            <label for="dealerNotes">Order notes (optional)</label>
-            <textarea id="dealerNotes" placeholder="Example: include extra fittings, homeowner notes, preferred ship date, etc."></textarea>
+            <label for="productName">Product name</label>
+            <input id="productName" value="Whole-Home Filtration System (Mainline)">
           </div>
 
-          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:14px;">
-            <button class="btn btn-primary" onclick="addToCart()">Add to Cart</button>
-            <button class="btn btn-outline" onclick="resetBuilder()">Reset</button>
+          <div class="field">
+            <label for="notes">Order notes (optional)</label>
+            <textarea id="notes" placeholder="Anything we should know (ship notes, install notes, etc.)"></textarea>
           </div>
 
-          <div class="note">
-            <strong>Financing (optional, editable language):</strong><br/>
-            “Financing options may be available for qualified homeowners. We’ll walk through options and pick a plan that fits.”
-          </div>
-        </section>
-      </div>
-
-      <!-- RIGHT: CART + CHECKOUT -->
-      <div>
-        <section class="card" aria-label="Cart">
-          <h2>Cart</h2>
-          <div id="cartEmpty" class="note" style="margin-top:10px;">
-            Your cart is empty. Add the system from the order builder.
-          </div>
-
-          <div id="cartLines" style="display:none; margin-top:10px;"></div>
-
-          <div id="cartTotals" style="display:none;">
-            <div class="cart-line">
-              <span>Subtotal</span>
-              <span id="subtotal">$0.00</span>
-            </div>
-            <div class="cart-line">
-              <span>Estimated shipping</span>
-              <span id="shipping">$0.00</span>
-            </div>
-            <div class="cart-line">
-              <span>Estimated tax</span>
-              <span id="tax">$0.00</span>
-            </div>
-
-            <div class="cart-total">
-              <span>Total</span>
-              <span id="total">$0.00</span>
-            </div>
-
-            <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px;">
-              <a class="btn btn-dark" href="#checkout">Checkout</a>
-              <button class="btn btn-outline" onclick="clearCart()">Clear</button>
-            </div>
-
-            <div class="note">
-              <strong>Note:</strong> Shipping/tax are placeholders for now. You can switch to real rates later (flat rate, per-unit, API, etc.).
-            </div>
-          </div>
-        </section>
-
-        <section class="card" id="checkout" aria-label="Checkout" style="margin-top:18px;">
-          <h2>Checkout</h2>
-          <p class="lead" style="margin-bottom:0;">
-            This is a “looks real” checkout that’s easy to wire to your actual payment processor later.
-            For now, submission will simulate an order and show a confirmation.
-          </p>
-
-          <div class="hr"></div>
+          <div class="divider"></div>
 
           <div class="row2">
             <div class="field">
-              <label for="dealerCompany">Dealer company</label>
-              <input id="dealerCompany" placeholder="Your business name" />
+              <label for="firstName">First name</label>
+              <input id="firstName" placeholder="First name">
             </div>
             <div class="field">
-              <label for="dealerContact">Contact name</label>
-              <input id="dealerContact" placeholder="Full name" />
-            </div>
-          </div>
-
-          <div class="row2">
-            <div class="field">
-              <label for="dealerEmail">Email</label>
-              <input id="dealerEmail" type="email" placeholder="name@company.com" />
-            </div>
-            <div class="field">
-              <label for="dealerPhone">Phone</label>
-              <input id="dealerPhone" inputmode="tel" placeholder="(###) ###-####" />
+              <label for="lastName">Last name</label>
+              <input id="lastName" placeholder="Last name">
             </div>
           </div>
 
           <div class="field">
-            <label for="shipTo">Ship-to address</label>
-            <textarea id="shipTo" placeholder="Street, City, State, ZIP"></textarea>
+            <label for="company">Company name</label>
+            <input id="company" placeholder="Business name">
           </div>
 
           <div class="row2">
             <div class="field">
-              <label for="paymentMethod">Payment method (placeholder)</label>
-              <select id="paymentMethod">
-                <option value="invoice">Invoice / Net Terms (placeholder)</option>
-                <option value="card_stripe">Credit Card (Stripe placeholder)</option>
-                <option value="card_square">Credit Card (Square placeholder)</option>
-                <option value="quickbooks">QuickBooks Payment Link (placeholder)</option>
-                <option value="other">Other (notes)</option>
-              </select>
+              <label for="phone">Phone</label>
+              <input id="phone" placeholder="(###) ###-####" inputmode="tel">
             </div>
-
             <div class="field">
-              <label for="poNumber">PO / reference (optional)</label>
-              <input id="poNumber" placeholder="PO-12345" />
+              <label for="email">Email</label>
+              <input id="email" placeholder="name@company.com" type="email">
             </div>
+          </div>
+
+          <div class="field">
+            <label for="address">Business address</label>
+            <textarea id="address" placeholder="Street, City, State, ZIP"></textarea>
           </div>
 
           <div class="note">
-            <strong>Dealer support:</strong> Based in Chattanooga • Serving TN / GA / AL. Call <a href="tel:+14235550123">(423) 555-0123</a>.
+            <strong>Dealer support:</strong> Based in Chattanooga • Serving TN / GA / AL • Call <a href="tel:+14235550123">(423) 555-0123</a>
           </div>
 
-          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:14px;">
-            <button class="btn btn-primary" onclick="submitOrder()">Place Order</button>
-            <button class="btn btn-outline" onclick="prefillTest()">Prefill Test</button>
+          <div class="status bad" id="formErr"></div>
+          <div class="status good" id="formOk">Order submitted. Redirecting to payment…</div>
+
+          <div style="display:flex; gap:10px; margin-top:12px;">
+            <button class="btn btn-primary" onclick="submitAndPay()">Checkout</button>
+            <button class="btn btn-ghost" onclick="prefill()">Prefill Test</button>
           </div>
 
-          <div class="err" id="orderErr" style="display:none; margin-top:10px;"></div>
-
-          <div id="orderOk" class="note" style="display:none; margin-top:12px;">
-            <strong>Order received (simulation).</strong><br/>
-            Next step is wiring this “Place Order” button to your real POS / payment link / backend.
-          </div>
-        </section>
-      </div>
+          <footer>
+            Portal is private by URL and password gate (testing). For real dealer security, we’ll add proper authentication.
+          </footer>
+        </div>
+      </section>
     </div>
   </main>
 
-  <footer style="background:#0f172a;color:rgba(255,255,255,.86);padding:22px 0;font-size:13px;">
-    <div class="container" style="display:flex; gap:12px; align-items:center; justify-content:space-between; flex-wrap:wrap;">
-      <div>
-        <strong>American Purity</strong><br/>
-        <span style="opacity:.85;">Dealer Ordering Portal • Whole-Home Water Filtration & Softening • TN / GA / AL</span>
-      </div>
-      <div style="display:flex; gap:14px; flex-wrap:wrap;">
-        <a href="#product" style="color:rgba(255,255,255,.86); text-decoration:none;">Product</a>
-        <a href="#order" style="color:rgba(255,255,255,.86); text-decoration:none;">Order</a>
-        <a href="#checkout" style="color:rgba(255,255,255,.86); text-decoration:none;">Checkout</a>
-      </div>
-    </div>
-  </footer>
-
   <script>
-    /*****************************************************************
-     * EDIT ME (quick configuration)
-     *****************************************************************/
+    /************************************************************
+     * EDIT ME (config)
+     ************************************************************/
     const DEALER_PASSWORD = "password"; // testing only
-    const CART_STORAGE_KEY = "ap_dealer_cart_v1";
-    const GATE_STORAGE_KEY = "ap_dealer_gate_ok";
+    const GATE_STORAGE_KEY = "ap_dealer_gate_ok_v1";
 
-    // Defaults for “looks real” totals (placeholders)
-    const DEFAULT_SHIPPING_FLAT = 0.00;  // set later
-    const DEFAULT_TAX_RATE = 0.00;       // set later (e.g., 0.07)
+    // Paste your Apps Script Web App URL here after deployment:
+    // Example: https://script.google.com/macros/s/XXXX/exec
+    const GOOGLE_SCRIPT_URL = "PASTE_YOUR_APPS_SCRIPT_WEB_APP_URL_HERE";
 
-    // Optional: when you wire real submission later, set an endpoint here
-    // const ORDER_ENDPOINT_URL = "https://script.google.com/macros/s/XXXX/exec";
+    // Payment link placeholder (for now redirect to google.com)
+    const PAYMENT_LINK_URL = "https://google.com";
 
-    /*****************************************************************
+    /************************************************************
      * Password gate
-     *****************************************************************/
+     ************************************************************/
     function lockIfNeeded(){
-      try{
-        const ok = localStorage.getItem(GATE_STORAGE_KEY) === "1";
-        document.getElementById("gate").style.display = ok ? "none" : "flex";
-        if(!ok){
-          setTimeout(()=> document.getElementById("dealerPass")?.focus(), 150);
-        }
-      }catch(e){
-        document.getElementById("gate").style.display = "flex";
-      }
+      let ok = false;
+      try { ok = localStorage.getItem(GATE_STORAGE_KEY) === "1"; } catch(e){}
+      document.getElementById("gate").style.display = ok ? "none" : "flex";
+      if(!ok) setTimeout(()=>document.getElementById("dealerPass")?.focus(), 150);
     }
 
     function unlock(){
       const passEl = document.getElementById("dealerPass");
       const errEl = document.getElementById("gateErr");
       const pass = (passEl?.value || "").trim();
-
       if(pass === DEALER_PASSWORD){
-        try{ localStorage.setItem(GATE_STORAGE_KEY, "1"); }catch(e){}
+        try { localStorage.setItem(GATE_STORAGE_KEY, "1"); } catch(e){}
         document.getElementById("gate").style.display = "none";
         errEl.style.display = "none";
       }else{
         errEl.style.display = "block";
-        passEl && passEl.focus();
-        passEl && passEl.select();
+        passEl?.focus();
+        passEl?.select();
       }
     }
 
@@ -737,220 +597,120 @@
       }
     });
 
-    /*****************************************************************
-     * Cart helpers
-     *****************************************************************/
+    /************************************************************
+     * Submit order → Google Sheet → redirect to payment
+     ************************************************************/
     function money(n){
       const x = Number(n || 0);
-      return x.toLocaleString(undefined, { style:"currency", currency:"USD" });
+      return x.toFixed(2);
     }
 
-    function readCart(){
-      try{
-        const raw = localStorage.getItem(CART_STORAGE_KEY);
-        return raw ? JSON.parse(raw) : [];
-      }catch(e){
-        return [];
-      }
-    }
-
-    function writeCart(cart){
-      try{ localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(cart || [])); }catch(e){}
-    }
-
-    function calcTotals(cart){
-      const subtotal = cart.reduce((sum, item)=> sum + (Number(item.unitPrice)||0) * (Number(item.qty)||0), 0);
-      const shipping = DEFAULT_SHIPPING_FLAT;
-      const tax = subtotal * DEFAULT_TAX_RATE;
-      const total = subtotal + shipping + tax;
-      return { subtotal, shipping, tax, total };
-    }
-
-    function renderCart(){
-      const cart = readCart();
-
-      const empty = document.getElementById("cartEmpty");
-      const linesWrap = document.getElementById("cartLines");
-      const totalsWrap = document.getElementById("cartTotals");
-
-      if(!cart.length){
-        empty.style.display = "block";
-        linesWrap.style.display = "none";
-        totalsWrap.style.display = "none";
-        return;
-      }
-
-      empty.style.display = "none";
-      linesWrap.style.display = "block";
-      totalsWrap.style.display = "block";
-
-      linesWrap.innerHTML = "";
-      cart.forEach((item, idx)=>{
-        const line = document.createElement("div");
-        line.className = "cart-line";
-        line.innerHTML = `
-          <div>
-            <strong>${escapeHtml(item.name)}</strong>
-            <small>SKU: ${escapeHtml(item.sku)} • ${escapeHtml(item.systemType)} • ${escapeHtml(item.waterType)} • Qty: ${Number(item.qty||0)}</small>
-          </div>
-          <div style="text-align:right;">
-            <strong>${money((Number(item.unitPrice)||0) * (Number(item.qty)||0))}</strong>
-            <small><a href="#" onclick="removeLine(${idx});return false;" style="color:${"#1e4f8f"}; font-weight:900; text-decoration:none;">Remove</a></small>
-          </div>
-        `;
-        linesWrap.appendChild(line);
-      });
-
-      const t = calcTotals(cart);
-      document.getElementById("subtotal").textContent = money(t.subtotal);
-      document.getElementById("shipping").textContent = money(t.shipping);
-      document.getElementById("tax").textContent = money(t.tax);
-      document.getElementById("total").textContent = money(t.total);
-    }
-
-    function removeLine(idx){
-      const cart = readCart();
-      cart.splice(idx, 1);
-      writeCart(cart);
-      renderCart();
-    }
-
-    function clearCart(){
-      writeCart([]);
-      renderCart();
-    }
-
-    function resetBuilder(){
-      document.getElementById("sku").value = "AP-WH-01";
-      document.getElementById("unitPrice").value = "0.00";
-      document.getElementById("qty").value = "1";
-      document.getElementById("waterType").value = "unknown";
-      document.getElementById("systemType").value = "filtration";
-      document.getElementById("dealerNotes").value = "";
-    }
-
-    function addToCart(){
-      const sku = (document.getElementById("sku").value || "").trim();
-      const unitPrice = Number((document.getElementById("unitPrice").value || "0").replace(/[^0-9.]/g,""));
-      const qty = Math.max(1, parseInt(document.getElementById("qty").value || "1", 10) || 1);
-      const waterType = document.getElementById("waterType").value;
-      const systemType = document.getElementById("systemType").value;
-      const notes = (document.getElementById("dealerNotes").value || "").trim();
-
-      if(!sku){
-        alert("Please enter a SKU.");
-        return;
-      }
-      if(!isFinite(unitPrice) || unitPrice < 0){
-        alert("Please enter a valid unit price.");
-        return;
-      }
-
-      const nameMap = {
-        filtration: "Whole-Home Filtration System (Mainline)",
-        softener: "Whole-Home Softener System (When Needed)",
-        combo: "Whole-Home Combo System (Filter + Softener)"
-      };
-
-      const cart = readCart();
-      cart.push({
-        name: nameMap[systemType] || "Whole-Home System",
-        sku,
-        unitPrice,
-        qty,
-        waterType,
-        systemType,
-        notes,
-        addedAt: new Date().toISOString()
-      });
-      writeCart(cart);
-      renderCart();
-
-      // little UX
-      location.hash = "#checkout";
-    }
-
-    /*****************************************************************
-     * Checkout (simulation)
-     *****************************************************************/
-    function submitOrder(){
-      const err = document.getElementById("orderErr");
-      const ok = document.getElementById("orderOk");
-      err.style.display = "none";
+    function showErr(msg){
+      const el = document.getElementById("formErr");
+      const ok = document.getElementById("formOk");
       ok.style.display = "none";
+      el.textContent = msg;
+      el.style.display = "block";
+    }
 
-      const cart = readCart();
-      if(!cart.length){
-        err.textContent = "Your cart is empty. Add at least one item before checkout.";
-        err.style.display = "block";
+    function showOk(){
+      const el = document.getElementById("formErr");
+      const ok = document.getElementById("formOk");
+      el.style.display = "none";
+      ok.style.display = "block";
+    }
+
+    function required(value){ return String(value || "").trim().length > 0; }
+
+    async function submitAndPay(){
+      const sku = document.getElementById("sku").value.trim();
+      const productName = document.getElementById("productName").value.trim();
+      const qty = Math.max(1, parseInt(document.getElementById("qty").value || "1", 10) || 1);
+      const unitPrice = Number((document.getElementById("unitPrice").value || "0").replace(/[^0-9.]/g,""));
+      const notes = document.getElementById("notes").value.trim();
+
+      const firstName = document.getElementById("firstName").value.trim();
+      const lastName = document.getElementById("lastName").value.trim();
+      const company = document.getElementById("company").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const businessAddress = document.getElementById("address").value.trim();
+
+      if(!required(firstName) || !required(lastName) || !required(company) || !required(phone) || !required(email) || !required(businessAddress)){
+        showErr("Please fill out: first/last name, company, phone, email, and business address.");
         return;
       }
 
-      const dealerCompany = (document.getElementById("dealerCompany").value || "").trim();
-      const dealerContact = (document.getElementById("dealerContact").value || "").trim();
-      const dealerEmail = (document.getElementById("dealerEmail").value || "").trim();
-      const dealerPhone = (document.getElementById("dealerPhone").value || "").trim();
-      const shipTo = (document.getElementById("shipTo").value || "").trim();
-      const paymentMethod = document.getElementById("paymentMethod").value;
-      const poNumber = (document.getElementById("poNumber").value || "").trim();
-
-      if(!dealerCompany || !dealerContact || !dealerEmail || !shipTo){
-        err.textContent = "Please fill out Dealer company, Contact name, Email, and Ship-to address.";
-        err.style.display = "block";
+      if(!sku || !productName){
+        showErr("SKU and product name are required.");
         return;
       }
 
-      const totals = calcTotals(cart);
+      if(!isFinite(unitPrice) || unitPrice < 0){
+        showErr("Please enter a valid unit price.");
+        return;
+      }
+
+      const total = unitPrice * qty;
+      const orderId = "AP-" + Date.now().toString(36).toUpperCase();
+
       const payload = {
-        portal: "AmericanPurity Dealer Portal",
-        submittedAt: new Date().toISOString(),
-        dealer: { dealerCompany, dealerContact, dealerEmail, dealerPhone, shipTo, paymentMethod, poNumber },
-        cart,
-        totals
+        orderId,
+        sku,
+        productName,
+        qty,
+        unitPrice: money(unitPrice),
+        total: money(total),
+        firstName,
+        lastName,
+        company,
+        phone,
+        email,
+        businessAddress,
+        notes,
+        userAgent: navigator.userAgent
       };
 
-      // For now: simulate success (and log payload so you can copy it)
-      console.log("DEALER ORDER PAYLOAD:", payload);
+      // If script URL not configured, still redirect (but warn in console)
+      if(!GOOGLE_SCRIPT_URL || GOOGLE_SCRIPT_URL.includes("PASTE_YOUR")){
+        console.warn("GOOGLE_SCRIPT_URL not set. Order payload:", payload);
+        showOk();
+        setTimeout(()=> window.location.href = PAYMENT_LINK_URL, 700);
+        return;
+      }
 
-      // If/when you wire a real backend:
-      // fetch(ORDER_ENDPOINT_URL, { method:"POST", headers:{ "Content-Type":"application/json" }, body: JSON.stringify(payload) })
-      //   .then(r => r.json())
-      //   .then(() => { ok.style.display="block"; clearCart(); })
-      //   .catch(() => { err.textContent="Submission failed. Try again."; err.style.display="block"; });
+      try{
+        // IMPORTANT: Apps Script should be deployed as "Anyone" access
+        // mode: 'no-cors' avoids preflight/CORS issues; you won't read response but it will still post.
+        await fetch(GOOGLE_SCRIPT_URL, {
+          method: "POST",
+          mode: "no-cors",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        });
 
-      ok.style.display = "block";
+        showOk();
+        setTimeout(()=> window.location.href = PAYMENT_LINK_URL, 700);
 
-      // optional: clear cart on "success"
-      clearCart();
-
-      // scroll to confirmation
-      ok.scrollIntoView({ behavior:"smooth", block:"start" });
+      }catch(err){
+        console.error(err);
+        showErr("Submission failed. Please try again, or call dealer support.");
+      }
     }
 
-    function prefillTest(){
-      document.getElementById("dealerCompany").value = "Test Dealer LLC";
-      document.getElementById("dealerContact").value = "Test Contact";
-      document.getElementById("dealerEmail").value = "test@dealer.com";
-      document.getElementById("dealerPhone").value = "(423) 555-9999";
-      document.getElementById("shipTo").value = "123 Test St\nChattanooga, TN 37421";
-      document.getElementById("poNumber").value = "PO-TEST-001";
-    }
-
-    /*****************************************************************
-     * Small utilities
-     *****************************************************************/
-    function escapeHtml(str){
-      return String(str || "")
-        .replaceAll("&","&amp;")
-        .replaceAll("<","&lt;")
-        .replaceAll(">","&gt;")
-        .replaceAll('"',"&quot;")
-        .replaceAll("'","&#039;");
+    function prefill(){
+      document.getElementById("unitPrice").value = "0.00";
+      document.getElementById("firstName").value = "Test";
+      document.getElementById("lastName").value = "Dealer";
+      document.getElementById("company").value = "Test Dealer LLC";
+      document.getElementById("phone").value = "(423) 555-9999";
+      document.getElementById("email").value = "test@dealer.com";
+      document.getElementById("address").value = "123 Test St\nChattanooga, TN 37421";
+      document.getElementById("notes").value = "Test order submission.";
     }
 
     // init
     lockIfNeeded();
-    renderCart();
   </script>
 </body>
 </html>
