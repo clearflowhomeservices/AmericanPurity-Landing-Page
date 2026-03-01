@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>American Purity | Whole-Home Water Filtration & Softening | Chattanooga & Tri-State Area</title>
-  <meta name="description" content="American Purity provides whole-home water filtration and softening systems based in Chattanooga, serving TN, GA, and AL. Installed once. Working every day. Check your water quality and get a free water analysis." />
+  <meta name="description" content="American Purity provides whole-home water filtration and softening systems based in Chattanooga, serving TN, GA, and AL. Check your water quality and get a free water analysis." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -593,6 +593,191 @@
     .btn-row .btn-outline { width: auto; margin-top: 0; }
     .btn-row .btn-dark { margin-top: 0; }
     .btn-row .btn-primary { width: auto; margin-top: 0; }
+
+    /* ── LEAD FORM ── */
+    .lead-form-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      align-items: start;
+    }
+    .lead-form-card {
+      border: 1px solid var(--line2);
+      background: var(--ink2);
+      overflow: hidden;
+    }
+    .lead-form-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 24px;
+      background: var(--surface);
+      border-bottom: 1px solid var(--line);
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .lead-form-stepper {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      padding: 0 24px;
+      border-bottom: 1px solid var(--line);
+      background: var(--ink3);
+    }
+    .lead-form-stepper .stepdot {
+      display: flex; align-items: center; gap: 8px;
+      padding: 14px 0;
+      font-family: var(--cond); font-size: 11px; font-weight: 700;
+      letter-spacing: .12em; text-transform: uppercase;
+      color: var(--muted); transition: color .2s;
+    }
+    .lead-form-stepper .stepdot + .stepdot { margin-left: 24px; }
+    .lead-form-stepper .stepdot .num {
+      width: 20px; height: 20px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      border: 1px solid var(--line2);
+      font-size: 10px; font-weight: 800; color: var(--muted);
+      flex-shrink: 0; transition: all .2s;
+    }
+    .lead-form-stepper .stepdot.active { color: var(--sand2); }
+    .lead-form-stepper .stepdot.active .num {
+      border-color: var(--brass); background: var(--brass); color: var(--ink);
+    }
+
+    .lead-form-body { padding: 28px 24px 24px; }
+
+    .formgrid-lg {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .formgrid-lg .span2 { grid-column: span 2; }
+
+    .lf-label {
+      display: block;
+      font-family: var(--cond); font-size: 10px; font-weight: 800;
+      letter-spacing: .2em; text-transform: uppercase;
+      color: var(--muted2); margin-bottom: 8px;
+    }
+    .lf-input {
+      width: 100%;
+      background: var(--surface);
+      border: 1px solid var(--line2);
+      color: var(--text);
+      font-family: var(--sans); font-size: 14px;
+      padding: 11px 13px;
+      border-radius: 2px; outline: none;
+      transition: border-color .2s, box-shadow .2s;
+      -webkit-appearance: none;
+    }
+    .lf-input::placeholder { color: var(--muted); }
+    .lf-input:focus {
+      border-color: var(--brass);
+      box-shadow: 0 0 0 3px var(--brass-glow);
+    }
+
+    /* Checkbox grid for multi-select */
+    .check-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-top: 2px;
+    }
+    .check-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      border: 1px solid var(--line2);
+      background: var(--surface);
+      cursor: pointer;
+      transition: border-color .2s, background .2s;
+      border-radius: 2px;
+    }
+    .check-item:hover { border-color: rgba(192,154,74,.4); background: rgba(192,154,74,.05); }
+    .check-item input[type="checkbox"] { display: none; }
+    .check-box {
+      width: 16px; height: 16px; flex-shrink: 0;
+      border: 1px solid var(--line2);
+      background: var(--ink3);
+      display: flex; align-items: center; justify-content: center;
+      transition: all .15s;
+      border-radius: 2px;
+    }
+    .check-box svg { display: none; }
+    .check-item input:checked ~ .check-box {
+      background: var(--brass); border-color: var(--brass);
+    }
+    .check-item input:checked ~ .check-box svg { display: block; }
+    .check-item input:checked ~ .check-label { color: var(--sand2); }
+    .check-label {
+      font-size: 13px; color: var(--muted2); line-height: 1.4;
+      font-family: var(--sans); transition: color .15s;
+    }
+
+    /* Radio group */
+    .radio-group {
+      display: flex; flex-direction: column; gap: 8px; margin-top: 2px;
+    }
+    .radio-item {
+      display: flex; align-items: center; gap: 10px;
+      padding: 10px 12px;
+      border: 1px solid var(--line2);
+      background: var(--surface);
+      cursor: pointer;
+      transition: border-color .2s, background .2s;
+      border-radius: 2px;
+    }
+    .radio-item:hover { border-color: rgba(192,154,74,.4); background: rgba(192,154,74,.05); }
+    .radio-item input[type="radio"] { display: none; }
+    .radio-dot {
+      width: 16px; height: 16px; flex-shrink: 0;
+      border: 1px solid var(--line2);
+      background: var(--ink3);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      transition: all .15s;
+    }
+    .radio-dot::after {
+      content: "";
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--ink);
+      opacity: 0;
+      transition: opacity .15s;
+    }
+    .radio-item input:checked ~ .radio-dot {
+      background: var(--brass); border-color: var(--brass);
+    }
+    .radio-item input:checked ~ .radio-dot::after { opacity: 1; }
+    .radio-item input:checked ~ .radio-label { color: var(--sand2); }
+    .radio-label {
+      font-size: 13px; color: var(--muted2); line-height: 1.4;
+      font-family: var(--sans); transition: color .15s;
+    }
+
+    .lf-actions {
+      display: flex; gap: 10px; margin-top: 22px; justify-content: flex-end;
+    }
+    .lf-minihelp {
+      font-size: 12px; color: var(--muted); margin-top: 10px; line-height: 1.5;
+    }
+    .lf-minihelp a { color: var(--brass); }
+    .lf-toast {
+      display: none; margin-top: 14px; padding: 12px 14px;
+      border: 1px solid rgba(192,154,74,.3);
+      background: rgba(192,154,74,.08);
+      border-radius: 2px; font-size: 13px;
+      color: var(--sand2); line-height: 1.55;
+    }
+    .lf-toast.show { display: block; }
+
+    @media (max-width: 980px) {
+      .lead-form-wrap { grid-template-columns: 1fr; }
+      .formgrid-lg { grid-template-columns: 1fr; }
+      .formgrid-lg .span2 { grid-column: span 1; }
+      .check-grid { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 
@@ -636,18 +821,13 @@
         <div class="hero-eyebrow">Whole-Home Water Systems</div>
 
         <h1>
-          Installed once.<br><em>Protecting every tap.</em>
+          Cleaner, better water —<br><em>from every tap in your home</em>
         </h1>
 
         <p>
-          Your water runs through everything — showers, dishes, laundry, cooking, and the plumbing behind your walls.
-          The American Purity Water System is designed for whole-home protection: a clean, quiet solution that helps deliver better water at
-          <strong>every tap</strong>, every day.
-        </p>
-
-        <p>
-          Built for long-term homes and real life — <strong>installed once, working every day</strong> — with a <strong>10-year warranty</strong>
-          and craftsmanship you can trust. <strong>Built in America</strong>.
+          If your water tastes like chlorine, smells off, leaves spots on dishes, or builds scale on fixtures, you're not alone.
+          American Purity helps homeowners choose the right <strong>whole-home water filtration</strong> system
+          (and softening when needed) so you can protect plumbing, appliances, and the water your family uses every day.
         </p>
 
         <p class="local">Based in Chattanooga &nbsp;·&nbsp; Serving TN / GA / AL</p>
@@ -657,25 +837,19 @@
             <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M12 22s8-4 8-10V6l-8-4-8 4v6c0 6 8 10 8 10z"/>
             </svg>
-            Whole-home protection
+            Better taste &amp; odor
           </li>
           <li>
             <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M20 7l-8 10-4-4"/>
             </svg>
-            Cleaner taste &amp; odor
+            Less scale &amp; buildup
           </li>
           <li>
             <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M12 8v4l3 3"/><path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/>
             </svg>
-            Installed once. Working daily.
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M12 2l3 7h7l-5.5 4 2 7-6.5-4.5L5.5 20l2-7L2 9h7z"/>
-            </svg>
-            10-year warranty
+            Fast scheduling
           </li>
         </ul>
       </div>
@@ -702,9 +876,8 @@
           </a>
 
           <div class="note">
-            <strong>What you get:</strong> A clear recommendation for whole-home protection — matched to your water and your home.<br/>
-            <strong>Service area:</strong> Chattanooga + surrounding region across TN / North GA / NE AL.<br/>
-            <strong>Built for the long run:</strong> installed once, working every day.
+            <strong>What you get:</strong> A clear recommendation for the right whole-home system (filter / softener / combo) based on your water symptoms and home needs.<br/>
+            <strong>Service area:</strong> Chattanooga + surrounding region across TN / North GA / NE AL.
           </div>
 
           <div class="micro">No spam. Just scheduling + answers.</div>
@@ -718,11 +891,11 @@
     <div class="container">
       <div class="row">
         <div class="proof-pill">Local team · Based in Chattanooga</div>
-        <div class="proof-pill">Protects every tap in the home</div>
-        <div class="proof-pill">10-year warranty · Built in America</div>
+        <div class="proof-pill">Whole-home systems (city + well)</div>
+        <div class="proof-pill">Clean install · fast scheduling</div>
       </div>
       <small>
-        Serving homeowners across the Tri-State area (TN / GA / AL). Start with a free water analysis to get the right system — installed once, working every day.
+        Serving homeowners across the Tri-State area (TN / GA / AL). Call or request a free water analysis to get the right recommendation.
       </small>
     </div>
   </section>
@@ -734,7 +907,7 @@
         <div class="section-label">Self-Diagnosis</div>
         <h2>Are you seeing any of these signs?</h2>
         <p class="lead" style="margin-bottom:0;">
-          Most homeowners don’t need noise — they need clarity. If any of these are familiar, a whole-home system can help protect the water you use all day, every day.
+          Most homeowners don't need a "sales pitch" — they need answers. Check the symptoms you're noticing and we'll point you toward the right solution.
         </p>
 
         <div class="grid3">
@@ -745,7 +918,7 @@
               </svg>
             </div>
             <h4>White crust on faucets / shower glass</h4>
-            <p>Scale can build up fast — a properly matched system helps reduce buildup across showers, fixtures, and appliances.</p>
+            <p>Hard-water scale (limescale) can build up quickly and dull fixtures.</p>
           </div>
 
           <div class="mini">
@@ -755,7 +928,7 @@
               </svg>
             </div>
             <h4>Dry skin / hair after showering</h4>
-            <p>Water quality shows up on your skin. The right whole-home setup can make daily showers feel noticeably better.</p>
+            <p>Hard water can feel harsh and make soap and shampoo less effective.</p>
           </div>
 
           <div class="mini">
@@ -765,7 +938,7 @@
               </svg>
             </div>
             <h4>Chlorine taste or "pool" smell</h4>
-            <p>Common with city treatment — whole-home filtration can improve taste and odor across every tap.</p>
+            <p>Common with city water treatment — filtration can noticeably improve taste and odor.</p>
           </div>
 
           <div class="mini">
@@ -775,7 +948,7 @@
               </svg>
             </div>
             <h4>Rust stains in sinks / toilets</h4>
-            <p>Often linked to minerals like iron — common on well systems and some municipal lines.</p>
+            <p>Often linked to iron or minerals — common on well systems and some municipal lines.</p>
           </div>
 
           <div class="mini">
@@ -785,7 +958,7 @@
               </svg>
             </div>
             <h4>"Rotten egg" smell</h4>
-            <p>Can be sulfur-related (more common on well water) — usually has a targeted, fixable cause.</p>
+            <p>Can be sulfur-related (more common on well water) and usually has a targeted fix.</p>
           </div>
 
           <div class="mini">
@@ -795,7 +968,7 @@
               </svg>
             </div>
             <h4>Spotty dishes + dull laundry</h4>
-            <p>Minerals can leave residue over time — better whole-home water helps reduce spotting and buildup.</p>
+            <p>Minerals can leave residue and reduce soap performance over time.</p>
           </div>
         </div>
 
@@ -818,18 +991,19 @@
         <div class="section-label">Process</div>
         <h2>How the free water analysis works</h2>
         <p class="lead">
-          Water problems aren’t one-size-fits-all. Some homes need filtration for taste and odor. Others need softening to reduce scale.
-          Some need both. We help you get the right whole-home protection so you’re not guessing — or buying the wrong system.
+          Different water problems require different systems. Some homes need filtration for chlorine and taste.
+          Others need softening to reduce scale and protect plumbing. Many need a <strong>combo system</strong>.
+          We help you identify the right approach before you spend money on the wrong setup.
         </p>
 
         <ul class="subpoints">
           <li><strong>Tell us your ZIP + symptoms</strong> (taste, smell, scale, stains, dryness)</li>
-          <li><strong>We identify likely causes</strong> based on local conditions (city or well)</li>
-          <li><strong>Get a clear recommendation</strong> sized for your home — and protecting every tap</li>
+          <li><strong>We identify likely causes</strong> (chlorine, hardness, iron, sulfur)</li>
+          <li><strong>Get a clear recommendation</strong> (filter / softener / combo) and next steps</li>
         </ul>
 
         <div class="note" style="margin-top:16px;">
-          <strong>Installed once. Working every day.</strong> Based in Chattanooga and serving the surrounding Tri-State region (TN / GA / AL).
+          <strong>Serving city + well water homes.</strong> Based in Chattanooga and serving the surrounding Tri-State region (TN / GA / AL).
         </div>
       </div>
     </div>
@@ -840,10 +1014,10 @@
     <div class="container">
       <div class="card">
         <div class="section-label">Results</div>
-        <h2>Before &amp; after: what better water looks like</h2>
+        <h2>Before &amp; after: what clean water looks like</h2>
         <p class="lead" style="margin-bottom:0;">
-          The goal is simple: water that tastes better, smells better, and supports your home — with less spotting, scale, and buildup.
-          A properly matched whole-home system helps improve water quality across every tap, shower, and appliance connection.
+          The goal is simple: water that tastes better, smells better, and feels better — with less scale, spotting, and buildup.
+          A properly matched whole-home system improves water quality across every tap, shower, and appliance connection.
         </p>
 
         <div class="ba" aria-label="Before and after water comparison">
@@ -855,7 +1029,7 @@
         </div>
 
         <p class="lead" style="margin:16px 0 0;">
-          If you want “installed once, working every day” water — start with a free analysis and we’ll point you to the right setup.
+          If you're not sure whether you need filtration, softening, or both, start with a free water analysis.
         </p>
 
         <div class="btn-row">
@@ -882,14 +1056,14 @@
         </div>
 
         <p class="lead" style="margin-bottom:0;">
-          Want whole-home protection without a big upfront hit? Financing options may be available for qualified homeowners.
-          We’ll walk you through it clearly — no pressure — and help you choose a plan that fits your home.
+          Want better water without a big upfront hit? We can offer financing options for qualified homeowners.
+          We'll walk you through the choices and help you pick a payment plan that makes sense for your home.
         </p>
 
         <ul class="subpoints">
-          <li><strong>Clear options</strong> explained in plain English</li>
+          <li><strong>Simple approval process</strong> (when available)</li>
           <li><strong>Flexible payments</strong> for qualified applicants</li>
-          <li><strong>Long-term value</strong> — installed once, working every day</li>
+          <li><strong>No pressure</strong> — we explain options clearly</li>
         </ul>
 
         <div class="btn-row">
@@ -915,7 +1089,7 @@
         <div class="section-label">Our Process</div>
         <h2>What happens after you check your water</h2>
         <p class="lead" style="margin-bottom:0;">
-          Straightforward and professional — we help you get to “installed once, working every day” water without guessing.
+          No runaround. No guessing. Here's the straightforward process we use to get you the right recommendation.
         </p>
 
         <div class="steps" aria-label="Process steps">
@@ -923,20 +1097,20 @@
             <div class="num">1</div>
             <div>
               <strong>Confirm your basics</strong>
-              <p>We confirm your ZIP, your water source (city or well), and what you’re noticing day-to-day.</p>
+              <p>We confirm your ZIP and whether you're on city water or well (and what you're noticing).</p>
             </div>
           </div>
           <div class="step">
             <div class="num">2</div>
             <div>
               <strong>Identify the likely cause</strong>
-              <p>Chlorine taste, hardness scale, iron staining, sulfur odor — we narrow it down quickly.</p>
+              <p>Chlorine taste, hardness scale, iron stains, sulfur odor — we narrow the issue quickly.</p>
             </div>
           </div>
           <div class="step">
             <div class="num">3</div>
             <div>
-              <strong>Recommend whole-home protection</strong>
+              <strong>Recommend the right system</strong>
               <p>Filter, softener, or combo — sized for your home, water conditions, and goals.</p>
             </div>
           </div>
@@ -944,7 +1118,7 @@
             <div class="num">4</div>
             <div>
               <strong>Schedule install if you want</strong>
-              <p>Clean, professional install — designed to protect every tap and keep working for years.</p>
+              <p>If you decide to move forward, we coordinate a clean, professional installation.</p>
             </div>
           </div>
         </div>
@@ -964,14 +1138,14 @@
         <div class="section-label">Why American Purity</div>
         <h3>Why homeowners choose American Purity</h3>
         <p>
-          Whole-home water is a long-term decision. The system should be matched correctly, installed cleanly,
-          and built to keep performing — quietly — day after day.
+          Whole-home water filtration is a long-term investment — it should be installed cleanly and matched correctly.
+          We focus on clear recommendations, tidy installs, and water that feels noticeably better in day-to-day use.
         </p>
         <ul class="subpoints">
-          <li><strong>Protects every tap:</strong> whole-home coverage for daily water use.</li>
-          <li><strong>Installed once. Working every day:</strong> built for long-term reliability.</li>
-          <li><strong>Built in America:</strong> craftsmanship you can stand behind.</li>
-          <li><strong>10-year warranty:</strong> confidence that lasts.</li>
+          <li><strong>Right system for your water:</strong> filtration, softening, or combo — no guesswork.</li>
+          <li><strong>Professional install:</strong> clean setup, solid workmanship, and clear next steps.</li>
+          <li><strong>Local service:</strong> based in Chattanooga and serving TN / GA / AL.</li>
+          <li><strong>Protects your home:</strong> less scale buildup can help plumbing and appliances over time.</li>
         </ul>
       </div>
 
@@ -988,7 +1162,7 @@
         <div class="section-label">Customer Reviews</div>
         <h2>Real homeowner feedback</h2>
         <p class="lead" style="margin-bottom:0;">
-          When whole-home water is matched correctly, the difference shows up everywhere — taste, odor, showers, dishes, and less buildup over time.
+          A whole-home system should make a noticeable difference — taste, odor, and scale reduction are the most common improvements homeowners mention.
         </p>
 
         <div class="reviews-grid" aria-label="reviews">
@@ -1022,35 +1196,246 @@
 
   <!-- ── REQUEST ── -->
   <section class="section" id="request">
-    <div class="container two-col">
-      <div class="card">
-        <div class="section-label">Free Analysis</div>
-        <h2>Check my water quality (free)</h2>
-        <p class="lead">
-          Tell us what you’re noticing and we’ll recommend the right whole-home system for your home —
-          built to protect every tap, and designed for “installed once, working every day” performance.
-        </p>
+    <div class="container">
 
-        <div class="note">
-          <strong>Prefer to talk now?</strong> Call <a href="tel:+14235550123">(423) 555-0123</a>.
-          We're based in Chattanooga and serve the Tri-State area (TN / GA / AL).
-        </div>
-      </div>
+      <div class="lead-form-wrap">
 
-      <div class="card">
-        <div class="section-label">Get Started</div>
-        <h2>Request a free water analysis</h2>
-        <p class="lead" style="margin-top:0;">
-          Form will be connected here next (2-step). For now, use the phone number above.
-        </p>
-
-        <div class="note">
-          <strong>Quick version:</strong> ZIP + symptoms → we recommend whole-home protection → schedule if you want.
+        <!-- LEFT: context card -->
+        <div class="card">
+          <div class="section-label">Free Analysis</div>
+          <h2>Check my water quality (free)</h2>
+          <p class="lead">
+            Tell us what you're noticing and we'll recommend the right whole-home system for your home —
+            built to protect every tap, and designed for "installed once, working every day" performance.
+          </p>
+          <ul class="subpoints">
+            <li><strong>No pressure</strong> — just a clear recommendation based on your symptoms</li>
+            <li><strong>City or well water</strong> — we cover both</li>
+            <li><strong>Local team</strong> — based in Chattanooga, serving TN / GA / AL</li>
+          </ul>
+          <div class="note" style="margin-top:18px;">
+            <strong>Prefer to talk now?</strong> Call <a href="tel:+14235550123">(423) 555-0123</a>.
+            We're based in Chattanooga and serve the Tri-State area (TN / GA / AL).
+          </div>
         </div>
 
-        <a class="btn btn-primary" href="tel:+14235550123" style="margin-top:16px;">
-          Call (423) 555-0123
-        </a>
+        <!-- RIGHT: form -->
+        <div class="lead-form-card">
+
+          <div class="lead-form-top">
+            <div class="pills-row">
+              <span class="chip">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V6l-8-4-8 4v6c0 6 8 10 8 10z"/></svg>
+                Free · No Obligation
+              </span>
+              <span class="chip">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 21s7-4.35 7-10a7 7 0 0 0-14 0c0 5.65 7 10 7 10z"/><circle cx="12" cy="11" r="2"/></svg>
+                Serving TN / GA / AL
+              </span>
+            </div>
+          </div>
+
+          <!-- Stepper -->
+          <div class="lead-form-stepper">
+            <div class="stepdot active" id="lf-sd1"><span class="num">1</span> Your Water</div>
+            <div class="stepdot" id="lf-sd2"><span class="num">2</span> Contact</div>
+            <div class="stepdot" id="lf-sd3"><span class="num">3</span> Timeline</div>
+          </div>
+
+          <div class="lead-form-body">
+
+            <!-- Step 1: Water symptoms + ZIP -->
+            <div class="lf-step" id="lf-step1">
+              <div class="formgrid-lg">
+
+                <div class="field span2">
+                  <label class="lf-label" for="lf-zip">ZIP Code</label>
+                  <input class="lf-input" id="lf-zip" inputmode="numeric" maxlength="10" placeholder="e.g., 37421" />
+                </div>
+
+                <div class="field span2">
+                  <label class="lf-label">Water source</label>
+                  <div class="radio-group" style="flex-direction:row; gap:8px;">
+                    <label class="radio-item" style="flex:1;">
+                      <input type="radio" name="lf-source" value="City water">
+                      <span class="radio-dot"></span>
+                      <span class="radio-label">City water</span>
+                    </label>
+                    <label class="radio-item" style="flex:1;">
+                      <input type="radio" name="lf-source" value="Well water">
+                      <span class="radio-dot"></span>
+                      <span class="radio-label">Well water</span>
+                    </label>
+                    <label class="radio-item" style="flex:1;">
+                      <input type="radio" name="lf-source" value="Not sure">
+                      <span class="radio-dot"></span>
+                      <span class="radio-label">Not sure</span>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="field span2">
+                  <label class="lf-label">What are you noticing? <span style="color:var(--muted);font-weight:500;">(select all that apply)</span></label>
+                  <div class="check-grid">
+                    <label class="check-item">
+                      <input type="checkbox" name="lf-symptoms" value="Chlorine taste or smell">
+                      <span class="check-box"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+                      <span class="check-label">Chlorine taste or smell</span>
+                    </label>
+                    <label class="check-item">
+                      <input type="checkbox" name="lf-symptoms" value="Scale / white buildup on fixtures">
+                      <span class="check-box"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+                      <span class="check-label">Scale / white buildup on fixtures</span>
+                    </label>
+                    <label class="check-item">
+                      <input type="checkbox" name="lf-symptoms" value="Dry skin or hair after showering">
+                      <span class="check-box"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+                      <span class="check-label">Dry skin or hair after showering</span>
+                    </label>
+                    <label class="check-item">
+                      <input type="checkbox" name="lf-symptoms" value="Rust stains in sinks or toilets">
+                      <span class="check-box"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+                      <span class="check-label">Rust stains in sinks or toilets</span>
+                    </label>
+                    <label class="check-item">
+                      <input type="checkbox" name="lf-symptoms" value="Rotten egg smell">
+                      <span class="check-box"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+                      <span class="check-label">Rotten egg smell</span>
+                    </label>
+                    <label class="check-item">
+                      <input type="checkbox" name="lf-symptoms" value="Spotty dishes or dull laundry">
+                      <span class="check-box"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+                      <span class="check-label">Spotty dishes or dull laundry</span>
+                    </label>
+                    <label class="check-item">
+                      <input type="checkbox" name="lf-symptoms" value="General water quality concern">
+                      <span class="check-box"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+                      <span class="check-label">General water quality concern</span>
+                    </label>
+                    <label class="check-item">
+                      <input type="checkbox" name="lf-symptoms" value="Not sure — just want an analysis">
+                      <span class="check-box"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+                      <span class="check-label">Not sure — just want an analysis</span>
+                    </label>
+                  </div>
+                </div>
+
+              </div>
+              <div class="lf-actions">
+                <button class="btn btn-primary" type="button" onclick="lfNext(2)">
+                  Next
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- Step 2: Contact info -->
+            <div class="lf-step" id="lf-step2" style="display:none;">
+              <div class="formgrid-lg">
+                <div class="field">
+                  <label class="lf-label" for="lf-first">First name</label>
+                  <input class="lf-input" id="lf-first" autocomplete="given-name" placeholder="First name" />
+                </div>
+                <div class="field">
+                  <label class="lf-label" for="lf-last">Last name</label>
+                  <input class="lf-input" id="lf-last" autocomplete="family-name" placeholder="Last name" />
+                </div>
+                <div class="field span2">
+                  <label class="lf-label" for="lf-phone">Phone number</label>
+                  <input class="lf-input" id="lf-phone" inputmode="tel" autocomplete="tel" placeholder="(###) ###-####" />
+                </div>
+                <div class="field span2">
+                  <label class="lf-label" for="lf-email">Email <span style="color:var(--muted);font-weight:500;">(optional)</span></label>
+                  <input class="lf-input" id="lf-email" inputmode="email" autocomplete="email" placeholder="name@email.com" />
+                </div>
+              </div>
+              <div class="lf-actions">
+                <button class="btn btn-ghost" type="button" onclick="lfPrev(1)">Back</button>
+                <button class="btn btn-primary" type="button" onclick="lfNext(3)">
+                  Next
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- Step 3: Timeline -->
+            <div class="lf-step" id="lf-step3" style="display:none;">
+              <div class="formgrid-lg">
+
+                <div class="field span2">
+                  <label class="lf-label">How soon are you looking to address this?</label>
+                  <div class="radio-group">
+                    <label class="radio-item">
+                      <input type="radio" name="lf-timeline" value="As soon as possible">
+                      <span class="radio-dot"></span>
+                      <span class="radio-label">As soon as possible</span>
+                    </label>
+                    <label class="radio-item">
+                      <input type="radio" name="lf-timeline" value="Within the next 1–3 months">
+                      <span class="radio-dot"></span>
+                      <span class="radio-label">Within the next 1–3 months</span>
+                    </label>
+                    <label class="radio-item">
+                      <input type="radio" name="lf-timeline" value="Within 3–6 months">
+                      <span class="radio-dot"></span>
+                      <span class="radio-label">Within 3–6 months</span>
+                    </label>
+                    <label class="radio-item">
+                      <input type="radio" name="lf-timeline" value="Just researching for now">
+                      <span class="radio-dot"></span>
+                      <span class="radio-label">Just researching for now</span>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="field span2">
+                  <label class="lf-label">How did you hear about us? <span style="color:var(--muted);font-weight:500;">(optional)</span></label>
+                  <div class="radio-group" style="flex-direction:row; flex-wrap:wrap; gap:8px;">
+                    <label class="radio-item" style="flex:1; min-width:140px;">
+                      <input type="radio" name="lf-heard" value="Google search">
+                      <span class="radio-dot"></span>
+                      <span class="radio-label">Google search</span>
+                    </label>
+                    <label class="radio-item" style="flex:1; min-width:140px;">
+                      <input type="radio" name="lf-heard" value="Word of mouth">
+                      <span class="radio-dot"></span>
+                      <span class="radio-label">Word of mouth</span>
+                    </label>
+                    <label class="radio-item" style="flex:1; min-width:140px;">
+                      <input type="radio" name="lf-heard" value="Social media">
+                      <span class="radio-dot"></span>
+                      <span class="radio-label">Social media</span>
+                    </label>
+                    <label class="radio-item" style="flex:1; min-width:140px;">
+                      <input type="radio" name="lf-heard" value="Other">
+                      <span class="radio-dot"></span>
+                      <span class="radio-label">Other</span>
+                    </label>
+                  </div>
+                </div>
+
+              </div>
+
+              <p class="lf-minihelp">Submitting sends your info to our team. We'll follow up to schedule your free water analysis.</p>
+
+              <div class="lf-actions">
+                <button class="btn btn-ghost" type="button" onclick="lfPrev(2)">Back</button>
+                <button class="btn btn-primary" type="button" onclick="lfSubmit()">
+                  Get My Free Analysis
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="22 2 11 13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                </button>
+              </div>
+
+              <div class="lf-toast" id="lf-toast"></div>
+
+              <p class="lf-minihelp" style="margin-top:14px;">
+                Or call us directly: <a href="tel:+14235550123"><strong>(423) 555-0123</strong></a>
+              </p>
+            </div>
+
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -1062,7 +1447,7 @@
         <div class="section-label">FAQ</div>
         <h2>Frequently asked questions</h2>
         <p class="lead" style="margin-bottom:10px;">
-          Quick answers to the most common questions homeowners have before getting whole-home protection.
+          Quick answers to the most common questions homeowners have before getting a whole-home system.
         </p>
 
         <details class="faq-item">
@@ -1074,7 +1459,7 @@
           </summary>
           <div class="faq-answer">
             It depends on your water. Filtration targets taste/odor (like chlorine) and certain contaminants. Softening targets hardness minerals that cause scale.
-            Many homeowners benefit from a combo system when both issues are present — so every tap gets the right protection.
+            Many homeowners benefit from a combo system when both issues are present.
           </div>
         </details>
 
@@ -1087,7 +1472,7 @@
           </summary>
           <div class="faq-answer">
             Yes. City water often has chlorine taste/odor and varying hardness. Well water can have hardness, iron staining, sulfur odor, or sediment.
-            We match the right approach so the system keeps working quietly day after day.
+            The right system depends on the symptoms and local conditions.
           </div>
         </details>
 
@@ -1099,7 +1484,7 @@
             </svg>
           </summary>
           <div class="faq-answer">
-            Most installations are completed in a single visit. We confirm placement, scope, and water type before scheduling so install day is clean and efficient.
+            Most installations are completed in a single visit. We'll confirm scope and placement before scheduling.
           </div>
         </details>
 
@@ -1139,12 +1524,94 @@
   <!-- ── MOBILE STICKY CTA ── -->
   <div class="sticky-cta" aria-label="Sticky call to action">
     <div class="inner">
-      <span>Want whole-home protection?<br/>Check your water quality.</span>
+      <span>Want cleaner water?<br/>Check your water quality.</span>
       <a href="#request" onclick="return saveZip();">REQUEST</a>
     </div>
   </div>
 
   <script>
+    /******************************************************************
+     * LEAD GEN FORM
+     ******************************************************************/
+    const LF_APPS_SCRIPT_URL = ""; // ← PASTE YOUR GOOGLE APPS SCRIPT /exec URL HERE
+
+    function lfShowStep(n) {
+      [1,2,3].forEach(i => {
+        document.getElementById("lf-step" + i).style.display = (i === n) ? "" : "none";
+        const dot = document.getElementById("lf-sd" + i);
+        if (dot) dot.classList.toggle("active", i === n);
+      });
+    }
+
+    function lfNext(n) {
+      if (n === 2) {
+        const zip = (document.getElementById("lf-zip").value || "").trim();
+        if (!zip) { alert("Please enter your ZIP code."); return; }
+        if (!/^\d{5}(-\d{4})?$/.test(zip)) { alert("Please enter a valid ZIP code."); return; }
+      }
+      if (n === 3) {
+        if (!document.getElementById("lf-first").value.trim()) { alert("First name is required."); return; }
+        if (!document.getElementById("lf-last").value.trim()) { alert("Last name is required."); return; }
+        if (!document.getElementById("lf-phone").value.trim()) { alert("Phone number is required."); return; }
+      }
+      lfShowStep(n);
+    }
+
+    function lfPrev(n) { lfShowStep(n); }
+
+    function lfToast(msg) {
+      const t = document.getElementById("lf-toast");
+      t.textContent = msg;
+      t.classList.add("show");
+    }
+
+    function lfBuildPayload() {
+      const symptoms = [...document.querySelectorAll('input[name="lf-symptoms"]:checked')].map(el => el.value).join(", ");
+      const source = (document.querySelector('input[name="lf-source"]:checked') || {}).value || "";
+      const timeline = (document.querySelector('input[name="lf-timeline"]:checked') || {}).value || "";
+      const heard = (document.querySelector('input[name="lf-heard"]:checked') || {}).value || "";
+      return {
+        timestamp: new Date().toISOString(),
+        leadId: "AP-LEAD-" + Math.random().toString(36).slice(2,8).toUpperCase(),
+        zip: document.getElementById("lf-zip").value.trim(),
+        waterSource: source,
+        symptoms: symptoms,
+        firstName: document.getElementById("lf-first").value.trim(),
+        lastName: document.getElementById("lf-last").value.trim(),
+        phone: document.getElementById("lf-phone").value.trim(),
+        email: document.getElementById("lf-email").value.trim(),
+        timeline: timeline,
+        heardFrom: heard,
+        form: "Consumer Lead Gen"
+      };
+    }
+
+    async function lfSubmit() {
+      const timeline = document.querySelector('input[name="lf-timeline"]:checked');
+      if (!timeline) { alert("Please select how soon you're looking to address this."); return; }
+
+      lfToast("Submitting…");
+
+      const payload = lfBuildPayload();
+
+      if (!LF_APPS_SCRIPT_URL) {
+        // No URL yet — just show success
+        lfToast("Thanks! We'll be in touch soon to schedule your free water analysis.");
+        return;
+      }
+
+      try {
+        await fetch(LF_APPS_SCRIPT_URL, {
+          method: "POST",
+          mode: "no-cors",
+          headers: { "Content-Type": "text/plain;charset=UTF-8" },
+          body: JSON.stringify(payload)
+        });
+      } catch(e) {}
+
+      lfToast("Thanks! We'll be in touch soon to schedule your free water analysis.");
+    }
+
     function validZip(zip){
       return /^\d{5}(-\d{4})?$/.test(zip);
     }
@@ -1152,7 +1619,6 @@
     function saveZip(){
       const zipEl = document.getElementById('zip');
       const zip = (zipEl && zipEl.value ? zipEl.value : '').trim();
-
       if(zip && !validZip(zip)){
         alert("Please enter a valid ZIP code (e.g., 37421).");
         zipEl && zipEl.focus();
