@@ -6,264 +6,699 @@
   <title>American Purity | Dealer Portal</title>
   <meta name="robots" content="noindex,nofollow" />
 
-  <!-- Premium serif headline -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Barlow:wght@400;500;600;700;800;900&family=Barlow+Condensed:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <style>
-    :root{
-      /* Enhanced palette matching product shots: charcoal unit, brass fittings, stone/beige variants, warm natural bg */
-      --charcoal: #1f2327;
-      --charcoal2: #111416;
-      --stone: #d9ccbd;
-      --stone2: #f0e9db;
-      --warmbg: #f5f1ea;
-      --brass: #a87f3a;
-      --eagle-gold: #b89752;
+    :root {
+      --ink:       #0d0e0f;
+      --ink2:      #141618;
+      --ink3:      #1c1e21;
+      --surface:   #232629;
+      --surface2:  #2a2d31;
+      --line:      rgba(255,255,255,.08);
+      --line2:     rgba(255,255,255,.14);
 
-      --text: #111111;
-      --muted: #5c5c5c;
-      --line: #e4d9c6;
+      --sand:      #d4c5a9;
+      --sand2:     #ede3d1;
+      --sand3:     #f5f0e8;
 
-      --card: #ffffff;
-      --shadow: 0 20px 48px rgba(0,0,0,.09);
-      --shadow2: 0 12px 28px rgba(0,0,0,.07);
+      --brass:     #c09a4a;
+      --brass2:    #e8c06a;
+      --brass-glow: rgba(192,154,74,.18);
 
-      --radius: 20px;
-      --radius2: 14px;
-      --max: 1140px;
+      --red:       #c0392b;
 
-      --ui: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-      --serif: 'Playfair Display', serif;
+      --text:      #f0ece4;
+      --muted:     #888580;
+      --muted2:    #b0ada8;
 
-      --headerH: 80px;
-    }
+      --radius:    4px;
+      --radius2:   2px;
+      --max:       1120px;
 
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font-family:var(--ui);
-      color:var(--text);
-      background:
-        radial-gradient(ellipse at 80% -10%, rgba(217,204,189,0.5) 0%, transparent 60%),
-        radial-gradient(ellipse at 10% 5%, rgba(31,35,39,0.08) 0%, transparent 65%),
-        var(--warmbg);
-      background-attachment: fixed;
-    }
-    a{color:inherit}
-    .container{max-width:var(--max); margin:0 auto; padding:0 20px}
+      --serif:  "Cormorant Garamond", Georgia, serif;
+      --sans:   "Barlow", system-ui, sans-serif;
+      --cond:   "Barlow Condensed", system-ui, sans-serif;
 
-    /* Top bar – more premium */
-    .topbar{
-      height:var(--headerH);
-      display:flex; align-items:center;
-      border-bottom:1px solid var(--line);
-      background:rgba(245,241,234,0.94);
-      backdrop-filter: blur(12px);
-      position:sticky; top:0; z-index:100;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.05);
-    }
-    .topbar-inner{display:flex; align-items:center; gap:16px; width:100%;}
-    .brand{
-      display:flex; align-items:center; gap:14px;
-      text-decoration:none;
-      font-weight:700;
-      letter-spacing:.15px;
-    }
-    .brand img{height:48px; width:auto;}
-    .brand .name{
-      font-family:var(--serif);
-      font-size:18px;
-      line-height:1;
-      font-weight:700;
-      letter-spacing:.4px;
-    }
-    .brand .sub{
-      display:block;
-      font-size:11px;
-      letter-spacing:.18em;
-      text-transform:uppercase;
-      color:var(--muted);
-      font-weight:700;
-      margin-top:2px;
+      --headerH: 68px;
     }
 
-    .navspacer{flex:1}
-    .nav{
-      display:flex; gap:20px; font-size:13.5px; font-weight:600; color:#222;
-    }
-    .nav a{ text-decoration:none; opacity:0.9; }
-    .nav a:hover{ opacity:1; text-decoration:underline; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
 
-    .phone-pill{
-      display:inline-flex; align-items:center; gap:10px;
-      padding:10px 16px;
-      border-radius:999px;
-      border:1px solid var(--line);
-      background:var(--card);
-      font-weight:700;
-      color:#111;
-      box-shadow:0 6px 20px rgba(0,0,0,.05);
-      white-space:nowrap;
+    body {
+      font-family: var(--sans);
+      color: var(--text);
+      background: var(--ink);
+      min-height: 100vh;
+      overflow-x: hidden;
     }
 
-    /* Main */
-    .wrap{padding:32px 0 64px}
-
-    /* Hero – more imposing, matches tall pillar unit */
-    .hero{
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      overflow:hidden;
-      background:var(--card);
-      box-shadow:var(--shadow);
-    }
-    .hero-top{
-      display:grid;
-      grid-template-columns: 1.25fr 0.75fr;
-      gap:0;
-      min-height:380px;
-    }
-    .hero-media{
-      position:relative;
-      background:#f8f6f2;
-      border-right:1px solid var(--line);
-    }
-    .hero-media img{
-      width:100%; height:100%;
-      object-fit:cover;
-      filter: contrast(1.03) saturate(1.04);
-    }
-    .hero-content{
-      padding:28px 28px 20px;
-      display:flex; flex-direction:column; justify-content:space-between;
+    /* Grain overlay */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1000;
+      opacity: .028;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+      background-size: 180px;
     }
 
-    .kicker{
-      display:inline-flex; align-items:center; gap:10px;
-      font-size:12px; letter-spacing:.14em; text-transform:uppercase;
-      color:var(--muted); font-weight:800;
+    a { color: inherit; text-decoration: none; }
+    .container { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+
+    /* ── HEADER ── */
+    .topbar {
+      height: var(--headerH);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(13,14,15,.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--line);
     }
-    .kicker .dot{
-      width:8px; height:8px; border-radius:50%;
-      background:var(--brass);
-      box-shadow:0 0 0 4px rgba(168,127,58,.16);
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      height: 100%;
     }
 
-    .product-title{
-      margin:0;
-      font-family:var(--serif);
-      font-size:36px;
-      line-height:1.06;
-      font-weight:700;
-      letter-spacing:.2px;
-      color:var(--charcoal2);
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
     }
-    .tagline{
-      margin:10px 0 0;
-      font-size:15px; line-height:1.6;
-      color:#333;
-      max-width:50ch;
+    .brand img { height: 36px; width: auto; display: block; filter: brightness(0) invert(1); }
+    .brand-text {}
+    .brand-name {
+      font-family: var(--cond);
+      font-size: 17px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--text);
+      line-height: 1;
     }
-
-    .price-row{
-      display:flex; align-items:center; justify-content:space-between;
-      gap:16px; margin-top:12px; padding-top:12px;
-      border-top:1px solid var(--line);
-    }
-    .price .value{
-      font-family:var(--serif);
-      font-size:32px;
-      font-weight:700;
-      color:var(--charcoal2);
-    }
-
-    .badge{
-      padding:8px 14px;
-      border-radius:12px;
-      border:1px solid rgba(168,127,58,.3);
-      background:rgba(217,204,189,.18);
-      font-size:12.5px; font-weight:700;
-      display:inline-flex; align-items:center; gap:8px;
+    .brand-sub {
+      display: block;
+      margin-top: 4px;
+      font-family: var(--cond);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--brass);
     }
 
-    .hero-bottom{
-      border-top:1px solid var(--line);
-      padding:20px 28px;
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:24px;
-      background:rgba(245,241,234,0.5);
+    .divider-v {
+      width: 1px;
+      height: 28px;
+      background: var(--line2);
+      flex-shrink: 0;
     }
 
-    /* Checkout – consistent luxury */
-    .checkout{
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      background:var(--card);
-      box-shadow:var(--shadow2);
+    .navspacer { flex: 1; }
+
+    .nav { display: flex; gap: 24px; align-items: center; }
+    .nav a {
+      font-family: var(--cond);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--muted2);
+      transition: color .2s;
     }
-    .checkout-head{
-      padding:18px 24px;
-      border-bottom:1px solid var(--line);
-      background:linear-gradient(to bottom, rgba(217,204,189,.18), transparent);
+    .nav a:hover { color: var(--sand2); }
+
+    .phone-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 16px;
+      border-radius: 2px;
+      border: 1px solid var(--brass);
+      color: var(--brass);
+      font-family: var(--cond);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      transition: background .2s, color .2s;
+      white-space: nowrap;
     }
-    .checkout-head h3{
-      margin:0; font-size:13px; letter-spacing:.2em; text-transform:uppercase;
-      font-weight:800; color:var(--text);
+    .phone-pill:hover { background: var(--brass); color: var(--ink); }
+
+    /* ── HERO BAND ── */
+    .hero-band {
+      position: relative;
+      border-bottom: 1px solid var(--line);
+      overflow: hidden;
     }
 
-    /* Other styles remain similar – streamlined for brevity */
-    .btn-primary{
-      background:var(--charcoal2);
-      color:#fff;
-    }
-    .btn-primary:hover{background:var(--charcoal);}
-    .btn-outline:hover{background:rgba(217,204,189,.18);}
-
-    footer{
-      margin-top:24px;
-      padding:24px 0;
-      border-top:1px solid var(--line);
-      color:var(--muted);
-      font-size:13px;
-      text-align:center;
+    /* Ambient glow */
+    .hero-band::before {
+      content: "";
+      position: absolute;
+      top: -120px; left: -80px;
+      width: 600px; height: 500px;
+      background: radial-gradient(ellipse, rgba(192,154,74,.07) 0%, transparent 65%);
+      pointer-events: none;
     }
 
-    @media (max-width: 980px){
-      .hero-top{grid-template-columns:1fr}
-      .hero-media{border-right:0; border-bottom:1px solid var(--line)}
-      .hero-bottom{grid-template-columns:1fr}
-      .nav{display:none}
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      min-height: 480px;
     }
-    @media (max-width: 520px){
-      .product-title{font-size:28px}
-      .formgrid{grid-template-columns:1fr}
+
+    /* LEFT: product info */
+    .hero-left {
+      padding: 52px 52px 48px 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-right: 1px solid var(--line);
     }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--cond);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--brass);
+      margin-bottom: 20px;
+    }
+    .eyebrow::before {
+      content: "";
+      display: block;
+      width: 28px; height: 1px;
+      background: var(--brass);
+    }
+
+    .hero-title {
+      font-family: var(--serif);
+      font-size: clamp(38px, 5vw, 62px);
+      font-weight: 600;
+      line-height: 1.04;
+      letter-spacing: .01em;
+      color: var(--sand2);
+      margin-bottom: 18px;
+    }
+    .hero-title em {
+      font-style: italic;
+      color: var(--sand);
+    }
+
+    .hero-tagline {
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--muted2);
+      max-width: 48ch;
+      margin-bottom: 36px;
+    }
+
+    .stats-row {
+      display: flex;
+      gap: 32px;
+      padding: 24px 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 28px;
+    }
+    .stat {}
+    .stat-value {
+      font-family: var(--serif);
+      font-size: 30px;
+      font-weight: 700;
+      color: var(--sand2);
+      line-height: 1;
+    }
+    .stat-label {
+      font-family: var(--cond);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 5px;
+    }
+
+    .features-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .features-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 14px;
+      color: var(--muted2);
+      line-height: 1.5;
+    }
+    .feat-icon {
+      flex-shrink: 0;
+      width: 18px; height: 18px;
+      margin-top: 1px;
+      color: var(--brass);
+    }
+    .features-list strong { color: var(--sand2); font-weight: 600; }
+
+    /* RIGHT: price + image */
+    .hero-right {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .hero-img-wrap {
+      flex: 1;
+      position: relative;
+      overflow: hidden;
+      background: var(--ink2);
+    }
+    .hero-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      opacity: .9;
+    }
+    /* Gradient fade at bottom */
+    .hero-img-wrap::after {
+      content: "";
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 120px;
+      background: linear-gradient(to top, var(--ink2), transparent);
+      pointer-events: none;
+    }
+
+    .price-block {
+      padding: 24px 28px;
+      background: var(--ink2);
+      border-top: 1px solid var(--line);
+    }
+    .price-label {
+      font-family: var(--cond);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+    .price-value {
+      font-family: var(--serif);
+      font-size: 42px;
+      font-weight: 700;
+      color: var(--sand2);
+      line-height: 1;
+    }
+    .price-sub {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    .warranty-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 14px;
+      padding: 8px 12px;
+      border: 1px solid rgba(192,154,74,.35);
+      background: rgba(192,154,74,.08);
+      border-radius: 2px;
+      font-family: var(--cond);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--brass);
+    }
+
+    /* ── INFO STRIP ── */
+    .info-strip {
+      border-bottom: 1px solid var(--line);
+    }
+    .info-strip-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+    }
+    .info-col {
+      padding: 40px 0;
+    }
+    .info-col:first-child {
+      padding-right: 52px;
+      border-right: 1px solid var(--line);
+    }
+    .info-col:last-child {
+      padding-left: 52px;
+    }
+    .info-col h2 {
+      font-family: var(--cond);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--brass);
+      margin-bottom: 14px;
+    }
+    .info-col p {
+      font-size: 14px;
+      line-height: 1.75;
+      color: var(--muted2);
+    }
+    .info-col ul {
+      list-style: none;
+      margin-top: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .info-col ul li {
+      font-size: 14px;
+      color: var(--muted2);
+      line-height: 1.5;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .info-col ul li::before {
+      content: "—";
+      color: var(--brass);
+      flex-shrink: 0;
+      font-weight: 700;
+    }
+    .info-col ul li strong { color: var(--sand2); }
+
+    /* ── CHECKOUT ── */
+    .checkout-section {
+      padding: 64px 0 80px;
+    }
+
+    .section-header {
+      margin-bottom: 36px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .section-header h2 {
+      font-family: var(--serif);
+      font-size: clamp(28px, 3.5vw, 42px);
+      font-weight: 600;
+      color: var(--sand2);
+      line-height: 1.1;
+    }
+    .section-header .desc {
+      font-size: 14px;
+      color: var(--muted);
+      max-width: 42ch;
+      text-align: right;
+      line-height: 1.6;
+    }
+
+    .checkout-card {
+      border: 1px solid var(--line2);
+      background: var(--ink2);
+      overflow: hidden;
+    }
+
+    .checkout-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 28px;
+      background: var(--surface);
+      border-bottom: 1px solid var(--line);
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .pills-row { display: flex; gap: 8px; flex-wrap: wrap; }
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--cond);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      padding: 5px 10px;
+      border: 1px solid var(--line2);
+      border-radius: 2px;
+      color: var(--muted2);
+    }
+    .chip svg { opacity: .7; }
+
+    /* Stepper */
+    .stepper {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      padding: 0 28px;
+      border-bottom: 1px solid var(--line);
+      background: var(--ink3);
+    }
+    .stepdot {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 0;
+      font-family: var(--cond);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      cursor: default;
+      transition: color .2s;
+      position: relative;
+    }
+    .stepdot + .stepdot { margin-left: 28px; }
+    .stepdot .num {
+      width: 22px; height: 22px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      border: 1px solid var(--line2);
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--muted);
+      flex-shrink: 0;
+      transition: all .2s;
+    }
+    .stepdot.active {
+      color: var(--sand2);
+    }
+    .stepdot.active .num {
+      border-color: var(--brass);
+      background: var(--brass);
+      color: var(--ink);
+    }
+
+    .checkout-body { padding: 36px 28px 28px; }
+
+    /* Form */
+    .formgrid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .field { display: flex; flex-direction: column; gap: 8px; }
+    label {
+      font-family: var(--cond);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--muted2);
+    }
+    input, textarea {
+      background: var(--surface);
+      border: 1px solid var(--line2);
+      color: var(--text);
+      font-family: var(--sans);
+      font-size: 14px;
+      padding: 12px 14px;
+      border-radius: 2px;
+      outline: none;
+      transition: border-color .2s, box-shadow .2s;
+      -webkit-appearance: none;
+    }
+    input::placeholder, textarea::placeholder { color: var(--muted); }
+    input:focus, textarea:focus {
+      border-color: var(--brass);
+      box-shadow: 0 0 0 3px var(--brass-glow);
+    }
+    textarea { min-height: 100px; resize: vertical; }
+    .span2 { grid-column: span 2; }
+
+    .actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 24px;
+      justify-content: flex-end;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-family: var(--cond);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      padding: 13px 24px;
+      border: 1px solid transparent;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: all .2s;
+      white-space: nowrap;
+    }
+    .btn-primary {
+      background: var(--brass);
+      color: var(--ink);
+      border-color: var(--brass);
+    }
+    .btn-primary:hover {
+      background: var(--brass2);
+      border-color: var(--brass2);
+    }
+    .btn-ghost {
+      background: transparent;
+      color: var(--muted2);
+      border-color: var(--line2);
+    }
+    .btn-ghost:hover {
+      background: var(--surface);
+      color: var(--text);
+    }
+
+    .minihelp {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.6;
+      margin-top: 12px;
+    }
+    .minihelp a { color: var(--brass); }
+
+    .toast {
+      display: none;
+      margin-top: 16px;
+      padding: 12px 16px;
+      border: 1px solid rgba(192,154,74,.3);
+      background: rgba(192,154,74,.08);
+      border-radius: 2px;
+      font-size: 13px;
+      color: var(--sand2);
+      line-height: 1.55;
+    }
+    .toast.show { display: block; }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 24px 0;
+    }
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .footer-left {
+      font-family: var(--cond);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .footer-left span { color: var(--brass); }
+    .footer-right {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-left { padding: 36px 0 28px; border-right: none; border-bottom: 1px solid var(--line); }
+      .hero-right { min-height: 320px; }
+      .info-strip-inner { grid-template-columns: 1fr; }
+      .info-col:first-child { padding-right: 0; border-right: none; border-bottom: 1px solid var(--line); }
+      .info-col:last-child { padding-left: 0; }
+      .nav { display: none; }
+      .section-header { flex-direction: column; align-items: flex-start; }
+      .section-header .desc { text-align: left; }
+    }
+    @media (max-width: 600px) {
+      .formgrid { grid-template-columns: 1fr; }
+      .span2 { grid-column: span 1; }
+      .stats-row { flex-wrap: wrap; gap: 20px; }
+      .checkout-body { padding: 24px 16px 20px; }
+      .stepper { padding: 0 16px; }
+      .checkout-top { padding: 12px 16px; }
+    }
+
+    /* ── FADE IN ANIMATION ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .hero-left > * {
+      animation: fadeUp .6s ease both;
+    }
+    .hero-left > *:nth-child(1) { animation-delay: .05s; }
+    .hero-left > *:nth-child(2) { animation-delay: .12s; }
+    .hero-left > *:nth-child(3) { animation-delay: .18s; }
+    .hero-left > *:nth-child(4) { animation-delay: .24s; }
+    .hero-left > *:nth-child(5) { animation-delay: .3s; }
   </style>
 </head>
 
 <body>
+
+  <!-- ── HEADER ── -->
   <header class="topbar" id="top">
     <div class="container topbar-inner">
       <a class="brand" href="#top" aria-label="American Purity dealer portal">
-        <img src="../logo.png" alt="American Purity eagle logo" onerror="this.style.display='none'">
-        <div>
-          <div class="name">American Purity</div>
-          <span class="sub">Dealer Portal • Since 1993</span>
+        <img src="../logo.png" alt="American Purity" onerror="this.style.display='none'">
+        <div class="brand-text">
+          <div class="brand-name">American Purity</div>
+          <span class="brand-sub">Dealer Portal</span>
         </div>
       </a>
+
+      <div class="divider-v"></div>
 
       <div class="navspacer"></div>
 
       <nav class="nav" aria-label="Primary navigation">
-        <a href="#order">Order Now</a>
+        <a href="#order">Place Order</a>
+        <a href="#product-info">Product</a>
       </nav>
 
-      <a class="phone-pill" href="tel:+14235550123">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#111" stroke-width="2">
+      <a class="phone-pill" href="tel:+14235550123" aria-label="Call American Purity">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
           <path d="M22 16.92V21a2 2 0 0 1-2.18 2A19.86 19.86 0 0 1 3 5.18 2 2 0 0 1 5 3h4.09a2 2 0 0 1 2 1.72c.12.81.31 1.6.57 2.36a2 2 0 0 1-.45 2.11L9.91 10.91a16 16 0 0 0 3.18 3.18l1.72-1.3a2 2 0 0 1 2.11-.45c.76.26 1.55.45 2.36.57A2 2 0 0 1 22 16.92z"/>
         </svg>
         (423) 555-0123
@@ -271,85 +706,404 @@
     </div>
   </header>
 
-  <main class="wrap">
-    <div class="container">
-      <div class="stack">
+  <main>
 
-        <section class="hero" aria-label="Product overview">
-          <div class="hero-top">
-            <div class="hero-media">
-              <!-- Use your best premium shot here: black unit on concrete, or beige on stone/nature -->
-              <img src="hero.jpg" alt="American Purity Whole-Home Water System – Installed Once, Pure Forever">
+    <!-- ── HERO ── -->
+    <section class="hero-band" aria-label="Product overview">
+      <div class="container">
+        <div class="hero-grid">
+
+          <!-- Left -->
+          <div class="hero-left">
+            <div class="eyebrow">Dealer-Only — Ships Nationwide</div>
+
+            <h1 class="hero-title" id="productTitle">
+              Whole-Home<br><em>Water Filtration</em><br>System
+            </h1>
+
+            <p class="hero-tagline" id="productTagline">
+              Installed once. Working every day. The American Purity Water System quietly removes harmful contaminants — with permanent media, without constant service, without shortcuts.
+            </p>
+
+            <div class="stats-row">
+              <div class="stat">
+                <div class="stat-value">1993</div>
+                <div class="stat-label">Est.</div>
+              </div>
+              <div class="stat">
+                <div class="stat-value" id="priceDisplay">$2,500</div>
+                <div class="stat-label">Dealer Price</div>
+              </div>
+              <div class="stat">
+                <div class="stat-value">10-Yr</div>
+                <div class="stat-label">Warranty</div>
+              </div>
             </div>
 
-            <div class="hero-content">
-              <div>
-                <div class="kicker"><span class="dot"></span> Exclusive Dealer Access • Nationwide Shipping</div>
-                <h1 class="product-title">Whole-Home Water Purification System</h1>
-                <p class="tagline">
-                  Permanent protection. Zero maintenance. Clean water you trust—delivered to every tap. Since 1993.
-                </p>
+            <ul class="features-list">
+              <li>
+                <svg class="feat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2l8 4v6c0 5-3.5 9.5-8 10-4.5-.5-8-5-8-10V6l8-4z"/><path d="M9 12l2 2 4-4"/>
+                </svg>
+                <div><strong>Whole-Home Protection</strong> — supports every tap in the home</div>
+              </li>
+              <li>
+                <svg class="feat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/>
+                </svg>
+                <div><strong>Zero Cost Maintenance</strong> — permanent media, no filters to replace</div>
+              </li>
+              <li>
+                <svg class="feat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
+                </svg>
+                <div><strong>City &amp; Well Water</strong> — works with all residential supply types</div>
+              </li>
+              <li>
+                <svg class="feat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2z"/>
+                  <path d="M12 6v6l4 2"/>
+                </svg>
+                <div><strong>Built for Decades</strong> — "installed once" design philosophy</div>
+              </li>
+            </ul>
+          </div>
 
-                <div class="price-row">
-                  <div class="price">
-                    <div class="label">Dealer Pricing</div>
-                    <div class="value" id="priceDisplay">$2,500</div>
-                  </div>
-                  <div class="badge">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <path d="M12 2l8 4v6c0 5-3.5 9.5-8 10-4.5-.5-8-5-8-10V6l8-4z"/>
-                      <path d="M9 12l2 2 4-4"/>
-                    </svg>
-                    10-Year Transferable Warranty
-                  </div>
-                </div>
+          <!-- Right: image + price -->
+          <div class="hero-right">
+            <div class="hero-img-wrap">
+              <img src="hero.jpg" alt="American Purity Water System" onerror="this.style.display='none'">
+            </div>
+            <div class="price-block">
+              <div class="price-label">Dealer price</div>
+              <div class="price-value" id="priceDisplay2">$2,500</div>
+              <div class="price-sub">Per unit — ships anywhere in the U.S.</div>
+              <div class="warranty-badge">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2l8 4v6c0 5-3.5 9.5-8 10-4.5-.5-8-5-8-10V6l8-4z"/>
+                </svg>
+                10-Year Transferable Warranty
               </div>
             </div>
           </div>
 
-          <div class="hero-bottom">
-            <div>
-              <h2>Dealer Essentials</h2>
-              <p>Flagship whole-home system with permanent media. Install once—protect forever. Ideal for city or well water.</p>
-              <ul class="bullets">
-                <li><strong>Complete home coverage</strong> – every faucet, shower, appliance</li>
-                <li><strong>No filters to replace</strong> – zero ongoing costs</li>
-                <li><strong>Reduces scale, improves taste</strong> – noticeable results fast</li>
-                <li><strong>Built American tough</strong> – decades of reliable service</li>
-              </ul>
-            </div>
+        </div>
+      </div>
+    </section>
 
-            <div>
-              <h2>Ordering Process</h2>
-              <p>Quick dealer submission → internal verification → secure payment redirect.</p>
-              <ul class="bullets">
-                <li><strong>Shipping:</strong> Continental U.S.</li>
-                <li><strong>Dealer Support:</strong> (423) 555-0123</li>
-                <li><strong>Protected Access:</strong> password-secured portal</li>
-              </ul>
+    <!-- ── INFO STRIP ── -->
+    <section class="info-strip" id="product-info" aria-label="Product details">
+      <div class="container">
+        <div class="info-strip-inner">
+          <div class="info-col">
+            <h2>What dealers should know</h2>
+            <p>Mainline whole-home filtration installed at the home's primary water connection. Designed for long service life with permanent media and minimal ongoing maintenance.</p>
+            <ul>
+              <li><strong>Whole-home protection:</strong> supports every tap</li>
+              <li><strong>Works with:</strong> city + well water homes</li>
+              <li><strong>Common outcomes:</strong> better taste, odor reduction, reduced spotting &amp; scale</li>
+              <li><strong>Built for decades:</strong> "installed once" design philosophy</li>
+            </ul>
+          </div>
+
+          <div class="info-col">
+            <h2>Order flow</h2>
+            <p>Submit your dealer order details — we log it to internal records and you're redirected to the payment link. Clean and fast.</p>
+            <ul>
+              <li><strong>Shipping:</strong> anywhere in the U.S.</li>
+              <li><strong>Support:</strong> (423) 555-0123</li>
+              <li><strong>Security:</strong> password required each visit</li>
+              <li><strong>Fulfillment:</strong> contact rep for lead times</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CHECKOUT ── -->
+    <section class="checkout-section" id="order" aria-label="Dealer checkout">
+      <div class="container">
+
+        <div class="section-header">
+          <h2>Place Your<br><em style="font-style:italic; color: var(--sand);">Dealer Order</em></h2>
+          <p class="desc">We only collect what's needed to verify the order and route payment. Secure, fast, private.</p>
+        </div>
+
+        <div class="checkout-card">
+
+          <div class="checkout-top">
+            <div class="pills-row">
+              <span class="chip">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                Password Protected
+              </span>
+              <span class="chip">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="22 2 11 13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                Redirect to Payment
+              </span>
+              <span class="chip">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Ships USA
+              </span>
             </div>
           </div>
-        </section>
 
-        <!-- Checkout section remains functionally identical, just styled consistently -->
-        <section class="checkout" id="order" aria-label="Dealer checkout">
-          <!-- ... (keep the exact same checkout HTML structure, classes, IDs, form fields, steps, buttons, toast, etc. as in your original – only cosmetic classes enhanced above) ... -->
-          <!-- For brevity, assume you copy-paste your original checkout-body content here -->
-        </section>
+          <!-- Stepper -->
+          <div class="stepper" aria-label="Checkout steps">
+            <div class="stepdot active" id="sd1"><span class="num">1</span>Contact</div>
+            <div class="stepdot" id="sd2"><span class="num">2</span>Business</div>
+            <div class="stepdot" id="sd3"><span class="num">3</span>Notes</div>
+          </div>
+
+          <div class="checkout-body">
+
+            <!-- Step 1 -->
+            <div class="step" id="step1">
+              <div class="formgrid">
+                <div class="field">
+                  <label for="firstName">First name</label>
+                  <input id="firstName" autocomplete="given-name" placeholder="First name" />
+                </div>
+                <div class="field">
+                  <label for="lastName">Last name</label>
+                  <input id="lastName" autocomplete="family-name" placeholder="Last name" />
+                </div>
+                <div class="field">
+                  <label for="phone">Phone</label>
+                  <input id="phone" inputmode="tel" autocomplete="tel" placeholder="(###) ###-####" />
+                </div>
+                <div class="field">
+                  <label for="email">Email</label>
+                  <input id="email" inputmode="email" autocomplete="email" placeholder="name@company.com" />
+                </div>
+              </div>
+              <div class="actions">
+                <button class="btn btn-primary" type="button" onclick="nextStep(2)">
+                  Continue
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="step" id="step2" style="display:none;">
+              <div class="formgrid">
+                <div class="field span2">
+                  <label for="company">Company name</label>
+                  <input id="company" autocomplete="organization" placeholder="Business name" />
+                </div>
+                <div class="field span2">
+                  <label for="bizAddress">Business address</label>
+                  <input id="bizAddress" autocomplete="street-address" placeholder="Street, City, State, ZIP" />
+                </div>
+                <div class="field">
+                  <label for="poRef">PO / Reference (optional)</label>
+                  <input id="poRef" placeholder="PO-12345" />
+                </div>
+                <div class="field">
+                  <label for="shipState">Ship-to state (optional)</label>
+                  <input id="shipState" placeholder="e.g., TN" />
+                </div>
+              </div>
+              <div class="actions">
+                <button class="btn btn-ghost" type="button" onclick="prevStep(1)">Back</button>
+                <button class="btn btn-primary" type="button" onclick="nextStep(3)">
+                  Continue
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="step" id="step3" style="display:none;">
+              <div class="formgrid">
+                <div class="field span2">
+                  <label for="orderNotes">Order notes (optional)</label>
+                  <textarea id="orderNotes" placeholder="Install notes, delivery instructions, anything we should know…"></textarea>
+                </div>
+              </div>
+              <p class="minihelp">Submitting logs the order for verification and redirects to the payment link.</p>
+              <div class="actions">
+                <button class="btn btn-ghost" type="button" onclick="prevStep(2)">Back</button>
+                <button class="btn btn-primary" type="button" onclick="submitOrder()">
+                  Submit &amp; Go To Payment
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="22 2 11 13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                </button>
+              </div>
+              <div class="toast" id="toast"></div>
+              <p class="minihelp" style="margin-top:16px;">
+                Need help? Call <a href="tel:+14235550123"><strong>(423) 555-0123</strong></a>
+              </p>
+            </div>
+
+          </div>
+        </div>
 
       </div>
+    </section>
 
-      <footer class="container">
-        <div>
-          <strong>American Purity</strong> • Since 1993 • Whole-Home Water Purification • Dealer Portal • Made for Lasting Trust
-        </div>
-      </footer>
-    </div>
   </main>
 
-  <!-- JavaScript remains 100% unchanged – password, steps, submitOrder(), etc. -->
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-left">
+          <span>American Purity</span> &nbsp;·&nbsp; Dealer Portal &nbsp;·&nbsp; Est. 1993
+        </div>
+        <div class="footer-right">
+          Whole-Home Water Filtration &nbsp;·&nbsp; Ships USA &nbsp;·&nbsp; <a href="tel:+14235550123" style="color:var(--brass)">(423) 555-0123</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
   <script>
-    // ... paste your entire original <script> block here – no changes needed ...
+    /******************************************************************
+     * PASSWORD GATE
+     ******************************************************************/
+    const DEALER_PASSWORD = "password"; // EDIT ME
+    const SESSION_KEY = "ap_dealer_authed";
+
+    function requirePassword(){
+      if (sessionStorage.getItem(SESSION_KEY) === "1") return;
+      let ok = false;
+      for (let tries=0; tries<5; tries++){
+        const entered = prompt("Dealer Portal Password:");
+        if (entered === null) { ok = false; break; }
+        if (entered === DEALER_PASSWORD) { ok = true; break; }
+        alert("Incorrect password.");
+      }
+      if (!ok){
+        document.body.innerHTML = "<div style='font-family:system-ui;padding:48px;color:#f0ece4;background:#0d0e0f;min-height:100vh;display:flex;align-items:center;justify-content:center;font-size:15px;letter-spacing:.04em;'>Access denied.</div>";
+        return;
+      }
+      sessionStorage.setItem(SESSION_KEY, "1");
+    }
+
+    window.addEventListener("beforeunload", () => {
+      try { sessionStorage.removeItem(SESSION_KEY); } catch(e){}
+    });
+
+    requirePassword();
+
+    /******************************************************************
+     * EDIT ME: Apps Script + Payment Link + Product Constants
+     ******************************************************************/
+    const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzOr1dZPUNMXerJG7qFCPM6SNF9eE4dlDJggL2TpIHsiBByE_aj98k2dPhPrjsJr-BmTA/exec";
+    const PAYMENT_LINK = "https://google.com";
+
+    const PRODUCT_NAME = "Whole-Home Water Filtration System";
+    const PRODUCT_PRICE = "2500";
+    const PRODUCT_WARRANTY = "10-Year Transferable Warranty";
+
+    (function(){
+      const fmt = "$" + Number(PRODUCT_PRICE).toLocaleString();
+      const el1 = document.getElementById("priceDisplay");
+      const el2 = document.getElementById("priceDisplay2");
+      if(el1) el1.textContent = fmt;
+      if(el2) el2.textContent = fmt;
+    })();
+
+    /******************************************************************
+     * STEPPER
+     ******************************************************************/
+    function setStepDots(active){
+      [1,2,3].forEach(n => {
+        const el = document.getElementById("sd"+n);
+        el.classList.toggle("active", n === active);
+      });
+    }
+
+    function showStep(n){
+      [1,2,3].forEach(i => {
+        document.getElementById("step"+i).style.display = (i===n) ? "" : "none";
+      });
+      setStepDots(n);
+    }
+
+    function nextStep(n){
+      if(n===2){
+        if(!byId("firstName").value.trim()) return alert("First name is required.");
+        if(!byId("lastName").value.trim()) return alert("Last name is required.");
+        if(!byId("phone").value.trim()) return alert("Phone is required.");
+        if(!byId("email").value.trim()) return alert("Email is required.");
+      }
+      if(n===3){
+        if(!byId("company").value.trim()) return alert("Company name is required.");
+        if(!byId("bizAddress").value.trim()) return alert("Business address is required.");
+      }
+      showStep(n);
+    }
+    function prevStep(n){ showStep(n); }
+    function byId(id){ return document.getElementById(id); }
+
+    /******************************************************************
+     * SUBMIT
+     ******************************************************************/
+    function toast(msg){
+      const t = byId("toast");
+      t.textContent = msg;
+      t.classList.add("show");
+    }
+
+    function buildPayload(){
+      const get = (id) => (byId(id).value || "").trim();
+      return {
+        timestamp: new Date().toISOString(),
+        orderId: "AP-" + Math.random().toString(36).slice(2,8).toUpperCase() + "-" + Date.now().toString().slice(-5),
+        productName: PRODUCT_NAME,
+        price: PRODUCT_PRICE,
+        warranty: PRODUCT_WARRANTY,
+        firstName: get("firstName"),
+        lastName: get("lastName"),
+        phone: get("phone"),
+        email: get("email"),
+        company: get("company"),
+        businessAddress: get("bizAddress"),
+        poRef: get("poRef"),
+        shipState: get("shipState"),
+        orderNotes: get("orderNotes"),
+        ships: "USA",
+        portal: "Dealer Portal"
+      };
+    }
+
+    async function postJSON(url, data){
+      try{
+        const res = await fetch(url, {
+          method: "POST",
+          headers: {"Content-Type":"application/json"},
+          body: JSON.stringify(data)
+        });
+        return { ok: res.ok, text: await res.text() };
+      }catch(err){ return { ok:false, text:String(err) }; }
+    }
+
+    async function postNoCors(url, data){
+      try{
+        await fetch(url, {
+          method: "POST",
+          mode: "no-cors",
+          headers: {"Content-Type":"text/plain;charset=UTF-8"},
+          body: JSON.stringify(data)
+        });
+        return { ok:true, text:"no-cors sent" };
+      }catch(err){ return { ok:false, text:String(err) }; }
+    }
+
+    async function submitOrder(){
+      if (!APPS_SCRIPT_URL || !APPS_SCRIPT_URL.startsWith("https://script.google.com/macros/s/")) {
+        alert("Missing Apps Script Web App /exec URL. Paste it into APPS_SCRIPT_URL.");
+        return;
+      }
+      toast("Submitting…");
+      const payload = buildPayload();
+      let result = await postJSON(APPS_SCRIPT_URL, payload);
+      if(!result.ok) result = await postNoCors(APPS_SCRIPT_URL, payload);
+      toast("Order logged. Redirecting to payment…");
+      setTimeout(() => { window.location.href = PAYMENT_LINK; }, 650);
+    }
   </script>
 </body>
 </html>
