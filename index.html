@@ -6,582 +6,609 @@
   <title>American Purity | Whole-Home Water Filtration & Softening | Chattanooga & Tri-State Area</title>
   <meta name="description" content="American Purity provides whole-home water filtration and softening systems based in Chattanooga, serving TN, GA, and AL. Check your water quality and get a free water analysis." />
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Barlow:wght@400;500;600;700;800;900&family=Barlow+Condensed:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
   <style>
-    :root{
-      --bg:#ffffff;
-      --text:#0f172a;
-      --muted:#64748b;
-      --line:#e2e8f0;
+    :root {
+      --ink:        #0d0e0f;
+      --ink2:       #141618;
+      --ink3:       #1c1e21;
+      --surface:    #232629;
+      --surface2:   #2a2d31;
+      --line:       rgba(255,255,255,.08);
+      --line2:      rgba(255,255,255,.14);
 
-      /* Water / brand blues (muted, not neon) */
-      --brand:#1e4f8f;     /* primary */
-      --brand2:#163c6c;    /* darker */
-      --accent:#0b2f55;
+      --sand:       #d4c5a9;
+      --sand2:      #ede3d1;
+      --sand3:      #f5f0e8;
 
-      --card:#ffffff;
-      --shadow:0 18px 48px rgba(2,6,23,.14);
-      --shadow2:0 10px 24px rgba(2,6,23,.10);
-      --radius:16px;
-      --max:1120px;
-      --font: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-      --headerH:74px;
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{margin:0;font-family:var(--font);color:var(--text);background:var(--bg)}
-    a{color:inherit}
-    .container{max-width:var(--max);margin:0 auto;padding:0 18px}
-    section[id]{scroll-margin-top: calc(var(--headerH) + 16px);}
+      --brass:      #c09a4a;
+      --brass2:     #e8c06a;
+      --brass-glow: rgba(192,154,74,.18);
 
-    /* TOP BAR */
-    .topbar{
-      height:var(--headerH);
-      display:flex; align-items:center;
-      border-bottom:1px solid var(--line);
-      background:#fff;
-      position:sticky; top:0; z-index:50;
-    }
-    .topbar-inner{
-      display:flex; align-items:center; gap:14px; width:100%;
-    }
-    .brand{
-      display:flex; align-items:center; gap:12px;
-      text-decoration:none;
-      font-weight:950; letter-spacing:.2px;
-      white-space:nowrap;
-    }
-    .brand img{height:44px; width:auto; display:block;}
-    .brand .name{font-size:18px; line-height:1.05}
-    .brand .name span{color:var(--brand)}
-    .brand .sub{
-      display:block;
-      font-size:12px;
-      font-weight:750;
-      color:var(--muted);
-      letter-spacing:.15px;
-      margin-top:2px;
-    }
-    .navspacer{flex:1}
-    .nav{
-      display:flex; gap:18px; font-size:14px; color:#334155; align-items:center;
-    }
-    .nav a{ text-decoration:none; opacity:.92; font-weight:750 }
-    .nav a:hover{ opacity:1; text-decoration:underline }
+      --red:        #c0392b;
 
-    .phone-pill{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      padding:10px 14px;
-      border-radius:999px;
-      border:1px solid var(--line);
-      background:#f8fafc;
-      text-decoration:none;
-      font-weight:900;
-      color:#0f172a;
-      box-shadow:0 6px 18px rgba(2,6,23,.06);
-      white-space:nowrap;
-      flex:0 0 auto;
-    }
-    .phone-pill svg{opacity:.85}
+      --text:       #f0ece4;
+      --muted:      #888580;
+      --muted2:     #b0ada8;
 
-    /* HERO */
-    .hero{
-      position:relative;
-      min-height:620px;
+      --max:        1120px;
+      --serif:      "Cormorant Garamond", Georgia, serif;
+      --sans:       "Barlow", system-ui, sans-serif;
+      --cond:       "Barlow Condensed", system-ui, sans-serif;
+      --headerH:    68px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--sans);
+      color: var(--text);
+      background: var(--ink);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Grain overlay */
+    body::before {
+      content: "";
+      position: fixed; inset: 0;
+      pointer-events: none; z-index: 1000;
+      opacity: .028;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+      background-size: 180px;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    .container { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+    section[id] { scroll-margin-top: calc(var(--headerH) + 16px); }
+
+    /* ── HEADER ── */
+    .topbar {
+      height: var(--headerH);
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(13,14,15,.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--line);
+    }
+    .topbar-inner {
+      display: flex; align-items: center; gap: 16px; height: 100%;
+    }
+
+    .brand { display: flex; align-items: center; gap: 14px; }
+    .brand img { height: 36px; width: auto; display: block; filter: brightness(0) invert(1); }
+    .brand-name {
+      font-family: var(--cond); font-size: 17px; font-weight: 800;
+      letter-spacing: .12em; text-transform: uppercase; color: var(--text); line-height: 1;
+    }
+    .brand-sub {
+      display: block; margin-top: 4px;
+      font-family: var(--cond); font-size: 10px; font-weight: 600;
+      letter-spacing: .22em; text-transform: uppercase; color: var(--brass);
+    }
+
+    .divider-v { width: 1px; height: 28px; background: var(--line2); flex-shrink: 0; }
+    .navspacer { flex: 1; }
+
+    .nav { display: flex; gap: 24px; align-items: center; }
+    .nav a {
+      font-family: var(--cond); font-size: 12px; font-weight: 700;
+      letter-spacing: .18em; text-transform: uppercase; color: var(--muted2); transition: color .2s;
+    }
+    .nav a:hover { color: var(--sand2); }
+
+    .phone-pill {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 9px 16px; border-radius: 2px;
+      border: 1px solid var(--brass); color: var(--brass);
+      font-family: var(--cond); font-size: 12px; font-weight: 700;
+      letter-spacing: .14em; text-transform: uppercase;
+      transition: background .2s, color .2s; white-space: nowrap;
+    }
+    .phone-pill:hover { background: var(--brass); color: var(--ink); }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      min-height: 640px;
       background:
-        linear-gradient(90deg, rgba(2,6,23,.70) 0%, rgba(2,6,23,.46) 55%, rgba(2,6,23,.22) 100%),
+        linear-gradient(90deg, rgba(13,14,15,.85) 0%, rgba(13,14,15,.60) 50%, rgba(13,14,15,.25) 100%),
         url("hero.jpg");
-      background-size:cover;
-      background-position:center;
-      overflow:hidden;
+      background-size: cover;
+      background-position: center;
+      overflow: hidden;
+      border-bottom: 1px solid var(--line);
     }
-    .hero .container{
-      display:grid;
-      grid-template-columns: 1.18fr .92fr;
-      gap:34px;
-      padding:42px 18px 44px;
-      align-items:start;
+
+    /* ambient brass glow */
+    .hero::before {
+      content: "";
+      position: absolute; top: -100px; right: 0;
+      width: 700px; height: 600px;
+      background: radial-gradient(ellipse, rgba(192,154,74,.06) 0%, transparent 65%);
+      pointer-events: none;
     }
-    .hero h1{
-      margin:0 0 12px;
-      color:#fff;
-      font-size:46px;
-      line-height:1.04;
-      font-weight:980;
-      text-shadow:0 2px 14px rgba(0,0,0,.30);
-      letter-spacing:-.5px;
+
+    .hero .container {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 40px;
+      padding: 64px 24px 60px;
+      align-items: start;
+      position: relative; z-index: 1;
     }
-    .hero p{
-      margin:0 0 16px;
-      color:rgba(255,255,255,.92);
-      font-size:16.5px;
-      line-height:1.65;
-      max-width:760px;
+
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-family: var(--cond); font-size: 11px; font-weight: 700;
+      letter-spacing: .22em; text-transform: uppercase; color: var(--brass);
+      margin-bottom: 20px;
     }
-    .hero .local{
-      margin-top:10px;
-      color:rgba(255,255,255,.86);
-      font-weight:800;
-      font-size:13.5px;
-      letter-spacing:.2px;
+    .hero-eyebrow::before {
+      content: ""; display: block; width: 28px; height: 1px; background: var(--brass);
+    }
+
+    .hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(38px, 5vw, 62px);
+      line-height: 1.04; letter-spacing: .01em;
+      font-weight: 600; color: var(--sand2);
+      margin-bottom: 18px;
+    }
+    .hero h1 em { font-style: italic; color: var(--sand); }
+
+    .hero p {
+      font-size: 15px; line-height: 1.75; color: var(--muted2);
+      max-width: 52ch; margin-bottom: 14px;
+    }
+    .hero p strong { color: var(--sand2); font-weight: 600; }
+
+    .hero .local {
+      display: inline-flex; align-items: center; gap: 8px;
+      margin-top: 10px;
+      font-family: var(--cond); font-size: 11px; font-weight: 700;
+      letter-spacing: .18em; text-transform: uppercase; color: var(--brass);
+    }
+    .hero .local::before {
+      content: ""; display: block; width: 20px; height: 1px; background: var(--brass);
     }
 
     /* benefit chips */
-    .benefits{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      margin:16px 0 0;
-      padding:0;
-      list-style:none;
-      color:#fff;
+    .benefits {
+      display: flex; flex-wrap: wrap; gap: 10px;
+      margin: 22px 0 0; padding: 0; list-style: none;
     }
-    .benefits li{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      border:1px solid rgba(255,255,255,.18);
-      background:rgba(2,6,23,.26);
-      padding:10px 12px;
-      border-radius:999px;
-      font-weight:900;
-      font-size:13px;
-      letter-spacing:.15px;
+    .benefits li {
+      display: inline-flex; align-items: center; gap: 8px;
+      border: 1px solid rgba(192,154,74,.3);
+      background: rgba(192,154,74,.07);
+      padding: 9px 14px; border-radius: 2px;
+      font-family: var(--cond); font-weight: 700; font-size: 12px;
+      letter-spacing: .14em; text-transform: uppercase; color: var(--sand2);
     }
-    .benefits svg{flex:0 0 18px; opacity:.92}
+    .benefits svg { flex: 0 0 16px; opacity: .85; }
 
-    /* HERO CARD (ZIP micro-conversion) */
-    .zip-card{
-      background:var(--card);
-      border-radius:16px;
-      box-shadow:var(--shadow);
-      overflow:hidden;
-      position:relative;
-      margin-top:6px;
-    }
-    .zip-card .head{
-      background:var(--brand);
-      color:#fff;
-      padding:14px 16px;
-      font-weight:950;
-      text-align:center;
-      font-size:15px;
-      letter-spacing:.2px;
-    }
-    .zip-card .body{padding:18px}
-    .zip-card label{display:block;font-size:14px;font-weight:900;margin:0 0 8px;color:#0f172a}
-    .field{
-      display:flex; gap:10px; align-items:center;
-      border:1px solid var(--line);
-      border-radius:12px;
-      padding:10px 12px;
-      background:#fff;
-    }
-    .field svg{opacity:.65}
-    .field input{
-      border:0; outline:0; width:100%;
-      font-size:14px; padding:2px 0;
+    /* ZIP CARD */
+    .zip-card {
+      background: var(--ink2);
+      border: 1px solid var(--line2);
+      overflow: hidden;
+      margin-top: 6px;
+      animation: fadeUp .6s ease .2s both;
     }
 
-    .btn{
-      display:inline-flex; justify-content:center; align-items:center;
-      border:0; cursor:pointer;
-      font-weight:950;
-      letter-spacing:.35px;
-      border-radius:12px;
-      padding:12px 14px;
-      text-transform:uppercase;
-      font-size:13px;
-      text-decoration:none;
-    }
-    .btn-primary{background:var(--brand);color:#fff;width:100%;margin-top:12px}
-    .btn-primary:hover{filter:brightness(.98)}
-    .btn-dark{background:#0f172a;color:#fff}
-    .btn-dark:hover{filter:brightness(1.05)}
-    .btn-outline{
-      background:transparent;
-      color:#0f172a;
-      border:1px solid var(--line);
-      width:100%;
-      margin-top:10px;
-      font-weight:950;
-    }
-    .btn-outline:hover{background:#f8fafc}
-
-    .micro{
-      margin-top:12px;
-      font-size:12px;
-      color:var(--muted);
-      line-height:1.5;
-      text-align:center;
-    }
-    .note{
-      margin-top:12px;
-      padding:10px 12px;
-      border:1px solid var(--line);
-      border-radius:12px;
-      background:#f8fafc;
-      color:#334155;
-      font-size:12.5px;
-      line-height:1.5;
-      text-align:left;
-    }
-    .note strong{color:#0f172a}
-
-    /* TRUST STRIP */
-    .proof{
-      background:#fff;
-      border-bottom:1px solid var(--line);
-      padding:18px 0;
-    }
-    .proof .row{
-      display:flex;
-      gap:14px;
-      flex-wrap:wrap;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-    }
-    .proof-pill{
-      border:1px solid var(--line);
-      border-radius:999px;
-      padding:10px 14px;
-      background:#f8fafc;
-      font-weight:900;
-      font-size:13px;
-      color:#0f172a;
-    }
-    .proof small{
-      display:block;
-      margin-top:10px;
-      color:var(--muted);
-      font-size:12.5px;
-      line-height:1.5;
-      text-align:center;
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
     }
 
-    /* MAIN */
-    .section{padding:46px 0}
-    .two-col{
-      display:grid;
+    .zip-card .head {
+      background: var(--brass);
+      color: var(--ink);
+      padding: 14px 18px;
+      font-family: var(--cond);
+      font-weight: 800; font-size: 13px;
+      letter-spacing: .18em; text-transform: uppercase;
+      text-align: center;
+    }
+    .zip-card .body { padding: 20px; }
+    .zip-card label {
+      display: block;
+      font-family: var(--cond); font-size: 10px; font-weight: 800;
+      letter-spacing: .2em; text-transform: uppercase;
+      color: var(--muted2); margin-bottom: 8px;
+    }
+
+    .field {
+      display: flex; gap: 10px; align-items: center;
+      border: 1px solid var(--line2);
+      padding: 10px 12px;
+      background: var(--surface);
+      border-radius: 2px;
+    }
+    .field svg { opacity: .5; flex-shrink: 0; }
+    .field input {
+      border: 0; outline: 0; width: 100%;
+      font-size: 14px; padding: 2px 0;
+      background: transparent; color: var(--text);
+      font-family: var(--sans);
+    }
+    .field input::placeholder { color: var(--muted); }
+
+    /* ── BUTTONS ── */
+    .btn {
+      display: inline-flex; justify-content: center; align-items: center; gap: 8px;
+      border: 0; cursor: pointer;
+      font-family: var(--cond); font-weight: 800;
+      letter-spacing: .18em; text-transform: uppercase;
+      padding: 13px 20px; font-size: 12px;
+      border-radius: 2px; transition: all .2s; white-space: nowrap;
+    }
+    .btn-primary {
+      background: var(--brass); color: var(--ink);
+      width: 100%; margin-top: 12px; border: 1px solid var(--brass);
+    }
+    .btn-primary:hover { background: var(--brass2); border-color: var(--brass2); }
+    .btn-dark {
+      background: var(--ink2); color: var(--sand2);
+      border: 1px solid var(--line2);
+    }
+    .btn-dark:hover { background: var(--surface); color: var(--sand2); }
+    .btn-outline {
+      background: transparent; color: var(--muted2);
+      border: 1px solid var(--line2);
+      width: 100%; margin-top: 10px;
+    }
+    .btn-outline:hover { background: var(--surface); color: var(--text); }
+
+    .micro {
+      margin-top: 12px; font-size: 12px;
+      color: var(--muted); line-height: 1.5; text-align: center;
+    }
+
+    .note {
+      margin-top: 14px; padding: 12px 14px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      color: var(--muted2); font-size: 13px; line-height: 1.6;
+    }
+    .note strong { color: var(--sand2); font-weight: 600; }
+    .note a { color: var(--brass); }
+
+    /* ── TRUST STRIP ── */
+    .proof {
+      background: var(--ink2);
+      border-bottom: 1px solid var(--line);
+      padding: 20px 0;
+    }
+    .proof .row {
+      display: flex; gap: 12px; flex-wrap: wrap;
+      align-items: center; justify-content: center;
+    }
+    .proof-pill {
+      border: 1px solid var(--line2);
+      padding: 9px 16px;
+      background: var(--surface);
+      font-family: var(--cond); font-weight: 700; font-size: 12px;
+      letter-spacing: .14em; text-transform: uppercase; color: var(--muted2);
+      border-radius: 2px;
+    }
+    .proof small {
+      display: block; margin-top: 12px;
+      color: var(--muted); font-size: 12.5px; line-height: 1.5; text-align: center;
+    }
+
+    /* ── SECTIONS ── */
+    .section { padding: 52px 0; border-bottom: 1px solid var(--line); }
+    .section:last-of-type { border-bottom: none; }
+
+    .two-col {
+      display: grid;
       grid-template-columns: 1fr 1fr;
-      gap:26px;
-      align-items:center;
+      gap: 28px;
+      align-items: start;
     }
-    .card{
-      border:1px solid var(--line);
-      border-radius:16px;
-      padding:22px;
-      background:#fff;
-    }
-    .card h2{margin:0 0 10px;font-size:24px; letter-spacing:-.2px}
-    .lead{color:#334155;line-height:1.78;margin:0 0 14px;font-size:14.9px}
-    .lead strong{color:#0f172a}
 
-    .imgbox{
-      border-radius:16px;
-      overflow:hidden;
-      border:1px solid var(--line);
-      background:#f1f5f9;
+    /* Section label */
+    .section-label {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-family: var(--cond); font-size: 11px; font-weight: 700;
+      letter-spacing: .22em; text-transform: uppercase; color: var(--brass);
+      margin-bottom: 16px;
     }
-    .imgbox img{display:block;width:100%;height:auto}
+    .section-label::before {
+      content: ""; display: block; width: 20px; height: 1px; background: var(--brass);
+    }
 
-    /* Self-diagnosis grid */
-    .grid3{
-      display:grid;
+    /* Cards */
+    .card {
+      border: 1px solid var(--line2);
+      background: var(--ink2);
+      padding: 28px;
+    }
+    .card h2 {
+      font-family: var(--serif);
+      font-size: clamp(24px, 3vw, 34px);
+      font-weight: 600; letter-spacing: .01em;
+      color: var(--sand2); margin-bottom: 12px; line-height: 1.1;
+    }
+    .lead {
+      color: var(--muted2); line-height: 1.78;
+      margin-bottom: 16px; font-size: 15px;
+    }
+    .lead strong { color: var(--sand2); font-weight: 600; }
+
+    .imgbox {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: var(--surface);
+    }
+    .imgbox img { display: block; width: 100%; height: auto; }
+
+    /* Signs grid */
+    .grid3 {
+      display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap:16px;
-      margin-top:16px;
+      gap: 16px; margin-top: 20px;
     }
-    .mini{
-      border:1px solid var(--line);
-      border-radius:16px;
-      padding:16px;
-      background:#fff;
+    .mini {
+      border: 1px solid var(--line);
+      background: var(--ink3);
+      padding: 18px;
     }
-    .mini h4{margin:0 0 6px;font-size:15.5px}
-    .mini p{margin:0;color:#334155;line-height:1.68;font-size:13.9px}
-    .mini .icon{
-      width:36px;height:36px;border-radius:12px;
-      display:flex;align-items:center;justify-content:center;
-      background:rgba(30,79,143,.10);
-      border:1px solid rgba(30,79,143,.18);
-      margin-bottom:10px;
+    .mini h4 {
+      font-family: var(--cond); font-size: 14px; font-weight: 700;
+      letter-spacing: .04em; text-transform: uppercase;
+      color: var(--sand2); margin-bottom: 8px;
     }
-    .mini .icon svg{stroke:var(--brand);opacity:.95}
+    .mini p { color: var(--muted2); line-height: 1.65; font-size: 13.5px; }
+    .mini .icon {
+      width: 36px; height: 36px;
+      display: flex; align-items: center; justify-content: center;
+      border: 1px solid rgba(192,154,74,.3);
+      background: rgba(192,154,74,.08);
+      margin-bottom: 12px;
+    }
+    .mini .icon svg { stroke: var(--brass); opacity: .95; }
 
-    /* How it works list */
-    .subpoints{
-      margin:12px 0 0;
-      padding-left:18px;
-      color:#334155;
-      line-height:1.78;
-      font-size:14.6px;
+    .subpoints {
+      margin: 14px 0 0; padding-left: 0; list-style: none;
+      display: flex; flex-direction: column; gap: 10px;
     }
-    .subpoints li{margin:6px 0}
+    .subpoints li {
+      font-size: 14px; color: var(--muted2); line-height: 1.55;
+      display: flex; align-items: flex-start; gap: 10px;
+    }
+    .subpoints li::before {
+      content: "—"; color: var(--brass); font-weight: 700; flex-shrink: 0;
+    }
+    .subpoints li strong { color: var(--sand2); }
 
     /* Before/After */
-    .ba{
-      margin-top:14px;
-      border:1px solid var(--line);
-      border-radius:16px;
-      overflow:hidden;
-      background:#fff;
+    .ba {
+      margin-top: 16px;
+      border: 1px solid var(--line);
+      overflow: hidden;
+      background: var(--surface);
     }
-    .ba img{display:block;width:100%;height:auto}
-    .ba .cap{
-      padding:10px 12px;
-      font-weight:950;
-      font-size:13px;
-      border-top:1px solid var(--line);
-      color:#0f172a;
-      background:#f8fafc;
-      display:flex;
-      justify-content:space-between;
-      gap:10px;
-      align-items:center;
+    .ba img { display: block; width: 100%; height: auto; }
+    .ba .cap {
+      padding: 10px 14px;
+      font-family: var(--cond); font-weight: 700; font-size: 11px;
+      letter-spacing: .16em; text-transform: uppercase;
+      border-top: 1px solid var(--line);
+      color: var(--muted2);
+      background: var(--ink3);
+      display: flex; justify-content: space-between; gap: 10px; align-items: center;
     }
-    .tag{
-      display:inline-flex;
-      align-items:center;
-      gap:6px;
-      font-size:12px;
-      font-weight:950;
-      padding:6px 10px;
-      border-radius:999px;
-      background:#0f172a;
-      color:#fff;
+    .tag {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 11px; font-weight: 700; padding: 5px 10px;
+      background: var(--brass); color: var(--ink);
+      font-family: var(--cond); letter-spacing: .12em; text-transform: uppercase;
     }
 
-    /* What happens next */
-    .steps{
-      margin-top:14px;
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:12px;
+    /* Process steps */
+    .steps {
+      margin-top: 16px;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 14px;
     }
-    .step{
-      border:1px solid var(--line);
-      border-radius:14px;
-      padding:14px;
-      background:#fff;
-      display:flex;
-      gap:12px;
-      align-items:flex-start;
+    .step {
+      border: 1px solid var(--line);
+      background: var(--ink3);
+      padding: 16px;
+      display: flex; gap: 14px; align-items: flex-start;
     }
-    .step .num{
-      width:34px;height:34px;border-radius:12px;
-      background:rgba(30,79,143,.10);
-      border:1px solid rgba(30,79,143,.18);
-      display:flex;align-items:center;justify-content:center;
-      font-weight:950;
-      color:var(--brand);
-      flex:0 0 34px;
+    .step .num {
+      width: 34px; height: 34px; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      border: 1px solid var(--brass); color: var(--brass);
+      font-family: var(--cond); font-size: 14px; font-weight: 800;
     }
-    .step strong{display:block;margin-bottom:4px}
-    .step p{margin:0;color:#334155;line-height:1.55;font-size:13.8px}
+    .step strong {
+      display: block; margin-bottom: 4px;
+      font-family: var(--cond); font-size: 13px; font-weight: 700;
+      letter-spacing: .08em; text-transform: uppercase; color: var(--sand2);
+    }
+    .step p { color: var(--muted2); line-height: 1.55; font-size: 13.5px; }
+
+    /* Why bar */
+    .whybar {
+      background: var(--ink2);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      padding: 52px 0;
+    }
+    .whygrid {
+      display: grid; grid-template-columns: 1.1fr .9fr;
+      gap: 28px; align-items: center;
+    }
+    .whybar h3 {
+      font-family: var(--serif); font-size: clamp(26px, 3vw, 36px);
+      font-weight: 600; color: var(--sand2); margin-bottom: 12px; line-height: 1.1;
+    }
+    .whybar p { color: var(--muted2); line-height: 1.75; font-size: 15px; margin-bottom: 14px; }
+
+    /* Financing badge */
+    .badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 8px 14px;
+      border: 1px solid rgba(192,154,74,.35);
+      background: rgba(192,154,74,.08);
+      font-family: var(--cond); font-weight: 700; font-size: 11px;
+      letter-spacing: .18em; text-transform: uppercase;
+      color: var(--brass);
+      margin: 8px 0 14px; width: fit-content;
+    }
 
     /* Reviews */
-    .reviews{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap:16px;
-      margin-top:16px;
+    .reviews-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 16px; margin-top: 20px;
     }
-    .review{
-      border:1px solid var(--line);
-      border-radius:16px;
-      padding:16px;
-      background:#fff;
+    .review {
+      border: 1px solid var(--line);
+      background: var(--ink3);
+      padding: 18px;
     }
-    .review .stars{color:var(--brand);font-weight:950;letter-spacing:1px}
-    .review p{margin:8px 0 10px;color:#334155;line-height:1.75;font-size:14px}
-    .review .who{font-weight:950;color:#0f172a;font-size:13px}
-    .review .where{color:var(--muted);font-size:12.5px;margin-top:2px}
-
-    /* WHY CHOOSE US (Truck) */
-    .whybar{
-      background:linear-gradient(180deg, #0b1c33, #071427);
-      color:rgba(255,255,255,.92);
-      border-top:1px solid rgba(255,255,255,.08);
-      border-bottom:1px solid rgba(255,255,255,.08);
-      padding:34px 0;
+    .review .stars { color: var(--brass); font-size: 14px; letter-spacing: 2px; }
+    .review p { margin: 10px 0 12px; color: var(--muted2); line-height: 1.75; font-size: 14px; }
+    .review .who {
+      font-family: var(--cond); font-weight: 700; font-size: 12px;
+      letter-spacing: .1em; text-transform: uppercase; color: var(--sand2);
     }
-    .whygrid{
-      display:grid;
-      grid-template-columns: 1.08fr .92fr;
-      gap:22px;
-      align-items:center;
-    }
-    .whybar h3{margin:0 0 8px; font-size:20px; letter-spacing:.2px}
-    .whybar p{margin:0 0 12px; color:rgba(255,255,255,.86); line-height:1.75; font-size:14.7px}
-    .whylist{
-      margin:10px 0 0;
-      padding-left:18px;
-      color:rgba(255,255,255,.86);
-      line-height:1.75;
-      font-size:14.5px;
-    }
-    .whylist li{margin:7px 0}
-    .whybar .imgbox{border-color:rgba(255,255,255,.12);background:rgba(255,255,255,.06)}
-
-    /* ✅ Financing badge */
-    .badge{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:8px 12px;
-      border-radius:999px;
-      border:1px solid var(--line);
-      background:#f8fafc;
-      font-weight:950;
-      font-size:12.5px;
-      color:#0f172a;
-      margin:8px 0 10px;
-      width:fit-content;
+    .review .where {
+      font-size: 12px; color: var(--muted); margin-top: 3px;
     }
 
     /* FAQ */
-    .faq{padding-top:0}
-    details.faq-item{
-      border:1px solid var(--line);
-      border-radius:16px;
-      padding:14px 16px;
-      background:#fff;
-      margin:10px 0;
+    details.faq-item {
+      border: 1px solid var(--line);
+      background: var(--ink3);
+      padding: 16px 18px;
+      margin: 10px 0;
     }
-    details.faq-item summary{
-      cursor:pointer;
-      font-weight:950;
-      color:#0f172a;
-      list-style:none;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:10px;
+    details.faq-item summary {
+      cursor: pointer; font-family: var(--cond); font-weight: 700;
+      font-size: 14px; letter-spacing: .06em; text-transform: uppercase;
+      color: var(--sand2); list-style: none;
+      display: flex; align-items: center; justify-content: space-between; gap: 10px;
     }
-    details.faq-item summary::-webkit-details-marker{display:none}
-    .chev{
-      width:18px; height:18px; flex:0 0 18px;
-      transition:transform .18s ease;
-      opacity:.75;
+    details.faq-item summary::-webkit-details-marker { display: none; }
+    .chev { width: 18px; height: 18px; flex: 0 0 18px; transition: transform .18s ease; opacity: .6; }
+    details[open] .chev { transform: rotate(180deg); }
+    .faq-answer { margin-top: 12px; color: var(--muted2); line-height: 1.75; font-size: 14.5px; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--ink);
+      border-top: 1px solid var(--line);
+      padding: 28px 0;
     }
-    details[open] .chev{transform:rotate(180deg)}
-    .faq-answer{
-      margin-top:10px;
-      color:#334155;
-      line-height:1.75;
-      font-size:14.6px;
+    footer .container {
+      display: flex; gap: 16px; align-items: center;
+      justify-content: space-between; flex-wrap: wrap;
+    }
+    .footer-left {
+      font-family: var(--cond); font-size: 11px; font-weight: 700;
+      letter-spacing: .16em; text-transform: uppercase; color: var(--muted);
+    }
+    .footer-left span { color: var(--brass); }
+    .footlinks { display: flex; gap: 20px; flex-wrap: wrap; }
+    .footlinks a {
+      font-family: var(--cond); font-size: 11px; font-weight: 700;
+      letter-spacing: .14em; text-transform: uppercase;
+      color: var(--muted); transition: color .2s;
+    }
+    .footlinks a:hover { color: var(--brass); }
+
+    /* ── MOBILE STICKY CTA ── */
+    .sticky-cta {
+      position: fixed; left: 12px; right: 12px; bottom: 12px;
+      z-index: 60; display: none;
+    }
+    .sticky-cta .inner {
+      background: var(--ink2);
+      border: 1px solid var(--line2);
+      padding: 12px 14px;
+      box-shadow: 0 18px 50px rgba(0,0,0,.50);
+      display: flex; gap: 12px; align-items: center; justify-content: space-between;
+    }
+    .sticky-cta .inner span {
+      color: var(--muted2); font-family: var(--cond);
+      font-size: 12px; font-weight: 700; letter-spacing: .1em;
+      text-transform: uppercase; line-height: 1.3;
+    }
+    .sticky-cta a {
+      padding: 11px 18px;
+      font-family: var(--cond); font-weight: 800; font-size: 11px;
+      letter-spacing: .2em; text-transform: uppercase;
+      background: var(--brass); color: var(--ink);
+      border: 0; cursor: pointer; white-space: nowrap;
+      display: inline-flex; align-items: center; justify-content: center;
+      transition: background .2s;
+    }
+    .sticky-cta a:hover { background: var(--brass2); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 980px) {
+      .nav { display: none; }
+      .hero { min-height: unset; }
+      .hero .container { grid-template-columns: 1fr; padding-top: 32px; }
+      .hero h1 { font-size: 38px; }
+      .two-col { grid-template-columns: 1fr; }
+      .grid3 { grid-template-columns: 1fr; }
+      .reviews-grid { grid-template-columns: 1fr; }
+      .whygrid { grid-template-columns: 1fr; }
+      .steps { grid-template-columns: 1fr; }
+      .sticky-cta { display: block; }
+      body { padding-bottom: 90px; }
     }
 
-    /* FOOTER */
-    footer{
-      background:#0f172a;
-      color:rgba(255,255,255,.86);
-      padding:26px 0;
-      font-size:13px;
-    }
-    footer .container{display:flex; gap:12px; align-items:center; justify-content:space-between; flex-wrap:wrap}
-    .footlinks{display:flex; gap:14px; flex-wrap:wrap}
-    .footlinks a{color:rgba(255,255,255,.86); text-decoration:none}
-    .footlinks a:hover{text-decoration:underline}
-
-    /* Mobile sticky CTA */
-    .sticky-cta{
-      position:fixed;
-      left:12px;
-      right:12px;
-      bottom:12px;
-      z-index:60;
-      display:none;
-    }
-    .sticky-cta .inner{
-      background:#0f172a;
-      border-radius:14px;
-      padding:10px;
-      box-shadow:0 18px 50px rgba(0,0,0,.30);
-      display:flex;
-      gap:10px;
-      align-items:center;
-      justify-content:space-between;
-    }
-    .sticky-cta .inner span{
-      color:#fff;
-      font-weight:950;
-      font-size:13px;
-      line-height:1.2;
-    }
-    .sticky-cta a{
-      width:auto;
-      padding:12px 14px;
-      border-radius:12px;
-      text-transform:uppercase;
-      font-weight:950;
-      border:0;
-      cursor:pointer;
-      background:var(--brand);
-      color:#fff;
-      letter-spacing:.35px;
-      font-size:12px;
-      white-space:nowrap;
-      text-decoration:none;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
+    @media (max-width: 480px) {
+      .topbar-inner { flex-wrap: nowrap !important; gap: 10px; }
+      .brand { min-width: 0; gap: 10px; }
+      .brand-sub { display: none; }
+      .phone-pill { flex: 0 0 auto; padding: 8px 10px; font-size: 12px; gap: 6px; }
+      .phone-pill svg { width: 14px; height: 14px; }
     }
 
-    /* RESPONSIVE */
-    @media (max-width: 480px){
-      /* Keep header one line and prevent wrapping */
-      .topbar-inner{ flex-wrap: nowrap !important; gap:10px; }
-
-      /* Let the logo/name area shrink instead of pushing the phone pill */
-      .brand{ min-width: 0; gap:10px; }
-
-      /* Prevent the business name from forcing extra width */
-      .name{ min-width:0; }
-      .name .sub{ display:none; }
-
-      /* Make the phone button smaller and avoid stretching the header */
-      .phone-pill{
-        flex: 0 0 auto;
-        padding:8px 10px;
-        font-size:13px;
-        gap:6px;
-        white-space:nowrap;
-        border-radius:999px;
-      }
-      .phone-pill svg{ width:16px; height:16px; }
+    /* Fade in animation on hero text */
+    .hero-left-anim > * {
+      animation: fadeUp .6s ease both;
     }
+    .hero-left-anim > *:nth-child(1) { animation-delay: .05s; }
+    .hero-left-anim > *:nth-child(2) { animation-delay: .12s; }
+    .hero-left-anim > *:nth-child(3) { animation-delay: .18s; }
+    .hero-left-anim > *:nth-child(4) { animation-delay: .24s; }
+    .hero-left-anim > *:nth-child(5) { animation-delay: .30s; }
 
-    @media (max-width: 980px){
-      .nav{display:none}
-      .hero{min-height:unset}
-      .hero .container{grid-template-columns: 1fr; padding-top:22px}
-      .hero h1{font-size:38px}
-      .two-col{grid-template-columns:1fr}
-      .grid3{grid-template-columns:1fr}
-      .reviews{grid-template-columns:1fr}
-      .whygrid{grid-template-columns:1fr}
-      .steps{grid-template-columns:1fr}
-      .sticky-cta{display:block}
-      body{padding-bottom:86px;}
+    /* inline flex for button groups */
+    .btn-row {
+      display: flex; gap: 10px; flex-wrap: wrap; margin-top: 18px;
     }
+    .btn-row .btn-outline { width: auto; margin-top: 0; }
+    .btn-row .btn-dark { margin-top: 0; }
+    .btn-row .btn-primary { width: auto; margin-top: 0; }
   </style>
 </head>
 
 <body>
+  <!-- ── HEADER ── -->
   <header class="topbar" id="top">
     <div class="container topbar-inner">
       <a class="brand" href="#top" aria-label="American Purity home">
         <img src="logo.png" alt="American Purity logo" onerror="this.style.display='none'">
-        <div class="name">
-          American <span>Purity</span>
-          <span class="sub">Whole-Home Water Filtration</span>
+        <div>
+          <div class="brand-name">American Purity</div>
+          <span class="brand-sub">Whole-Home Water Filtration</span>
         </div>
       </a>
 
+      <div class="divider-v"></div>
       <div class="navspacer"></div>
 
       <nav class="nav" aria-label="Primary navigation">
@@ -594,7 +621,7 @@
       </nav>
 
       <a class="phone-pill" href="tel:+14235550123" aria-label="Call American Purity">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#0f172a" stroke-width="2">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5">
           <path d="M22 16.92V21a2 2 0 0 1-2.18 2A19.86 19.86 0 0 1 3 5.18 2 2 0 0 1 5 3h4.09a2 2 0 0 1 2 1.72c.12.81.31 1.6.57 2.36a2 2 0 0 1-.45 2.11L9.91 10.91a16 16 0 0 0 3.18 3.18l1.72-1.3a2 2 0 0 1 2.11-.45c.76.26 1.55.45 2.36.57A2 2 0 0 1 22 16.92z"/>
         </svg>
         (423) 555-0123
@@ -602,37 +629,39 @@
     </div>
   </header>
 
-  <!-- HERO -->
+  <!-- ── HERO ── -->
   <section class="hero" aria-label="Hero section">
     <div class="container">
-      <div>
-        <h1>Cleaner, better water — from every tap in your home</h1>
+      <div class="hero-left-anim">
+        <div class="hero-eyebrow">Whole-Home Water Systems</div>
+
+        <h1>
+          Cleaner, better water —<br><em>from every tap in your home</em>
+        </h1>
 
         <p>
-          If your water tastes like chlorine, smells off, leaves spots on dishes, or builds scale on fixtures, you’re not alone.
+          If your water tastes like chlorine, smells off, leaves spots on dishes, or builds scale on fixtures, you're not alone.
           American Purity helps homeowners choose the right <strong>whole-home water filtration</strong> system
           (and softening when needed) so you can protect plumbing, appliances, and the water your family uses every day.
         </p>
 
-        <p class="local">
-          Based in Chattanooga • Serving the Tri-State area (TN / GA / AL)
-        </p>
+        <p class="local">Based in Chattanooga &nbsp;·&nbsp; Serving TN / GA / AL</p>
 
         <ul class="benefits" aria-label="Key benefits">
           <li>
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="white" stroke-width="2">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M12 22s8-4 8-10V6l-8-4-8 4v6c0 6 8 10 8 10z"/>
             </svg>
-            Better taste & odor
+            Better taste &amp; odor
           </li>
           <li>
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="white" stroke-width="2">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M20 7l-8 10-4-4"/>
             </svg>
-            Less scale & buildup
+            Less scale &amp; buildup
           </li>
           <li>
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="white" stroke-width="2">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M12 8v4l3 3"/><path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/>
             </svg>
             Fast scheduling
@@ -646,7 +675,7 @@
         <div class="body">
           <label for="zip">ZIP Code</label>
           <div class="field">
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#0f172a" stroke-width="2">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M12 21s7-4.35 7-10a7 7 0 0 0-14 0c0 5.65 7 10 7 10z"/>
               <circle cx="12" cy="11" r="2"/>
             </svg>
@@ -666,21 +695,19 @@
             <strong>Service area:</strong> Chattanooga + surrounding region across TN / North GA / NE AL.
           </div>
 
-          <div class="micro">
-            No spam. Just scheduling + answers.
-          </div>
+          <div class="micro">No spam. Just scheduling + answers.</div>
         </div>
       </aside>
     </div>
   </section>
 
-  <!-- TRUST STRIP -->
+  <!-- ── TRUST STRIP ── -->
   <section class="proof" aria-label="trust signals">
     <div class="container">
       <div class="row">
-        <div class="proof-pill">Local team • Based in Chattanooga</div>
+        <div class="proof-pill">Local team · Based in Chattanooga</div>
         <div class="proof-pill">Whole-home systems (city + well)</div>
-        <div class="proof-pill">Clean install • fast scheduling</div>
+        <div class="proof-pill">Clean install · fast scheduling</div>
       </div>
       <small>
         Serving homeowners across the Tri-State area (TN / GA / AL). Call or request a free water analysis to get the right recommendation.
@@ -688,13 +715,14 @@
     </div>
   </section>
 
-  <!-- SELF-DIAGNOSIS -->
+  <!-- ── SIGNS ── -->
   <section class="section" id="signs">
     <div class="container">
       <div class="card">
+        <div class="section-label">Self-Diagnosis</div>
         <h2>Are you seeing any of these signs?</h2>
         <p class="lead" style="margin-bottom:0;">
-          Most homeowners don’t need a “sales pitch” — they need answers. Check the symptoms you’re noticing and we’ll point you toward the right solution.
+          Most homeowners don't need a "sales pitch" — they need answers. Check the symptoms you're noticing and we'll point you toward the right solution.
         </p>
 
         <div class="grid3">
@@ -724,7 +752,7 @@
                 <path d="M12 2v20"/><path d="M7 7l5-5 5 5"/>
               </svg>
             </div>
-            <h4>Chlorine taste or “pool” smell</h4>
+            <h4>Chlorine taste or "pool" smell</h4>
             <p>Common with city water treatment — filtration can noticeably improve taste and odor.</p>
           </div>
 
@@ -744,7 +772,7 @@
                 <path d="M12 3c3 4 6 7 6 11a6 6 0 0 1-12 0c0-4 3-7 6-11z"/>
               </svg>
             </div>
-            <h4>“Rotten egg” smell</h4>
+            <h4>"Rotten egg" smell</h4>
             <p>Can be sulfur-related (more common on well water) and usually has a targeted fix.</p>
           </div>
 
@@ -759,22 +787,23 @@
           </div>
         </div>
 
-        <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:18px;">
-          <a class="btn btn-dark" href="#request" onclick="return saveZip();">Check My Water Quality</a>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="#request" onclick="return saveZip();">Check My Water Quality</a>
           <a class="btn btn-outline" href="tel:+14235550123">Call (423) 555-0123</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- HOW IT WORKS -->
+  <!-- ── HOW IT WORKS ── -->
   <section class="section" id="how">
     <div class="container two-col">
       <div class="imgbox">
-        <img src="install.jpg" alt="Whole-home water filtration installation" onerror="this.style.display='none'">
+        <img src="install.jpg" alt="Whole-home water filtration installation" onerror="this.style.display:'none'">
       </div>
 
       <div class="card">
+        <div class="section-label">Process</div>
         <h2>How the free water analysis works</h2>
         <p class="lead">
           Different water problems require different systems. Some homes need filtration for chlorine and taste.
@@ -788,18 +817,19 @@
           <li><strong>Get a clear recommendation</strong> (filter / softener / combo) and next steps</li>
         </ul>
 
-        <div class="note" style="margin-top:14px;">
+        <div class="note" style="margin-top:16px;">
           <strong>Serving city + well water homes.</strong> Based in Chattanooga and serving the surrounding Tri-State region (TN / GA / AL).
         </div>
       </div>
     </div>
   </section>
 
-  <!-- BEFORE / AFTER -->
+  <!-- ── BEFORE / AFTER ── -->
   <section class="section" id="beforeafter">
     <div class="container two-col">
       <div class="card">
-        <h2>Before & after: what clean water looks like</h2>
+        <div class="section-label">Results</div>
+        <h2>Before &amp; after: what clean water looks like</h2>
         <p class="lead" style="margin-bottom:0;">
           The goal is simple: water that tastes better, smells better, and feels better — with less scale, spotting, and buildup.
           A properly matched whole-home system improves water quality across every tap, shower, and appliance connection.
@@ -809,34 +839,35 @@
           <img src="water-filtration-system-before-after.jpg" alt="Before and after comparison of filtered water" />
           <div class="cap">
             <span>Before / After</span>
-            <span class="tag">Clearer • Better • Cleaner</span>
+            <span class="tag">Clearer · Better · Cleaner</span>
           </div>
         </div>
 
-        <p class="lead" style="margin:14px 0 0;">
-          If you’re not sure whether you need filtration, softening, or both, start with a free water analysis.
+        <p class="lead" style="margin:16px 0 0;">
+          If you're not sure whether you need filtration, softening, or both, start with a free water analysis.
         </p>
 
-        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+        <div class="btn-row">
           <a class="btn btn-primary" href="#request" onclick="return saveZip();">Check My Water Quality</a>
           <a class="btn btn-outline" href="tel:+14235550123">Call (423) 555-0123</a>
         </div>
       </div>
 
       <div class="imgbox">
-        <img src="kitchen.jpg" alt="Clean water in a modern home kitchen" onerror="this.style.display='none'">
+        <img src="kitchen.jpg" alt="Clean water in a modern home kitchen" onerror="this.style.display:'none'">
       </div>
     </div>
   </section>
 
-  <!-- ✅ FINANCING (card first, image BELOW the card) -->
+  <!-- ── FINANCING ── -->
   <section class="section" id="financing">
     <div class="container">
       <div class="card">
+        <div class="section-label">Financing</div>
         <h2>Financing options available</h2>
 
         <div class="badge" aria-label="Financing available badge">
-          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#0f172a" stroke-width="2">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M12 1v22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7H14a3.5 3.5 0 0 1 0 7H6"/>
           </svg>
           Financing options available
@@ -844,7 +875,7 @@
 
         <p class="lead" style="margin-bottom:0;">
           Want better water without a big upfront hit? We can offer financing options for qualified homeowners.
-          We’ll walk you through the choices and help you pick a payment plan that makes sense for your home.
+          We'll walk you through the choices and help you pick a payment plan that makes sense for your home.
         </p>
 
         <ul class="subpoints">
@@ -853,7 +884,7 @@
           <li><strong>No pressure</strong> — we explain options clearly</li>
         </ul>
 
-        <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:16px;">
+        <div class="btn-row">
           <a class="btn btn-primary" href="#request" onclick="return saveZip();">Check My Water Quality</a>
           <a class="btn btn-outline" href="tel:+14235550123">Call (423) 555-0123</a>
         </div>
@@ -863,20 +894,20 @@
         </div>
       </div>
 
-      <!-- ✅ IMAGE IS NOW OUTSIDE THE CARD, BELOW IT -->
       <div class="imgbox" style="margin-top:16px;">
-        <img src="kitchen.png" alt="Clean water in a modern home kitchen" onerror="this.style.display='none'">
+        <img src="kitchen.png" alt="Clean water in a modern home kitchen" onerror="this.style.display:'none'">
       </div>
     </div>
   </section>
 
-  <!-- WHAT HAPPENS NEXT -->
+  <!-- ── WHAT HAPPENS NEXT ── -->
   <section class="section" id="next">
     <div class="container">
       <div class="card">
+        <div class="section-label">Our Process</div>
         <h2>What happens after you check your water</h2>
         <p class="lead" style="margin-bottom:0;">
-          No runaround. No guessing. Here’s the straightforward process we use to get you the right recommendation.
+          No runaround. No guessing. Here's the straightforward process we use to get you the right recommendation.
         </p>
 
         <div class="steps" aria-label="Process steps">
@@ -884,7 +915,7 @@
             <div class="num">1</div>
             <div>
               <strong>Confirm your basics</strong>
-              <p>We confirm your ZIP and whether you’re on city water or well (and what you’re noticing).</p>
+              <p>We confirm your ZIP and whether you're on city water or well (and what you're noticing).</p>
             </div>
           </div>
           <div class="step">
@@ -910,24 +941,25 @@
           </div>
         </div>
 
-        <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:18px;">
-          <a class="btn btn-dark" href="#request" onclick="return saveZip();">Check My Water Quality</a>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="#request" onclick="return saveZip();">Check My Water Quality</a>
           <a class="btn btn-outline" href="tel:+14235550123">Call (423) 555-0123</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- WHY CHOOSE US -->
+  <!-- ── WHY CHOOSE US ── -->
   <section class="whybar" id="why">
     <div class="container whygrid">
       <div>
+        <div class="section-label">Why American Purity</div>
         <h3>Why homeowners choose American Purity</h3>
         <p>
           Whole-home water filtration is a long-term investment — it should be installed cleanly and matched correctly.
           We focus on clear recommendations, tidy installs, and water that feels noticeably better in day-to-day use.
         </p>
-        <ul class="whylist">
+        <ul class="subpoints">
           <li><strong>Right system for your water:</strong> filtration, softening, or combo — no guesswork.</li>
           <li><strong>Professional install:</strong> clean setup, solid workmanship, and clear next steps.</li>
           <li><strong>Local service:</strong> based in Chattanooga and serving TN / GA / AL.</li>
@@ -936,44 +968,43 @@
       </div>
 
       <div class="imgbox">
-        <img src="truck.jpg" alt="American Purity service truck" onerror="this.style.display='none'">
+        <img src="truck.jpg" alt="American Purity service truck" onerror="this.style.display:'none'">
       </div>
     </div>
   </section>
 
-  <!-- REVIEWS -->
+  <!-- ── REVIEWS ── -->
   <section class="section" id="reviews">
     <div class="container">
       <div class="card">
+        <div class="section-label">Customer Reviews</div>
         <h2>Real homeowner feedback</h2>
         <p class="lead" style="margin-bottom:0;">
           A whole-home system should make a noticeable difference — taste, odor, and scale reduction are the most common improvements homeowners mention.
         </p>
 
-        <div class="reviews" aria-label="reviews">
+        <div class="reviews-grid" aria-label="reviews">
           <div class="review">
             <div class="stars">★★★★★</div>
-            <p>“Water tastes better and the chlorine smell is basically gone. Install was clean and quick.”</p>
+            <p>"Water tastes better and the chlorine smell is basically gone. Install was clean and quick."</p>
             <div class="who">Megan R.</div>
-            <div class="where">Chattanooga • TN</div>
+            <div class="where">Chattanooga · TN</div>
           </div>
-
           <div class="review">
             <div class="stars">★★★★★</div>
-            <p>“We had scale on everything. After the system, the shower glass stays cleaner and soap works better.”</p>
+            <p>"We had scale on everything. After the system, the shower glass stays cleaner and soap works better."</p>
             <div class="who">Chris D.</div>
-            <div class="where">Fort Oglethorpe • GA</div>
+            <div class="where">Fort Oglethorpe · GA</div>
           </div>
-
           <div class="review">
             <div class="stars">★★★★★</div>
-            <p>“No more weird smell on our well water. Huge difference — and they explained it in plain English.”</p>
+            <p>"No more weird smell on our well water. Huge difference — and they explained it in plain English."</p>
             <div class="who">Jordan T.</div>
-            <div class="where">Scottsboro • AL</div>
+            <div class="where">Scottsboro · AL</div>
           </div>
         </div>
 
-        <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:18px;">
+        <div class="btn-row">
           <a class="btn btn-primary" href="#request" onclick="return saveZip();">Check My Water Quality</a>
           <a class="btn btn-outline" href="tel:+14235550123">Call (423) 555-0123</a>
         </div>
@@ -981,24 +1012,26 @@
     </div>
   </section>
 
-  <!-- REQUEST -->
+  <!-- ── REQUEST ── -->
   <section class="section" id="request">
     <div class="container two-col">
       <div class="card">
+        <div class="section-label">Free Analysis</div>
         <h2>Check my water quality (free)</h2>
         <p class="lead">
-          Tell us what you’re noticing and we’ll recommend the right whole-home system for your home.
+          Tell us what you're noticing and we'll recommend the right whole-home system for your home.
           This is the fastest way to get clear direction without guessing between filtration and softening.
         </p>
 
         <div class="note">
           <strong>Prefer to talk now?</strong> Call <a href="tel:+14235550123">(423) 555-0123</a>.
-          We’re based in Chattanooga and serve the Tri-State area (TN / GA / AL).
+          We're based in Chattanooga and serve the Tri-State area (TN / GA / AL).
         </div>
       </div>
 
       <div class="card">
-        <h2 style="margin-bottom:8px;">Request a free water analysis</h2>
+        <div class="section-label">Get Started</div>
+        <h2>Request a free water analysis</h2>
         <p class="lead" style="margin-top:0;">
           Form will be connected here next (2-step). For now, use the phone number above.
         </p>
@@ -1007,26 +1040,27 @@
           <strong>Quick version:</strong> ZIP + symptoms → we recommend the right system → schedule if you want.
         </div>
 
-        <a class="btn btn-primary" href="tel:+14235550123" style="margin-top:14px;">
+        <a class="btn btn-primary" href="tel:+14235550123" style="margin-top:16px;">
           Call (423) 555-0123
         </a>
       </div>
     </div>
   </section>
 
-  <!-- FAQ -->
-  <section class="section faq" id="faq">
+  <!-- ── FAQ ── -->
+  <section class="section" id="faq">
     <div class="container">
       <div class="card">
+        <div class="section-label">FAQ</div>
         <h2>Frequently asked questions</h2>
-        <p class="lead" style="margin-bottom:6px;">
+        <p class="lead" style="margin-bottom:10px;">
           Quick answers to the most common questions homeowners have before getting a whole-home system.
         </p>
 
         <details class="faq-item">
           <summary>
             Do I need filtration, softening, or both?
-            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="#0f172a" stroke-width="2">
+            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M6 9l6 6 6-6"/>
             </svg>
           </summary>
@@ -1039,7 +1073,7 @@
         <details class="faq-item">
           <summary>
             Do you work with city water and well water?
-            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="#0f172a" stroke-width="2">
+            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M6 9l6 6 6-6"/>
             </svg>
           </summary>
@@ -1052,35 +1086,35 @@
         <details class="faq-item">
           <summary>
             How long does installation take?
-            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="#0f172a" stroke-width="2">
+            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M6 9l6 6 6-6"/>
             </svg>
           </summary>
           <div class="faq-answer">
-            Most installations are completed in a single visit. We’ll confirm scope and placement before scheduling.
+            Most installations are completed in a single visit. We'll confirm scope and placement before scheduling.
           </div>
         </details>
 
         <details class="faq-item">
           <summary>
             What areas do you serve?
-            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="#0f172a" stroke-width="2">
+            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M6 9l6 6 6-6"/>
             </svg>
           </summary>
           <div class="faq-answer">
-            We’re based in Chattanooga and serve the surrounding Tri-State region across Tennessee, North Georgia, and Northeast Alabama.
+            We're based in Chattanooga and serve the surrounding Tri-State region across Tennessee, North Georgia, and Northeast Alabama.
           </div>
         </details>
       </div>
     </div>
   </section>
 
+  <!-- ── FOOTER ── -->
   <footer>
     <div class="container">
-      <div>
-        <strong>American Purity</strong><br/>
-        <span style="opacity:.85;">Whole-Home Water Filtration & Softening • Based in Chattanooga • Serving TN / GA / AL</span>
+      <div class="footer-left">
+        <span>American Purity</span> &nbsp;·&nbsp; Whole-Home Water Filtration &amp; Softening &nbsp;·&nbsp; Chattanooga &nbsp;·&nbsp; TN / GA / AL
       </div>
       <div class="footlinks">
         <a href="#top">Top</a>
@@ -1094,7 +1128,7 @@
     </div>
   </footer>
 
-  <!-- MOBILE STICKY CTA -->
+  <!-- ── MOBILE STICKY CTA ── -->
   <div class="sticky-cta" aria-label="Sticky call to action">
     <div class="inner">
       <span>Want cleaner water?<br/>Check your water quality.</span>
@@ -1130,4 +1164,3 @@
   </script>
 </body>
 </html>
-0
