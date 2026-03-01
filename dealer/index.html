@@ -579,7 +579,7 @@
      ******************************************************************/
     // IMPORTANT: Use the DEPLOYED web app URL that ends with /exec
     // Example: https://script.google.com/macros/s/XXXXXXX/exec
-    const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzLTBdv0acRUYTumhc50U7r1gcncjyojObugBDqR34-R2v29GUANo0A_sJKDk-dPILdjQ/exec";
+    const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzOr1dZPUNMXerJG7qFCPM6SNF9eE4dlDJggL2TpIHsiBByE_aj98k2dPhPrjsJr-BmTA/exec";
 
     // Until you have a real payment link, redirect here:
     const PAYMENT_LINK = "https://google.com";
@@ -717,10 +717,10 @@
     async function submitOrder(){
       const payload = buildPayload();
 
-      if(APPS_SCRIPT_URL.includes("https://script.google.com/macros/s/AKfycbzLTBdv0acRUYTumhc50U7r1gcncjyojObugBDqR34-R2v29GUANo0A_sJKDk-dPILdjQ/exec")){
-        alert("You still need to paste your Apps Script Web App /exec URL into APPS_SCRIPT_URL.");
-        return;
-      }
+      if (!APPS_SCRIPT_URL || !APPS_SCRIPT_URL.startsWith("https://script.google.com/macros/s/")) {
+  alert("Missing Apps Script Web App /exec URL. Paste it into APPS_SCRIPT_URL.");
+  return;
+}
 
       toast("Submitting order…");
 
